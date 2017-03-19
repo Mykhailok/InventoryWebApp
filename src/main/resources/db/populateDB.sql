@@ -1,19 +1,18 @@
---DELETE FROM goods;
+DELETE FROM product;
 DELETE FROM users;
 DELETE FROM user_roles;
 
---ALTER SEQUENCE goods_id_seq RESTART WITH 1;
+ALTER SEQUENCE product_id_seq RESTART WITH 1;
 ALTER SEQUENCE users_id_seq RESTART WITH 1;
 
-
--- INSERT INTO prodms.goods
--- (name,manufacturer,price,description)
--- VALUES
+INSERT INTO product
+(name,owner,manufacturer,price,description)
+VALUES
 -- 	('Abacuses','ASRock',100,'Cases'),
 -- 	('Bags','Compaq',200,'Laptop computer cases'),
 -- 	('Capacitors','Dell',300,'Motherboards'),
 -- 	('Detectors','Foxconn',400,'Chipsets for motherboards'),
--- 	('Lyres','Lenovo',500,'Central processing units (CPUs)');
+	('Test','User','Manufacturer',100,'Description');
 
 INSERT INTO users (username, password) VALUES
   ('admin', '$2a$11$bRQR2FxnBrKnr/PS0eaDUeEQzO2ZtYJllGPIkdekZ0q6rJVJrCmXm'), -- password = '1111'

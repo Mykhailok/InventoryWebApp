@@ -19,25 +19,19 @@ class UserServiceImplTest {
     private UserDAO userDAO;
     private UserService userService;
 
-
-
     @BeforeEach
     void setUp() {
         applicationContext = new FileSystemXmlApplicationContext("src/main/webapp/WEB-INF/appconfig-root.xml");
         userService = applicationContext.getBean(UserService.class);
-        //userDAO = applicationContext.getBean(UserDAO.class);
-
     }
 
     @AfterEach
     void tearDown() {
         applicationContext.close();
-
     }
 
     @Test
     void saveAndDeleteTest() {
-
         int startRows, currentRows, afterDelete;
         user.setUsername("Test");
         user.setPassword("111");
@@ -51,33 +45,8 @@ class UserServiceImplTest {
         userService.deleteById(user.getId());
         afterDelete = userService.findMaxId();
         assertEquals(startRows, afterDelete);
-
     }
 
-    /*@Test
-    void  addUserTest(){
-        User user = new User();
-        user.setUsername("Test");
-        user.setPassword("111");
-        userService.save(user);
-        assertNotNull(user);
-        assertEquals("Test", user.getUsername());
-    }*/
-
-    /*@Test
-    void getMaxIdTest(){
-        System.out.println("!!!!!!!! Current Rows = " + userService.findMaxId());
-    }*/
-
-    /*@Test
-    void removeUserTestWithoutId(){
-        applicationContext = new FileSystemXmlApplicationContext("src/main/webapp/WEB-INF/appconfig-root.xml");
-        userService = applicationContext.getBean(UserService.class);
-        userService.deleteById(3);
-    }*/
-
-    //@Test
-    //@Transactional
     void removeUserTest(int id){
         userDAO.delete(id);
     }
@@ -98,6 +67,5 @@ class UserServiceImplTest {
     void findByUsernameFalse() {
         User user = userService.findByUsername("adminn");
         assertNull(user);
-        //assertNotEquals("adminn", user.getUsername());
     }
 }
