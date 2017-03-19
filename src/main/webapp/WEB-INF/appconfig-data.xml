@@ -32,7 +32,7 @@
 
     <bean id="entityManagerFactory" class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean"
           p:dataSource-ref="dataSource"
-          p:packagesToScan="ua.goit.javaee.group2.**.model">
+          p:packagesToScan="mykhailok.inventory.model">
         <property name="jpaPropertyMap">
             <map>
                 <entry key="#{T(org.hibernate.cfg.AvailableSettings).FORMAT_SQL}" value="${hibernate.format_sql}"/>
@@ -57,7 +57,7 @@
 
     <tx:annotation-driven transaction-manager="transactionManager"/>
 
-    <context:component-scan base-package="mykhailok.inventory" />
+    <context:component-scan base-package="mykhailok.inventory"/>
 
 
 </beans>

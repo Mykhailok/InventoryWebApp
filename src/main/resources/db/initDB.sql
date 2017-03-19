@@ -1,16 +1,19 @@
---DROP TABLE IF EXISTS prodms.goods CASCADE;
+DROP TABLE IF EXISTS product CASCADE;
 DROP TABLE IF EXISTS users CASCADE;
 DROP TABLE IF EXISTS user_roles CASCADE;
 
--- CREATE TABLE prodms.goods
--- (
---     id serial NOT NULL,
---     name TEXT,
---     manufacturer TEXT,
---     price NUMERIC(10,2),
---     description TEXT,
---     PRIMARY KEY (id)
--- );
+--CREATE DATABASE inventory;
+
+CREATE TABLE product
+(
+    id serial NOT NULL,
+    name TEXT,
+    owner TEXT,
+    manufacturer TEXT,
+    price NUMERIC(10,2),
+    description TEXT,
+    PRIMARY KEY (id)
+);
 
 CREATE TABLE users
 (
