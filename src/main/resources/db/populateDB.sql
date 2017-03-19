@@ -1,9 +1,12 @@
 DELETE FROM product;
 DELETE FROM users;
 DELETE FROM user_roles;
+DELETE FROM owner_product;
+DELETE FROM owners;
 
 ALTER SEQUENCE product_id_seq RESTART WITH 1;
 ALTER SEQUENCE users_id_seq RESTART WITH 1;
+ALTER SEQUENCE owners_id_seq RESTART WITH 1;
 
 INSERT INTO product
 (name,owner,manufacturer,price,description)
@@ -22,3 +25,7 @@ INSERT INTO user_roles (role, user_id) VALUES
 	('ROLE_ADMIN', 1),
 	('ROLE_USER', 1),
 	('ROLE_USER', 2);
+
+INSERT INTO owners (name) VALUES ('Mike');
+
+INSERT INTO owner_product (owner_id, product_id) VALUES (1,1);
