@@ -7,4 +7,6 @@ public interface ProductDAO extends AbstractDAO<Product> {
 
     @Transactional
     int findMaxId();
+
+    Product findByProductName(String name);
 }

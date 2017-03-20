@@ -18,7 +18,8 @@ CREATE TABLE product
 CREATE TABLE owners
 (
     id SERIAL NOT NULL PRIMARY KEY,
-    name TEXT
+    firstname TEXT,
+    lastname TEXT
 );
 
 CREATE TABLE owner_product

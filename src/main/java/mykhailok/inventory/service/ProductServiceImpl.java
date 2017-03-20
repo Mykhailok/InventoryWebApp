@@ -49,4 +49,9 @@ public class ProductServiceImpl implements ProductService {
         return productDAO.findMaxId();
     }
 
+    @Override
+    public Product findByProductName(String name) {
+        return productDAO.findByProductName(name);
+    }
+
 }

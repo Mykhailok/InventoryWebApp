@@ -26,6 +26,6 @@ INSERT INTO user_roles (role, user_id) VALUES
 	('ROLE_USER', 1),
 	('ROLE_USER', 2);
 
-INSERT INTO owners (name) VALUES ('Mike');
+INSERT INTO owners (firstname, lastname) VALUES ('Mike', 'Kosynskyi');
 
 INSERT INTO owner_product (owner_id, product_id) VALUES (1,1);

@@ -17,4 +17,6 @@ public interface ProductService {
     List<Product> getAll();
 
     int findMaxId();
+
+    Product findByProductName(String name);
 }
