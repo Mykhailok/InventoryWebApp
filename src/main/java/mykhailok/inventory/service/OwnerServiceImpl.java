@@ -46,6 +46,11 @@ public class OwnerServiceImpl implements OwnerService {
     }
 
     @Override
+    public List<Owner> getAllOwners() {
+        return ownerDAO.getAllOwners();
+    }
+
+    @Override
     public BigInteger countRow() {
         return ownerDAO.countRow();
     }

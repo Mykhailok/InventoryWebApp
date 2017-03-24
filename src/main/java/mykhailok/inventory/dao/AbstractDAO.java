@@ -1,5 +1,7 @@
 package mykhailok.inventory.dao;
 
+import org.springframework.transaction.annotation.Transactional;
+
 import java.util.List;
 
 public interface AbstractDAO<T> {
@@ -10,6 +12,7 @@ public interface AbstractDAO<T> {
 
     T get(int id);
 
+    @Transactional
     List<T> getAll();
 
 }

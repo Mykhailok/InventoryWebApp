@@ -8,6 +8,8 @@ import org.junit.jupiter.api.Test;
 import org.springframework.context.support.FileSystemXmlApplicationContext;
 
 import java.math.BigInteger;
+import java.util.ArrayList;
+import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -43,6 +45,13 @@ class OwnerServiceImplTest {
         assertEquals("add_LastName", owner.getLastName());
         currentRows = ownerService.countRow();
         assertEquals(startRows.add(BigInteger.valueOf(1)), currentRows);
+    }
+
+    @Test
+    void getAllTest() {
+        List<Owner> fromDBList = ownerService.getAllOwners();
+        System.out.println("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! " + fromDBList);
+        assertEquals(ownerService.countRow(), BigInteger.valueOf(fromDBList.size()));
     }
 
     @Test

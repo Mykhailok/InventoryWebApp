@@ -1,9 +1,6 @@
 package mykhailok.inventory.model;
 
-import javax.persistence.AttributeOverride;
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 @Entity
 @Table(name = "product")
@@ -12,8 +9,12 @@ public class Product extends NamedEntity {
 
     public static final String NAME = "name";
 
-    @Column(name = "owner")
-    private String owner;
+    /*@Column(name = "owner")
+    private String owner;*/
+
+    @ManyToOne
+    @JoinColumn(name = "owner")
+    private Owner owner;
 
     @Column(name = "manufacturer")
     private String productManufacturer;
@@ -24,11 +25,11 @@ public class Product extends NamedEntity {
     @Column(name = "description")
     private String productDescription;
 
-    public String getOwner() {
+    public Owner getOwner() {
         return owner;
     }
 
-    public void setOwner(String owner) {
+    public void setOwner(Owner owner) {
         this.owner = owner;
     }
 

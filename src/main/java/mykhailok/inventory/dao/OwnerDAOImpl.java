@@ -10,6 +10,8 @@ import javax.persistence.NoResultException;
 import javax.persistence.NonUniqueResultException;
 import javax.persistence.Query;
 import java.math.BigInteger;
+import java.util.List;
+import java.util.Set;
 
 @Repository
 public class OwnerDAOImpl extends JpaGenericDAOImpl<Owner> implements OwnerDAO {
@@ -44,5 +46,18 @@ public class OwnerDAOImpl extends JpaGenericDAOImpl<Owner> implements OwnerDAO {
         //owner = (Owner) query.getSingleResult();
         //int maxId = owner.getId();
         return countRow;
+    }
+
+    @Override
+    public List<Owner> getAllOwners() {
+        List<Owner> owners = (List<Owner>) em.
+                createNativeQuery("SELECT firstname, lastname, name, description FROM product, owners, owner_product WHERE\n" +
+                        "  product.id = owner_product.product_id AND owners.id = owner_product.owner_id;").getResultList();
+        if (owners == null) {
+            logger.error("Search for companies has failed.");
+        } else {
+            logger.info("Search for all companies has been successful.");
+        }
+        return owners;
     }
 }
