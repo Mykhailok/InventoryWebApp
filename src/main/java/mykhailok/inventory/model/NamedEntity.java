@@ -46,4 +46,12 @@ public class NamedEntity {
     public boolean isNew() {
         return (getId() == null);
     }
+
+    @Override
+    public String toString() {
+        return "NamedEntity{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                '}';
+    }
 }

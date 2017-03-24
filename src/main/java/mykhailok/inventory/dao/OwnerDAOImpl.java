@@ -51,8 +51,9 @@ public class OwnerDAOImpl extends JpaGenericDAOImpl<Owner> implements OwnerDAO {
     @Override
     public List<Owner> getAllOwners() {
         List<Owner> owners = (List<Owner>) em.
-                createNativeQuery("SELECT firstname, lastname, name, description FROM product, owners, owner_product WHERE\n" +
-                        "  product.id = owner_product.product_id AND owners.id = owner_product.owner_id;").getResultList();
+                createNativeQuery("SELECT firstname, lastname, name, description " +
+                        "FROM product, owners, owner_product WHERE product.id = owner_product.product_id " +
+                        "AND owners.id = owner_product.owner_id;").getResultList();
         if (owners == null) {
             logger.error("Search for companies has failed.");
         } else {
