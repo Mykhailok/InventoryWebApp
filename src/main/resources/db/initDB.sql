@@ -8,7 +8,7 @@ CREATE TABLE product
 (
     id serial NOT NULL,
     name TEXT,
-    owner TEXT,
+    owner INT,
     manufacturer TEXT,
     price NUMERIC(10,2),
     description TEXT,

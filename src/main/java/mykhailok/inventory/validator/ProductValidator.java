@@ -27,12 +27,12 @@ public class ProductValidator implements Validator {
         ValidationUtils.rejectIfEmptyOrWhitespace(errors, "name", "Required");
         ValidationUtils.rejectIfEmptyOrWhitespace(errors, "owner", "Required");
 
-        if (product.getName().length() < 4 || product.getName().length() > 32) {
-            errors.rejectValue("name", "Size.userForm.name");
+        if (product.getName().length() < 1 || product.getName().length() > 32) {
+            errors.rejectValue("name", "Size.productForm.name");
         }
 
-        if (productService.findByUsername(product.getName()) != null) {
-            errors.rejectValue("name", "Duplicate.userForm.username");
+        if (productService.findByProductName(product.getName()) != null) {
+            errors.rejectValue("name", "Duplicate.productForm.name");
         }
 
     }
