@@ -1,7 +1,9 @@
 package mykhailok.inventory.service;
 
 import mykhailok.inventory.model.Product;
+import org.springframework.transaction.annotation.Transactional;
 
+import java.math.BigInteger;
 import java.util.List;
 
 public interface ProductService {
@@ -10,13 +12,16 @@ public interface ProductService {
 
     void update(Product product);
 
-    void delete(int id);
+    void delete(BigInteger id);
 
-    Product get(int id);
+    @Transactional
+    Product getById(BigInteger id);
 
     List<Product> getAll();
 
-    int findMaxId();
+    BigInteger findMaxId();
+
+    List<Product> getAllProducts();
 
     Product findByProductName(String name);
 }

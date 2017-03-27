@@ -49,6 +49,7 @@ class OwnerServiceImplTest {
 
     @Test
     void getAllTest() {
+        
         List<Owner> fromDBList = ownerService.getAllOwners();
         System.out.println("!!!!!!!!!!!!!!!!!!!!!!!! " + fromDBList.toString());
         assertEquals(ownerService.countRow(), BigInteger.valueOf(fromDBList.size()));

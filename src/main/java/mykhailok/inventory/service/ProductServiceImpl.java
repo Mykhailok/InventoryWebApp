@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.math.BigInteger;
 import java.util.List;
 
 @Service
@@ -28,14 +29,14 @@ public class ProductServiceImpl implements ProductService {
 
     @Override
     @Transactional
-    public void delete(int id) {
+    public void delete(BigInteger id) {
         productDAO.delete(id);
     }
 
     @Override
     @Transactional
-    public Product get(int id) {
-        return productDAO.get(id);
+    public Product getById(BigInteger id) {
+        return productDAO.getById(id);
     }
 
     @Override
@@ -45,8 +46,13 @@ public class ProductServiceImpl implements ProductService {
     }
 
     @Override
-    public int findMaxId() {
+    public BigInteger findMaxId() {
         return productDAO.findMaxId();
+    }
+
+    @Override
+    public List<Product> getAllProducts() {
+        return productDAO.getAllProducts();
     }
 
     @Override

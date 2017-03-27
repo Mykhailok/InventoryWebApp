@@ -8,6 +8,8 @@ import org.springframework.stereotype.Repository;
 import javax.persistence.NoResultException;
 import javax.persistence.NonUniqueResultException;
 import javax.persistence.Query;
+import java.math.BigInteger;
+import java.util.List;
 
 @Repository
 public class ProductDAOImpl extends JpaGenericDAOImpl<Product> implements ProductDAO {
@@ -15,17 +17,17 @@ public class ProductDAOImpl extends JpaGenericDAOImpl<Product> implements Produc
     private static final Logger logger = LoggerFactory.getLogger(ProductDAOImpl.class);
 
     @Override
-    public int findMaxId() {
+    public BigInteger findMaxId() {
         Query query = em.createQuery("from Product where id = (select max(id) from Product)");
         product = (Product) query.getSingleResult();
-        int maxId = product.getId();
+        BigInteger maxId = product.getId();
         return maxId;
     }
 
     @Override
     public Product findByProductName(String name) {
-        Query query = em.createQuery("SELECT p FROM Product p WHERE p.name=:name", Product.class)
-                .setParameter("name", name);
+        Query query = em.createQuery("SELECT p FROM Product p WHERE p.productname=:productname", Product.class)
+                .setParameter("productname", name);
         try {
             if (query.getResultList().size() != 0) {
                 product = (Product) query.getSingleResult();
@@ -39,4 +41,45 @@ public class ProductDAOImpl extends JpaGenericDAOImpl<Product> implements Produc
         }
         return product;
     }
+
+    @Override
+    public List<Product> getAllProducts() {
+        /*List<Product> products = (List<Product>) em.
+                createNativeQuery("SELECT productname, owner_id, manufacturer, price, description " +
+                        "FROM product, owners WHERE owners.id = product.owner_id;").getResultList();*/
+        List<Product> products = em.createQuery("from Product", Product.class).getResultList();
+        if (products == null) {
+            logger.error("Search for companies has failed.");
+        } else {
+            logger.info("Search for all companies has been successful.");
+        }
+        return products;
+    }
+
+    /*@Override
+    public Product getById(BigInteger id) {
+        Product product = em.find(Product.class, id);
+        return product;
+    }*/
+
+    @Override
+    public Product getById(BigInteger id) {
+        Query query = em.createQuery("SELECT p FROM Product p WHERE p.id=:id", Product.class)
+                .setParameter("id", id);
+        product = (Product) query.getSingleResult();
+        return product;
+    }
+
+    /*@Override
+    public Product getById(BigInteger prod_id) {
+        Product result;
+        Query query = em.createNativeQuery("SELECT product.id, product.productname" +
+                ", product.owner, product.manufacturer, product.description, product.price FROM product " +
+                "JOIN owner_product ON product.id = owner_product.product_id " +
+                "JOIN owners ON owners.id=owner_product.owner_id WHERE product.id=:id", Product.class);
+        query.setParameter("id", prod_id);
+        result = (Product) query.getSingleResult();
+        return result;
+    }*/
+
 }

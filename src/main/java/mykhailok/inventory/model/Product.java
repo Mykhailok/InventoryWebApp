@@ -1,20 +1,39 @@
 package mykhailok.inventory.model;
 
+import org.hibernate.annotations.Fetch;
+import org.hibernate.annotations.FetchMode;
+import org.hibernate.annotations.LazyCollection;
+import org.hibernate.annotations.LazyCollectionOption;
+
 import javax.persistence.*;
+import java.math.BigInteger;
+import java.util.List;
 
 @Entity
 @Table(name = "product")
-@AttributeOverride(name = "name", column = @Column(name = Product.NAME))
+
 public class Product extends NamedEntity {
 
-    public static final String NAME = "name";
+    public static final String NAME = "productname";
+    public static final String OWNER_ID = "owner_id";
 
-    /*@Column(name = "owner")
-    private String owner;*/
+    @Column(name = Product.NAME)
+    private String productName;
 
-    @ManyToOne
-    @JoinColumn(name = "owner")
-    private Owner owner;
+    @ManyToMany
+    @Fetch(FetchMode.JOIN)
+    @JoinTable(
+            name = "owner_product",
+            joinColumns = @JoinColumn(name = "owner_id"),
+            inverseJoinColumns = @JoinColumn(name = "product_id")
+    )
+    private List<Owner> owners;
+
+    /*@ManyToOne(optional=false)
+    @JoinColumn(name = Product.OWNER_ID)*/
+    @Column(name = Product.OWNER_ID)
+    @LazyCollection(value = LazyCollectionOption.FALSE)
+    private BigInteger owner_id;
 
     @Column(name = "manufacturer")
     private String productManufacturer;
@@ -25,12 +44,39 @@ public class Product extends NamedEntity {
     @Column(name = "description")
     private String productDescription;
 
-    public Owner getOwner() {
-        return owner;
+    public Product() {
     }
 
-    public void setOwner(Owner owner) {
-        this.owner = owner;
+    public static String getNAME() {
+        return NAME;
+    }
+
+    public BigInteger getOwner_id() {
+        return owner_id;
+    }
+
+    public void setOwner_id(BigInteger owner_id) {
+        this.owner_id = owner_id;
+    }
+
+    public static String getOwnerId() {
+        return OWNER_ID;
+    }
+
+    public String getProductName() {
+        return productName;
+    }
+
+    public void setProductName(String productName) {
+        this.productName = productName;
+    }
+
+    public List<Owner> getOwners() {
+        return owners;
+    }
+
+    public void setOwners(List<Owner> owners) {
+        this.owners = owners;
     }
 
     public String getProductManufacturer() {
@@ -60,9 +106,10 @@ public class Product extends NamedEntity {
     @Override
     public String toString() {
         return "Product{" +
-                "ID='" + getID() + '\'' +
-                ", product_name='" + getName() + '\'' +
-                ", owner='" + owner + '\'' +
+                "productName='" + productName + '\'' +
+                ", id=" + id +
+                ", owners=" + owners +
+                ", owner_id=" + owner_id +
                 ", productManufacturer='" + productManufacturer + '\'' +
                 ", price=" + price +
                 ", productDescription='" + productDescription + '\'' +

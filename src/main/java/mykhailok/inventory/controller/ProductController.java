@@ -10,6 +10,8 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import java.math.BigInteger;
+
 @Controller
 public class ProductController {
 
@@ -34,21 +36,21 @@ public class ProductController {
     }
 
     @RequestMapping("/remove/{id}")
-    public String removeGoods(@PathVariable("id") int id){
+    public String removeGoods(@PathVariable("id") BigInteger id){
         this.productService.delete(id);
         return "redirect:/products";
     }
 
     @RequestMapping("edit/{id}")
-    public String editGoods(@PathVariable("id") int id, Model model){
-        model.addAttribute("product", this.productService.get(id));
+    public String editGoods(@PathVariable("id") BigInteger id, Model model){
+        model.addAttribute("product", this.productService.getById(id));
         model.addAttribute("listProduct", this.productService.getAll());
         return "product";
     }
 
     @RequestMapping("productdata/{id}")
-    public String goodsData(@PathVariable("id") int id, Model model){
-        model.addAttribute("product", this.productService.get(id));
+    public String goodsData(@PathVariable("id") BigInteger id, Model model){
+        model.addAttribute("product", this.productService.getById(id));
         return "productData";
     }
 }

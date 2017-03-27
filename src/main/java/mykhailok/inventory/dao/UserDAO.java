@@ -3,6 +3,7 @@ package mykhailok.inventory.dao;
 import mykhailok.inventory.model.User;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.math.BigInteger;
 
 
 public interface UserDAO extends AbstractDAO<User>  {
@@ -10,5 +11,5 @@ public interface UserDAO extends AbstractDAO<User>  {
     User findByUsername(String username);
 
     @Transactional
-    int findMaxId();
+    BigInteger findMaxId();
 }

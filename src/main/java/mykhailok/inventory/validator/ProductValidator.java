@@ -24,15 +24,15 @@ public class ProductValidator implements Validator {
     public void validate(Object target, Errors errors) {
         Product product = (Product) target;
 
-        ValidationUtils.rejectIfEmptyOrWhitespace(errors, "name", "Required");
+        ValidationUtils.rejectIfEmptyOrWhitespace(errors, "productName", "Required");
         ValidationUtils.rejectIfEmptyOrWhitespace(errors, "owner", "Required");
 
-        if (product.getName().length() < 1 || product.getName().length() > 32) {
-            errors.rejectValue("name", "Size.productForm.name");
+        if (product.getProductName().length() < 1 || product.getProductName().length() > 32) {
+            errors.rejectValue("productName", "Size.productForm.name");
         }
 
-        if (productService.findByProductName(product.getName()) != null) {
-            errors.rejectValue("name", "Duplicate.productForm.name");
+        if (productService.findByProductName(product.getProductName()) != null) {
+            errors.rejectValue("productName", "Duplicate.productForm.name");
         }
 
     }

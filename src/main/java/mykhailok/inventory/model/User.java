@@ -6,11 +6,11 @@ import java.util.Set;
 
 @Entity
 @Table(name = "users")
-@AttributeOverride(name = "name", column = @Column(name = "username"))
+//@AttributeOverride(name = "name", column = @Column(name = "username"))
 public class User extends NamedEntity {
 
-//    @Column(name = "username")
-//    private String username;
+    @Column(name = "username")
+    private String username;
 
     @Column(name = "password")
     private String password;
@@ -25,11 +25,11 @@ public class User extends NamedEntity {
     private Set<Role> roles;
 
      public String getUsername() {
-        return name;
+        return username;
     }
 
     public void setUsername(String username) {
-        this.name = username;
+        this.username = username;
     }
 
     public String getPassword() {

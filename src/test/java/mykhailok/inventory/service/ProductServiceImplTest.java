@@ -1,12 +1,14 @@
 package mykhailok.inventory.service;
 
 import mykhailok.inventory.dao.ProductDAO;
+import mykhailok.inventory.model.Owner;
 import mykhailok.inventory.model.Product;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.context.support.FileSystemXmlApplicationContext;
 
+import java.math.BigInteger;
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -14,7 +16,7 @@ import static org.junit.jupiter.api.Assertions.*;
 class ProductServiceImplTest {
 
     private FileSystemXmlApplicationContext applicationContext;
-    int startRows, currentRows, afterDelete;
+    BigInteger startRows, currentRows, afterDelete;
     private Product product = new Product();
     private Product fromDB;
     private ProductService productService;
@@ -34,31 +36,32 @@ class ProductServiceImplTest {
     @Test
     void addTest() {
         startRows = productService.findMaxId();
-        product.setName("add_Test");
+        product.setProductName("add_Test");
+        product.setOwner_id(BigInteger.valueOf(1));
         product.setProductDescription("add_Description");
         product.setProductManufacturer("add_Manufacturer");
         product.setPrice(111);
         productService.add(product);
-        fromDB = productService.get(product.getId());
+        fromDB = productService.getById(product.getId());
         assertNotNull(fromDB);
-        assertEquals("add_Test", product.getName());
+        assertEquals("add_Test", product.getProductName());
         assertEquals("add_Description", product.getProductDescription());
-        assertEquals("add_add_Manufacturer", product.getProductManufacturer());
+        assertEquals("add_Manufacturer", product.getProductManufacturer());
         assertEquals(111, product.getPrice());
         currentRows = productService.findMaxId();
-        assertEquals(startRows + 1, currentRows);
+        assertEquals(startRows.add(BigInteger.valueOf(1)), currentRows);
     }
 
     @Test
     void updateTest() {
-        product.setName("Test_Update");
+        product.setProductName("Test_Update");
         product.setProductDescription("Description_Update");
         product.setProductManufacturer("Manufacturer_Update");
         product.setPrice(222);
         productService.add(product);
-        fromDB = productService.get(product.getId());
+        fromDB = productService.getById(product.getId());
         assertNotNull(fromDB);
-        assertEquals("Test_Update", product.getName());
+        assertEquals("Test_Update", product.getProductName());
         assertEquals("Description_Update", product.getProductDescription());
         assertEquals("Manufacturer_Update", product.getProductManufacturer());
         assertEquals(222, product.getPrice());
@@ -66,30 +69,34 @@ class ProductServiceImplTest {
 
     void deleteTest() {
         System.out.println("!!!!!!!!!!!!!!!!!!!!" + productService.findMaxId());
-        productDAO.delete(productService.findMaxId()+1);
+        productDAO.delete(productService.findMaxId().add(BigInteger.valueOf(1)));
     }
 
-    //@Test
+    @Test
     void findMaxId(){
         System.out.println("!!!!!!!!!!!!!!!!!!!! MAX" + productService.findMaxId());
         System.out.println("!!!!!!!!!!!!!!!!!!!! CURRENT" + currentRows);
     }
 
     @Test
-    void getTest() {
-        fromDB = productService.get(1);
+    void getByIdTest() {
+        fromDB = productService.getById(BigInteger.valueOf(1));
         assertNotNull(fromDB);
-        assertEquals("Test", fromDB.getName());
-        assertEquals("User", fromDB.getOwner());
-        assertEquals("Description", fromDB.getProductDescription());
-        assertEquals("Manufacturer", fromDB.getProductManufacturer());
+        assertEquals("Notebook", fromDB.getProductName());
+        assertEquals(BigInteger.valueOf(1), fromDB.getOwner_id());
+        assertEquals("Black", fromDB.getProductDescription());
+        assertEquals("Asus", fromDB.getProductManufacturer());
         assertEquals(100, fromDB.getPrice());
     }
 
     @Test
     void getAllTest() {
-        List<Product> fromDBList = productService.getAll();
-        assertEquals(productService.findMaxId(), fromDBList.size());
+        List<Product> fromDBList = productService.getAllProducts();
+        System.out.println("@@@@@@@@@@@@@@@@@@@@@ " + fromDBList.toString());
+        for (Product p : fromDBList){
+            System.out.println("!!!!!!!!!!!!!!!!!!!!!!!! " + p);
+        }
+        assertEquals(productService.findMaxId(), BigInteger.valueOf(fromDBList.size()));
     }
 
 }

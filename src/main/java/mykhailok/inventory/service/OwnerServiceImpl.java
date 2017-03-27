@@ -29,13 +29,13 @@ public class OwnerServiceImpl implements OwnerService {
 
     @Override
     @Transactional
-    public void delete(int id) {
+    public void delete(BigInteger id) {
         ownerDAO.delete(id);
     }
 
     @Override
     @Transactional
-    public Owner get(int id) {
+    public Owner get(BigInteger id) {
         return ownerDAO.get(id);
     }
 

@@ -4,6 +4,7 @@ import org.hibernate.annotations.GenericGenerator;
 import org.hibernate.validator.constraints.NotEmpty;
 
 import javax.persistence.*;
+import java.math.BigInteger;
 
 @MappedSuperclass
 @Access(AccessType.FIELD)
@@ -16,32 +17,32 @@ public class NamedEntity {
     @GenericGenerator(name = "increment", strategy = "increment")
     @Column(name = NamedEntity.ID)
     @Access(value = AccessType.PROPERTY)
-    protected Integer id;
+    protected BigInteger id;
 
-    @NotEmpty
+    /*@NotEmpty
     @Column(name = "name", nullable = false)
-    protected String name;
+    protected String name;*/
 
 
     public static String getID() {
         return ID;
     }
 
-    public Integer getId() {
+    public BigInteger getId() {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(BigInteger id) {
         this.id = id;
     }
 
-    public String getName() {
+    /*public String getName() {
         return name;
     }
 
     public void setName(String name) {
         this.name = name;
-    }
+    }*/
 
     public boolean isNew() {
         return (getId() == null);
@@ -51,7 +52,7 @@ public class NamedEntity {
     public String toString() {
         return "NamedEntity{" +
                 "id=" + id +
-                ", name='" + name + '\'' +
+                //", name='" + name + '\'' +
                 '}';
     }
 }

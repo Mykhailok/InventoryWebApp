@@ -4,6 +4,8 @@ import mykhailok.inventory.model.NamedEntity;
 import org.springframework.core.GenericTypeResolver;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import javax.persistence.Query;
+import java.math.BigInteger;
 import java.util.List;
 
 public class JpaGenericDAOImpl<T extends NamedEntity> implements AbstractDAO<T> {
@@ -19,7 +21,7 @@ public class JpaGenericDAOImpl<T extends NamedEntity> implements AbstractDAO<T> 
     }
 
     @Override
-    public void delete(int id) {
+    public void delete(BigInteger id) {
         T t = get(id);
         if (t != null) {
             em.remove(t);
@@ -27,7 +29,7 @@ public class JpaGenericDAOImpl<T extends NamedEntity> implements AbstractDAO<T> 
     }
 
     @Override
-    public T get(int id) {
+    public T get(BigInteger id) {
         return em.find(getClazz(), id);
     }
 

@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 
+import java.math.BigInteger;
 import java.util.Collections;
 import java.util.HashSet;
 
@@ -37,12 +38,12 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public int findMaxId() {
+    public BigInteger findMaxId() {
       return userDAO.findMaxId();
     }
 
     @Override
-    public void deleteById (int id){
+    public void deleteById (BigInteger id){
         userDAO.delete(id);
     }
 }

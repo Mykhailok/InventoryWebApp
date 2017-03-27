@@ -8,6 +8,7 @@ import org.springframework.stereotype.Repository;
 import javax.persistence.NoResultException;
 import javax.persistence.NonUniqueResultException;
 import javax.persistence.Query;
+import java.math.BigInteger;
 
 @Repository
 public class UserDAOImpl extends JpaGenericDAOImpl<User> implements UserDAO {
@@ -18,7 +19,7 @@ public class UserDAOImpl extends JpaGenericDAOImpl<User> implements UserDAO {
     @Override
     public User findByUsername(String username) {
 
-        Query query = em.createQuery("SELECT u FROM User u WHERE u.name=:name", User.class)
+        Query query = em.createQuery("SELECT u FROM User u WHERE u.username=:name", User.class)
                 .setParameter("name", username);
         try {
             if (query.getResultList().size() != 0) {
@@ -35,10 +36,10 @@ public class UserDAOImpl extends JpaGenericDAOImpl<User> implements UserDAO {
     }
 
     @Override
-    public int findMaxId() {
+    public BigInteger findMaxId() {
         Query query = em.createQuery("from User where id = (select max(id) from User)");
         user = (User) query.getSingleResult();
-        int maxId = user.getId();
+        BigInteger maxId = user.getId();
         return maxId;
     }
 

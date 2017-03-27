@@ -9,6 +9,9 @@ import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.context.support.FileSystemXmlApplicationContext;
+
+import java.math.BigInteger;
+
 import static org.junit.Assert.assertNotNull;
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -32,13 +35,13 @@ class UserServiceImplTest {
 
     @Test
     void saveAndDeleteTest() {
-        int startRows, currentRows, afterDelete;
+        BigInteger startRows, currentRows, afterDelete;
         user.setUsername("Test");
         user.setPassword("111");
         startRows = userService.findMaxId();
         userService.save(user);
         currentRows = userService.findMaxId();
-        assertEquals(startRows + 1, currentRows);
+        assertEquals(startRows.add(BigInteger.valueOf(1)), currentRows);
         userService.findByUsername("Test");
         assertNotNull(user);
         assertEquals("Test", user.getUsername());
@@ -48,7 +51,7 @@ class UserServiceImplTest {
     }
 
     void removeUserTest(int id){
-        userDAO.delete(id);
+        userDAO.delete(BigInteger.valueOf(id));
     }
 
     @Test

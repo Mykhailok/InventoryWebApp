@@ -12,9 +12,9 @@ public interface OwnerService {
 
     void update(Owner owner);
 
-    void delete(int id);
+    void delete(BigInteger id);
 
-    Owner get(int id);
+    Owner get(BigInteger id);
 
     List<Owner> getAll();
 
