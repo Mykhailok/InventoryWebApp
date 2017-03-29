@@ -42,17 +42,11 @@ public class OwnerDAOImpl extends JpaGenericDAOImpl<Owner> implements OwnerDAO {
     public BigInteger countRow() {
         Query nativeQuery = em.createNativeQuery("SELECT COUNT(id) FROM owners");
         BigInteger countRow = (BigInteger) nativeQuery.getSingleResult();
-        //Query query = em.createQuery("from Owner where id = (select max(id) from Owner)");
-        //owner = (Owner) query.getSingleResult();
-        //int maxId = owner.getId();
         return countRow;
     }
 
     @Override
     public List<Owner> getAllOwners() {
-        /*List<Owner> owners = (List<Owner>) em.
-                createNativeQuery("SELECT firstname, lastname, name, description " +
-                        "FROM product, owners WHERE owners.id = product.owner_id;").getResultList();*/
         List<Owner> owners = em.createQuery("from Owner", Owner.class).getResultList();
         if (owners == null) {
             logger.error("Search for companies has failed.");

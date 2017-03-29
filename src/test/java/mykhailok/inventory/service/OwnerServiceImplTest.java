@@ -49,7 +49,6 @@ class OwnerServiceImplTest {
 
     @Test
     void getAllTest() {
-        
         List<Owner> fromDBList = ownerService.getAllOwners();
         System.out.println("!!!!!!!!!!!!!!!!!!!!!!!! " + fromDBList.toString());
         assertEquals(ownerService.countRow(), BigInteger.valueOf(fromDBList.size()));
@@ -57,10 +56,18 @@ class OwnerServiceImplTest {
 
     @Test
     void countRow() {
+        System.out.println("!!!!!!!!!!!!!!!!!!!!! " + ownerService.countRow());
+        assertEquals(BigInteger.valueOf(2), ownerService.countRow());
     }
 
     @Test
     void findByOwnerLastName() {
+        owner.setFirstName("add_FirstName");
+        owner.setLastName("add_LastName");
+        ownerService.add(owner);
+        fromDB = ownerService.findByOwnerLastName("add_LastName");
+        assertNotNull(fromDB);
+        assertEquals("add_LastName", fromDB.getLastName());
     }
 
 }

@@ -4,6 +4,7 @@ import org.hibernate.annotations.LazyCollection;
 import org.hibernate.annotations.LazyCollectionOption;
 
 import javax.persistence.*;
+import java.math.BigInteger;
 import java.util.List;
 
 
@@ -24,6 +25,10 @@ public class Owner extends NamedEntity {
 
 
     public Owner() {
+    }
+
+    public Owner(BigInteger bigInteger, String firstName, String lastName) {
+
     }
 
     public String getFirstName() {

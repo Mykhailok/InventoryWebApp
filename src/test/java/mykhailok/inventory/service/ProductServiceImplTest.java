@@ -92,10 +92,6 @@ class ProductServiceImplTest {
     @Test
     void getAllTest() {
         List<Product> fromDBList = productService.getAllProducts();
-        System.out.println("@@@@@@@@@@@@@@@@@@@@@ " + fromDBList.toString());
-        for (Product p : fromDBList){
-            System.out.println("!!!!!!!!!!!!!!!!!!!!!!!! " + p);
-        }
         assertEquals(productService.findMaxId(), BigInteger.valueOf(fromDBList.size()));
     }
 
