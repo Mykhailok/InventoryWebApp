@@ -63,20 +63,23 @@
             <th width="80">ID</th>
             <th width="120">Name</th>
             <th width="120">Manufacturer</th>
+            <th width="120">Owner</th>
             <th width="120">Price</th>
             <th width="120">Description</th>
             <th width="60">Edit</th>
             <th width="120">Delete</th>
         </tr>
-        <c:forEach items="${listProducts}" var="goods">
+        <c:forEach items="${listProducts}" var="product">
             <tr>
                 <td>${product.id}</td>
-                <td><a href="/productdata/${product.id}" target="_blank">${product.name}</a></td>
+                <td><a href="/productdata/${product.id}" target="_blank">${product.productName}</a></td>
                 <td>${product.productManufacturer}</td>
-                <td>${product.price/100}${product.price%100}</td>
+                <td>${product.owners}</td>
+                <%--<td>${product.price/100}${product.price%100}</td>--%>
+                <td>${product.price}</td>
                 <td>${product.productDescription}</td>
-                <td><a href="<c:url value='/edit/${product.id}'/>">Edit</a></td>
-                <td><a href="<c:url value='/remove/${product.id}'/>">Delete</a></td>
+                <td><a href="<c:url value='/editProduct/${product.id}'/>">Edit</a></td>
+                <td><a href="<c:url value='/removeProduct/${product.id}'/>">Delete</a></td>
             </tr>
         </c:forEach>
     </table>
@@ -89,7 +92,7 @@
 
 <form:form action="${addAction}" commandName="product">
     <table>
-        <c:if test="${!empty product.name}">
+        <c:if test="${!empty product.productName}">
             <tr>
                 <td>
                     <form:label path="id">
@@ -104,12 +107,12 @@
         </c:if>
         <tr>
             <td>
-                <form:label path="name">
+                <form:label path="productName">
                     <spring:message text="Name"/>
                 </form:label>
             </td>
             <td>
-                <form:input path="name"/>
+                <form:input path="productName"/>
             </td>
         </tr>
         <tr>
@@ -122,6 +125,18 @@
                 <form:input path="productManufacturer"/>
             </td>
         </tr>
+        <tr>
+            <td>
+                <form:label path="owner_id">
+                    <spring:message text="Owner"/>
+                </form:label>
+            </td>
+            <td>
+                <form:input path="owner_id"/>
+            </td>
+        </tr>
+
+
         <tr>
             <td>
                 <form:label path="price">
@@ -146,11 +161,11 @@
 
         <tr>
             <td colspan="2">
-                <c:if test="${!empty product.name}">
+                <c:if test="${!empty product.productName}">
                     <input type="submit"
                            value="<spring:message text="Edit Product"/>"/>
                 </c:if>
-                <c:if test="${empty product.name}">
+                <c:if test="${empty product.productName}">
                     <input type="submit"
                            value="<spring:message text="Add Product"/>"/>
                 </c:if>

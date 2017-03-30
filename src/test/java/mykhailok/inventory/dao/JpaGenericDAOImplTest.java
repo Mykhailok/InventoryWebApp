@@ -1,33 +1,22 @@
 package mykhailok.inventory.dao;
 
-import mykhailok.inventory.dao.builder.OwnerBuilder;
 import mykhailok.inventory.model.Owner;
-import mykhailok.inventory.service.OwnerService;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import org.junit.runner.RunWith;
-import org.mockito.InjectMocks;
-import org.mockito.Mock;
-import org.mockito.runners.MockitoJUnitRunner;
-
-import javax.xml.ws.Response;
 import java.math.BigInteger;
 import java.util.ArrayList;
-import java.util.LinkedList;
 import java.util.List;
-
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
-import static org.junit.Assert.assertTrue;
 import static org.mockito.Mockito.*;
 
 class JpaGenericDAOImplTest {
 
-   private Owner owner;
+    private Owner owner;
 
 
-    AbstractDAO abstractDAO;
+    private AbstractDAO abstractDAO;
 
 
     private JpaGenericDAOImpl jpaGenericDAO;

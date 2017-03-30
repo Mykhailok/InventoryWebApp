@@ -56,13 +56,18 @@ public class Owner extends NamedEntity {
     }
 
 
-    @Override
+    /*@Override
     public String toString() {
         return "Owner{" +
                 "id=" + id +
                 ", firstName='" + firstName + '\'' +
                 ", lastName='" + lastName + '\'' +
                 '}';
+    }*/
+
+    @Override
+    public String toString(){
+        return firstName + " " + lastName;
     }
 
     @Override

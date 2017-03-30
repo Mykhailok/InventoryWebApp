@@ -16,12 +16,12 @@ public interface ProductService {
 
     @Transactional
     Product getById(BigInteger id);
-
+    @Transactional
     List<Product> getAll();
-
+    @Transactional
     BigInteger findMaxId();
-
+    @Transactional
     List<Product> getAllProducts();
-
+    @Transactional
     Product findByProductName(String name);
 }

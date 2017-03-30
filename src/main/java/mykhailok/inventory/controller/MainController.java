@@ -2,6 +2,7 @@ package mykhailok.inventory.controller;
 
 import mykhailok.inventory.model.Product;
 import mykhailok.inventory.model.User;
+import mykhailok.inventory.service.ProductService;
 import mykhailok.inventory.service.SecurityService;
 import mykhailok.inventory.service.UserService;
 import mykhailok.inventory.validator.UserValidator;
@@ -17,8 +18,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 @Controller
 public class MainController {
 
-    /*@Autowired
-    private GoodsService goodsService;*/
+    @Autowired
+    private ProductService productService;
 
     @Autowired
     private UserService userService;
@@ -48,7 +49,7 @@ public class MainController {
 
         securityService.autoLogin(userForm.getUsername(), userForm.getConfirmPassword());
 
-        return "redirect:/goodss";
+        return "redirect:/products";
     }
 
     @RequestMapping(value = "/login", method = RequestMethod.GET)

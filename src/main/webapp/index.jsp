@@ -9,8 +9,11 @@
 <body>
 <h3>Group#2 presents</h3>
 <br/>
-<a href="<c:url value="/registration"/>" target="_blank">Press to Start</a>
-<%--<a href="<c:url value="/products"/>" target="_blank">Product list</a>--%>
+<%--<a href="<c:url value="/registration"/>" target="_blank">Press to Start</a>--%>
+<a href="<c:url value="/products"/>" target="_blank">Product list</a>
+<br/>
+<br/>
+<a href="<c:url value="/owners"/>" target="_blank">Owner list</a>
 <br/>
 </body>
 </html>

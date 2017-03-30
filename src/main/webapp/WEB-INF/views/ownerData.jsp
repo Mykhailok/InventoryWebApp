@@ -1,13 +1,11 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-
 <%@ taglib uri="http://www.springframework.org/tags" prefix="spring" %>
 <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form" %>
 <%@ page session="false" %>
-
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>Product Data</title>
-
+    <title>Owner Data</title>
     <style type="text/css">
         .tg {
             border-collapse: collapse;
@@ -46,29 +44,21 @@
             background-color: #f9f9f9
         }
     </style>
-
 </head>
 <body>
-<h1>Product Details</h1>
+    <h1>Owner Details</h1>
 
-<table class="tg">
-    <tr>
-        <th width="80">ID</th>
-        <th width="120">Name</th>
-        <th width="120">Manufacturer</th>
-        <th width="120">Owner</th>
-        <th width="120">Price</th>
-        <th width="120">Description</th>
-    </tr>
-    <tr>
-        <td>${product.id}</td>
-        <td>${product.productName}</td>
-        <td>${product.productManufacturer}</td>
-        <td>${product.owners}</td>
-        <%--<td>${product.price/100}${product.price%100}</td>--%>
-        <td>${product.price}</td>
-        <td>${product.productDescription}</td>
-    </tr>
-</table>
+    <table class="tg">
+        <tr>
+            <th width="80">ID</th>
+            <th width="120">First Name</th>
+            <th width="120">Last Name</th>
+        </tr>
+        <tr>
+            <td>${owner.id}</td>
+            <td>${owner.firstName}</td>
+            <td>${owner.lastName}</td>
+        </tr>
+    </table>
 </body>
 </html>

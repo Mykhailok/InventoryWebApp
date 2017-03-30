@@ -19,14 +19,14 @@ public class ProductController {
     private ProductService productService;
 
     @RequestMapping(value = "products", method = RequestMethod.GET)
-    public String listGoods(Model model){
+    public String listProducts(Model model){
         model.addAttribute("product", new Product());
         model.addAttribute("listProducts", this.productService.getAll());
         return "product";
     }
 
     @RequestMapping(value = "/products/add", method = RequestMethod.POST)
-    public String addGoods(@ModelAttribute("products") Product product){
+    public String addProduct(@ModelAttribute("products") Product product){
         if(product.getId() == null){
             this.productService.add(product);
         }else {
@@ -35,21 +35,21 @@ public class ProductController {
         return "redirect:/products";
     }
 
-    @RequestMapping("/remove/{id}")
-    public String removeGoods(@PathVariable("id") BigInteger id){
+    @RequestMapping("/removeProduct/{id}")
+    public String removeProduct(@PathVariable("id") BigInteger id){
         this.productService.delete(id);
         return "redirect:/products";
     }
 
-    @RequestMapping("edit/{id}")
-    public String editGoods(@PathVariable("id") BigInteger id, Model model){
+    @RequestMapping("editProduct/{id}")
+    public String editProduct(@PathVariable("id") BigInteger id, Model model){
         model.addAttribute("product", this.productService.getById(id));
-        model.addAttribute("listProduct", this.productService.getAll());
+        model.addAttribute("listProducts", this.productService.getAll());
         return "product";
     }
 
     @RequestMapping("productdata/{id}")
-    public String goodsData(@PathVariable("id") BigInteger id, Model model){
+    public String productData(@PathVariable("id") BigInteger id, Model model){
         model.addAttribute("product", this.productService.getById(id));
         return "productData";
     }
