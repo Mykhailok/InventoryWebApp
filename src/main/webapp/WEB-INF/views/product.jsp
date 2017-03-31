@@ -74,7 +74,8 @@
                 <td>${product.id}</td>
                 <td><a href="/productdata/${product.id}" target="_blank">${product.productName}</a></td>
                 <td>${product.productManufacturer}</td>
-                <td>${product.owners}</td>
+                <%--<td>${product.owners}</td>--%>
+                <td>${product.owners.toString().replaceAll("[\\[\\]]","")}</td>
                 <%--<td>${product.price/100}${product.price%100}</td>--%>
                 <td>${product.price}</td>
                 <td>${product.productDescription}</td>

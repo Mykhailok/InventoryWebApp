@@ -49,9 +49,9 @@ public class ProductDAOImpl extends JpaGenericDAOImpl<Product> implements Produc
                         "FROM product, owners WHERE owners.id = product.owner_id;").getResultList();*/
         List<Product> products = em.createQuery("from Product", Product.class).getResultList();
         if (products == null) {
-            logger.error("Search for companies has failed.");
+            logger.error("Search for products has failed.");
         } else {
-            logger.info("Search for all companies has been successful.");
+            logger.info("Search for all products has been successful.");
         }
         return products;
     }

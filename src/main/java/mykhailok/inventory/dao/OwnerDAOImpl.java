@@ -49,9 +49,9 @@ public class OwnerDAOImpl extends JpaGenericDAOImpl<Owner> implements OwnerDAO {
     public List<Owner> getAllOwners() {
         List<Owner> owners = em.createQuery("from Owner", Owner.class).getResultList();
         if (owners == null) {
-            logger.error("Search for companies has failed.");
+            logger.error("Search for owners has failed.");
         } else {
-            logger.info("Search for all companies has been successful.");
+            logger.info("Search for all owners has been successful.");
         }
         return owners;
     }

@@ -22,7 +22,7 @@ CREATE TABLE product
     PRIMARY KEY (id),
     FOREIGN KEY (owner_id)
         REFERENCES owners (id) MATCH SIMPLE
-    ON UPDATE NO ACTION
+    ON UPDATE CASCADE
     ON DELETE CASCADE
 );
 

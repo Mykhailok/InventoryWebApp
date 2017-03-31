@@ -27,8 +27,14 @@ public class Owner extends NamedEntity {
     public Owner() {
     }
 
-    public Owner(BigInteger bigInteger, String firstName, String lastName) {
+    /*public Owner(BigInteger bigInteger, String firstName, String lastName) {
 
+    }*/
+
+    public Owner(BigInteger bigInteger, String firstName, String lastName) {
+        this.id = bigInteger;
+        this.firstName = firstName;
+        this.lastName = lastName;
     }
 
     public String getFirstName() {
