@@ -7,6 +7,7 @@ import org.hibernate.annotations.LazyCollectionOption;
 
 import javax.persistence.*;
 import java.math.BigInteger;
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity
@@ -45,6 +46,7 @@ public class Product extends NamedEntity {
     private String productDescription;
 
     public Product() {
+
     }
 
     public static String getNAME() {

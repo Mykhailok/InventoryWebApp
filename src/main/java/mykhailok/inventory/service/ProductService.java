@@ -24,4 +24,8 @@ public interface ProductService {
     List<Product> getAllProducts();
     @Transactional
     Product findByProductName(String name);
+
+    void saveWithOwner(Product product);
+    
+    void updateWithOwner(Product product);
 }

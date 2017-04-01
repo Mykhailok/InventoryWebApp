@@ -79,6 +79,17 @@
     </c:if>
 
 
+    <%--<select name="listOfOwners">--%>
+        <%--<option>Выберите владельца</option>--%>
+        <%--<c:forEach items="${listOwners}" var="listOwners">--%>
+            <%--<option value=${listOwners.id} >${listOwners.firstName}--%>
+                                            <%--${listOwners.lastName}--%>
+            <%--</option>--%>
+        <%--</c:forEach>--%>
+    <%--</select>--%>
+
+
+
     <h1>Add an Owner</h1>
 
     <c:url var="addAction" value="/owners/add"/>

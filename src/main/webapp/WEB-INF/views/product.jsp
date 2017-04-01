@@ -3,6 +3,7 @@
 <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form" %>
 <%@ taglib prefix="from" uri="http://www.springframework.org/tags/form" %>
 <%@ page session="false" %>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
     <title>Product Page</title>
@@ -54,6 +55,15 @@
 
 <br/>
 <br/>
+
+<%--<select name="listOfOwners">--%>
+    <%--<option>Выберите Владельца</option>--%>
+    <%--<c:forEach items="${listProducts}" var="listProducts">--%>
+        <%--<option value=${listProducts.id} >${listProducts.owners.toString().replaceAll("[\\[\\]]","")}--%>
+
+        <%--</option>--%>
+    <%--</c:forEach>--%>
+<%--</select>--%>
 
 <h1>Product List</h1>
 
@@ -126,6 +136,16 @@
                 <form:input path="productManufacturer"/>
             </td>
         </tr>
+        <%--<tr>--%>
+            <%--<td>--%>
+                <%--<form:label path="owner_id">--%>
+                    <%--<spring:message text="Owner"/>--%>
+                <%--</form:label>--%>
+            <%--</td>--%>
+            <%--<td>--%>
+                <%--<form:input path="owner_id"/>--%>
+            <%--</td>--%>
+        <%--</tr>--%>
         <tr>
             <td>
                 <form:label path="owner_id">
@@ -133,9 +153,18 @@
                 </form:label>
             </td>
             <td>
-                <form:input path="owner_id"/>
+
+                <select name="listOfOwners">
+                    <option>Выберите Владельца</option>
+                    <c:forEach items="${listProducts}" var="listProducts">
+                        <option value=${listProducts.id} >${listProducts.owners.toString().replaceAll("[\\[\\]]","")}
+                        </option>
+                    </c:forEach>
+                </select>
+
             </td>
         </tr>
+
 
 
         <tr>

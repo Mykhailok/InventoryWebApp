@@ -19,4 +19,10 @@ public interface ProductDAO extends AbstractDAO<Product> {
 
     @Transactional
     Product getById(BigInteger id);
+    
+    @Transactional
+    void saveWithOwner(Product product);
+    
+    @Transactional
+    void updateWithOwner(Product product);
 }

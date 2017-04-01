@@ -70,6 +70,16 @@ public class ProductDAOImpl extends JpaGenericDAOImpl<Product> implements Produc
         return product;
     }
 
+    @Override
+    public void saveWithOwner(Product product) {
+        
+    }
+
+    @Override
+    public void updateWithOwner(Product product) {
+        
+    }
+
     /*@Override
     public Product getById(BigInteger prod_id) {
         Product result;

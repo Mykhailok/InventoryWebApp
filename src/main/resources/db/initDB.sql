@@ -31,8 +31,8 @@ CREATE TABLE owner_product
     owner_id INT NOT NULL,
     product_id INT NOT NULL,
     CONSTRAINT owner_product_idx UNIQUE (owner_id, product_id),
-    FOREIGN KEY (owner_id) REFERENCES owners (id) ON UPDATE CASCADE ON DELETE CASCADE,
-    FOREIGN KEY (product_id) REFERENCES product (id) ON UPDATE CASCADE ON DELETE CASCADE
+    FOREIGN KEY (owner_id) REFERENCES owners (id) MATCH SIMPLE ON UPDATE NO ACTION ON DELETE CASCADE,
+    FOREIGN KEY (product_id) REFERENCES product (id) MATCH SIMPLE ON UPDATE NO ACTION ON DELETE CASCADE
 );
 
 CREATE TABLE users

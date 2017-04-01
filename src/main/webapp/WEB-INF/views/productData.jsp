@@ -64,7 +64,8 @@
         <td>${product.id}</td>
         <td>${product.productName}</td>
         <td>${product.productManufacturer}</td>
-        <td>${product.owners}</td>
+        <%--<td>${product.owners}</td>--%>
+        <td>${product.owners.toString().replaceAll("[\\[\\]]","")}</td>
         <%--<td>${product.price/100}${product.price%100}</td>--%>
         <td>${product.price}</td>
         <td>${product.productDescription}</td>

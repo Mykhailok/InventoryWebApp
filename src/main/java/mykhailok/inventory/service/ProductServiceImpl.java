@@ -60,4 +60,14 @@ public class ProductServiceImpl implements ProductService {
         return productDAO.findByProductName(name);
     }
 
+    @Override
+    public void saveWithOwner(Product product) {
+        productDAO.saveWithOwner(product);
+    }
+
+    @Override
+    public void updateWithOwner(Product product) {
+        productDAO.updateWithOwner(product);
+    }
+
 }
