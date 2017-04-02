@@ -4,7 +4,9 @@ import mykhailok.inventory.model.Owner;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.math.BigInteger;
+import java.util.Collection;
 import java.util.List;
+import java.util.Set;
 
 public interface OwnerService {
 
@@ -18,7 +20,7 @@ public interface OwnerService {
 
     List<Owner> getAll();
 
-    List<Owner> getAllOwners();
+    Collection<Owner> getAllOwners();
 
     BigInteger countRow();
 

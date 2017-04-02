@@ -10,6 +10,7 @@ import javax.persistence.NoResultException;
 import javax.persistence.NonUniqueResultException;
 import javax.persistence.Query;
 import java.math.BigInteger;
+import java.util.Collection;
 import java.util.List;
 import java.util.Set;
 
@@ -46,8 +47,8 @@ public class OwnerDAOImpl extends JpaGenericDAOImpl<Owner> implements OwnerDAO {
     }
 
     @Override
-    public List<Owner> getAllOwners() {
-        List<Owner> owners = em.createQuery("from Owner", Owner.class).getResultList();
+    public Collection<Owner> getAllOwners() {
+        Collection<Owner> owners = em.createQuery("from Owner", Owner.class).getResultList();
         if (owners == null) {
             logger.error("Search for owners has failed.");
         } else {

@@ -1,5 +1,6 @@
 package mykhailok.inventory.dao;
 
+import mykhailok.inventory.model.Owner;
 import mykhailok.inventory.model.Product;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -9,7 +10,7 @@ import javax.persistence.NoResultException;
 import javax.persistence.NonUniqueResultException;
 import javax.persistence.Query;
 import java.math.BigInteger;
-import java.util.List;
+import java.util.Set;
 
 @Repository
 public class ProductDAOImpl extends JpaGenericDAOImpl<Product> implements ProductDAO {
@@ -43,11 +44,11 @@ public class ProductDAOImpl extends JpaGenericDAOImpl<Product> implements Produc
     }
 
     @Override
-    public List<Product> getAllProducts() {
+    public Set<Product> getAllProducts() {
         /*List<Product> products = (List<Product>) em.
                 createNativeQuery("SELECT productname, owner_id, manufacturer, price, description " +
                         "FROM product, owners WHERE owners.id = product.owner_id;").getResultList();*/
-        List<Product> products = em.createQuery("from Product", Product.class).getResultList();
+        Set<Product> products = (Set<Product>) em.createQuery("from Product", Product.class).getResultList();
         if (products == null) {
             logger.error("Search for products has failed.");
         } else {
@@ -72,13 +73,18 @@ public class ProductDAOImpl extends JpaGenericDAOImpl<Product> implements Produc
 
     @Override
     public void saveWithOwner(Product product) {
-        
+
     }
 
     @Override
     public void updateWithOwner(Product product) {
         
     }
+
+
+
+
+
 
     /*@Override
     public Product getById(BigInteger prod_id) {

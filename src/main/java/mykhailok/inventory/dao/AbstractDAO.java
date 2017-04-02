@@ -4,6 +4,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import java.math.BigInteger;
 import java.util.List;
+import java.util.Set;
 
 public interface AbstractDAO<T> {
 

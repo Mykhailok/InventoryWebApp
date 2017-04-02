@@ -7,6 +7,7 @@ import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
 import java.math.BigInteger;
 import java.util.List;
+import java.util.Set;
 
 public class JpaGenericDAOImpl<T extends NamedEntity> implements AbstractDAO<T> {
     @PersistenceContext
@@ -36,7 +37,7 @@ public class JpaGenericDAOImpl<T extends NamedEntity> implements AbstractDAO<T> 
     @Override
     @SuppressWarnings("unchecked")
     public List<T> getAll() {
-        return (List<T>) em.createQuery("FROM " + getClazz().getSimpleName()).getResultList();
+        return em.createQuery("FROM " + getClazz().getSimpleName()).getResultList();
     }
 
     @SuppressWarnings("unchecked")

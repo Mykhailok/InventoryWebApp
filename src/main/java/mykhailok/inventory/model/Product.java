@@ -7,8 +7,7 @@ import org.hibernate.annotations.LazyCollectionOption;
 
 import javax.persistence.*;
 import java.math.BigInteger;
-import java.util.ArrayList;
-import java.util.List;
+import java.util.Set;
 
 @Entity
 @Table(name = "product")
@@ -28,7 +27,7 @@ public class Product extends NamedEntity {
             joinColumns = @JoinColumn(name = "owner_id"),
             inverseJoinColumns = @JoinColumn(name = "product_id")
     )
-    private List<Owner> owners;
+    private Set<Owner> owners;
 
     /*@ManyToOne(optional=false)
     @JoinColumn(name = Product.OWNER_ID)*/
@@ -73,11 +72,11 @@ public class Product extends NamedEntity {
         this.productName = productName;
     }
 
-    public List<Owner> getOwners() {
+    public Set<Owner> getOwners() {
         return owners;
     }
 
-    public void setOwners(List<Owner> owners) {
+    public void setOwners(Set<Owner> owners) {
         this.owners = owners;
     }
 

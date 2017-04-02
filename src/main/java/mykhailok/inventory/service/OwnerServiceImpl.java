@@ -7,7 +7,9 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.math.BigInteger;
+import java.util.Collection;
 import java.util.List;
+import java.util.Set;
 
 @Service
 public class OwnerServiceImpl implements OwnerService {
@@ -46,7 +48,7 @@ public class OwnerServiceImpl implements OwnerService {
     }
 
     @Override
-    public List<Owner> getAllOwners() {
+    public Collection<Owner> getAllOwners() {
         return ownerDAO.getAllOwners();
     }
 

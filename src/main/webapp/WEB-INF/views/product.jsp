@@ -48,6 +48,14 @@
         .tg .tg-4eph {
             background-color: #f9f9f9
         }
+
+        input {
+            width: 200px;
+        }
+        select {
+            width: 206px;
+        }
+
     </style>
 </head>
 <body>

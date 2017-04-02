@@ -1,10 +1,12 @@
 package mykhailok.inventory.dao;
 
+import mykhailok.inventory.model.Owner;
 import mykhailok.inventory.model.Product;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.math.BigInteger;
 import java.util.List;
+import java.util.Set;
 
 public interface ProductDAO extends AbstractDAO<Product> {
 
@@ -15,7 +17,7 @@ public interface ProductDAO extends AbstractDAO<Product> {
     Product findByProductName(String name);
 
     @Transactional
-    List<Product> getAllProducts();
+    Set<Product> getAllProducts();
 
     @Transactional
     Product getById(BigInteger id);
@@ -25,4 +27,5 @@ public interface ProductDAO extends AbstractDAO<Product> {
     
     @Transactional
     void updateWithOwner(Product product);
+
 }

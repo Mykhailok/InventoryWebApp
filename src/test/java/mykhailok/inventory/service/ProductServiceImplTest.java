@@ -10,6 +10,7 @@ import org.springframework.context.support.FileSystemXmlApplicationContext;
 
 import java.math.BigInteger;
 import java.util.List;
+import java.util.Set;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -18,6 +19,7 @@ class ProductServiceImplTest {
     private FileSystemXmlApplicationContext applicationContext;
     BigInteger startRows, currentRows, afterDelete;
     private Product product = new Product();
+    private Owner owner = new Owner();
     private Product fromDB;
     private ProductService productService;
     private ProductDAO productDAO;
@@ -91,8 +93,9 @@ class ProductServiceImplTest {
 
     @Test
     void getAllTest() {
-        List<Product> fromDBList = productService.getAllProducts();
+        Set<Product> fromDBList = productService.getAllProducts();
         assertEquals(productService.findMaxId(), BigInteger.valueOf(fromDBList.size()));
     }
+
 
 }

@@ -9,7 +9,9 @@ import org.springframework.context.support.FileSystemXmlApplicationContext;
 
 import java.math.BigInteger;
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.List;
+import java.util.Set;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -47,9 +49,10 @@ class OwnerServiceImplTest {
         assertEquals(startRows.add(BigInteger.valueOf(1)), currentRows);
     }
 
+
     @Test
     void getAllTest() {
-        List<Owner> fromDBList = ownerService.getAllOwners();
+        Collection<Owner> fromDBList = ownerService.getAllOwners();
         System.out.println("!!!!!!!!!!!!!!!!!!!!!!!! " + fromDBList.toString());
         assertEquals(ownerService.countRow(), BigInteger.valueOf(fromDBList.size()));
     }

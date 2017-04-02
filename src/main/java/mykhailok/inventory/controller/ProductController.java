@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import javax.servlet.http.HttpServletRequest;
 import java.math.BigInteger;
 
 @Controller
@@ -26,7 +27,8 @@ public class ProductController {
     }
 
     @RequestMapping(value = "/products/add", method = RequestMethod.POST)
-    public String addProduct(@ModelAttribute("products") Product product){
+    public String addProduct(@ModelAttribute("products") Product product, HttpServletRequest request){
+        String id = request.getParameter("listOfOwners");
         if(product.getId() == null){
             this.productService.add(product);
         }else {
