@@ -9,6 +9,7 @@ import javax.persistence.NoResultException;
 import javax.persistence.NonUniqueResultException;
 import javax.persistence.Query;
 import java.math.BigInteger;
+import java.util.Set;
 
 @Repository
 public class UserDAOImpl extends JpaGenericDAOImpl<User> implements UserDAO {
@@ -37,11 +38,28 @@ public class UserDAOImpl extends JpaGenericDAOImpl<User> implements UserDAO {
 
     @Override
     public BigInteger findMaxId() {
-        Query query = em.createQuery("from User where id = (select max(id) from User)");
+        Query query = em.createQuery("FROM User where id = (select max(id) from User)");
         user = (User) query.getSingleResult();
         BigInteger maxId = user.getId();
         return maxId;
     }
 
+    @Override
+    public Set<User> getAllUsers() {
+        Set<User> users = (Set<User>) em.createQuery("FROM USERS", User.class).getResultList();
+        if (users == null) {
+            logger.error("Search for users has failed.");
+        } else {
+            logger.info("Search for all users has been successful.");
+        }
+        return users;
+    }
 
+    @Override
+    public User getById(BigInteger id) {
+        Query query = em.createQuery("SELECT u FROM USERS u WHERE u.id=:id", User.class)
+                .setParameter("id", id);
+        user = (User) query.getSingleResult();
+        return user;
+    }
 }

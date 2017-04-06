@@ -12,6 +12,7 @@ import org.springframework.transaction.annotation.Transactional;
 import java.math.BigInteger;
 import java.util.Collections;
 import java.util.HashSet;
+import java.util.Set;
 
 
 @Service
@@ -33,6 +34,13 @@ public class UserServiceImpl implements UserService {
 
     @Override
     @Transactional
+    public void update(User user) {userDAO.save(user);}
+
+    @Override
+    public Set<User> getAllUsers() {return userDAO.getAllUsers();}
+
+    @Override
+    @Transactional
     public User findByUsername(String name) {
         return userDAO.findByUsername(name);
     }
@@ -45,5 +53,11 @@ public class UserServiceImpl implements UserService {
     @Override
     public void deleteById (BigInteger id){
         userDAO.delete(id);
+    }
+
+    @Override
+    @Transactional
+    public User getById(BigInteger id) {
+        return null;
     }
 }
