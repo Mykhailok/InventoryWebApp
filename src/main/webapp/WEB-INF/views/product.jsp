@@ -60,6 +60,9 @@
 </head>
 <body>
 <a href="../../index.jsp">Back to main menu</a>
+<br/>
+<br/>
+<a href="../../admin">Admin</a>
 
 <br/>
 <br/>

@@ -9,6 +9,9 @@ import java.util.Set;
 //@AttributeOverride(name = "name", column = @Column(name = "username"))
 public class User extends NamedEntity {
 
+    public User() {
+    }
+
     @Column(name = "username")
     private String username;
 

@@ -1,7 +1,6 @@
 package mykhailok.inventory.service;
 
 import mykhailok.inventory.dao.ProductDAO;
-import mykhailok.inventory.model.Owner;
 import mykhailok.inventory.model.Product;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -53,9 +52,7 @@ public class ProductServiceImpl implements ProductService {
     }
 
     @Override
-    public Set<Product> getAllProducts() {
-        return productDAO.getAllProducts();
-    }
+    public Set<Product> getAllProducts() {return productDAO.getAllProducts();}
 
     @Override
     public Product findByProductName(String name) {

@@ -10,7 +10,6 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-import javax.servlet.http.HttpServletRequest;
 import java.math.BigInteger;
 
 @Controller
@@ -21,12 +20,13 @@ public class UserController {
 
     @RequestMapping(value = "users", method = RequestMethod.GET)
     public String listUsers (Model model){
+        model.addAttribute("user", new User());
         model.addAttribute("listUsers", this.userService.getAllUsers());
         return "user";
     }
 
     @RequestMapping(value = "/users/add", method = RequestMethod.POST)
-    public String addUser(@ModelAttribute("users")User user, HttpServletRequest request){
+    public String addUser(@ModelAttribute("users")User user){
         if (user.getId() == null){
             this.userService.save(user);
         } else {

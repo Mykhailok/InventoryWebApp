@@ -8,11 +8,10 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-
 import java.math.BigInteger;
 import java.util.Collections;
 import java.util.HashSet;
-import java.util.Set;
+import java.util.List;
 
 
 @Service
@@ -37,7 +36,7 @@ public class UserServiceImpl implements UserService {
     public void update(User user) {userDAO.save(user);}
 
     @Override
-    public Set<User> getAllUsers() {return userDAO.getAllUsers();}
+    public List<User> getAllUsers() {return userDAO.getAll();}
 
     @Override
     @Transactional
