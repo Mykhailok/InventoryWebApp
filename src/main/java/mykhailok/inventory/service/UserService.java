@@ -21,8 +21,8 @@ public interface UserService {
 
     @Transactional
     User getById(BigInteger id);
-
+    @Transactional
     User findByUsername(String username);
-
+    @Transactional
     BigInteger findMaxId();
 }

@@ -36,6 +36,7 @@ public class UserServiceImpl implements UserService {
     public void update(User user) {userDAO.save(user);}
 
     @Override
+    @Transactional
     public List<User> getAllUsers() {return userDAO.getAll();}
 
     @Override
@@ -45,11 +46,13 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
+    @Transactional
     public BigInteger findMaxId() {
       return userDAO.findMaxId();
     }
 
     @Override
+    @Transactional
     public void deleteById (BigInteger id){
         userDAO.delete(id);
     }

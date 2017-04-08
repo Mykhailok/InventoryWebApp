@@ -111,7 +111,7 @@
                     </form:label>
                 </td>
                 <td>
-                    <form:input path="userName"/>
+                    <form:input path="username"/>
                 </td>
             </tr>
             <tr>
