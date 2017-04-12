@@ -49,7 +49,7 @@ public class UserController {
     }
 
     @RequestMapping("userdata/{id}")
-    public String productData(@PathVariable("id") BigInteger id, Model model){
+    public String userData(@PathVariable("id") BigInteger id, Model model){
         model.addAttribute("user", this.userService.getById(id));
         return "userData";
     }

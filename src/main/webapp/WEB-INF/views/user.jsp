@@ -106,7 +106,7 @@
 
             <tr>
                 <td>
-                    <form:label path="userName">
+                    <form:label path="username">
                         <spring:message text="Name"/>
                     </form:label>
                 </td>

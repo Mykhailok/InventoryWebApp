@@ -9,9 +9,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.math.BigInteger;
-import java.util.Collections;
-import java.util.HashSet;
-import java.util.List;
+import java.util.*;
 
 
 @Service
@@ -37,7 +35,7 @@ public class UserServiceImpl implements UserService {
 
     @Override
     @Transactional
-    public List<User> getAllUsers() {return userDAO.getAll();}
+    public Collection<User> getAllUsers() {return userDAO.getAllUsers();}
 
     @Override
     @Transactional
@@ -60,6 +58,6 @@ public class UserServiceImpl implements UserService {
     @Override
     @Transactional
     public User getById(BigInteger id) {
-        return null;
+      return userDAO.getById(id);
     }
 }

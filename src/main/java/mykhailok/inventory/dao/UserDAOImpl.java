@@ -9,6 +9,7 @@ import javax.persistence.NoResultException;
 import javax.persistence.NonUniqueResultException;
 import javax.persistence.Query;
 import java.math.BigInteger;
+import java.util.Collection;
 import java.util.Set;
 
 @Repository
@@ -45,8 +46,8 @@ public class UserDAOImpl extends JpaGenericDAOImpl<User> implements UserDAO {
     }
 
     @Override
-    public Set<User> getAllUsers() {
-        Set<User> users = (Set<User>) em.createQuery("FROM User", User.class).getResultList();
+    public Collection<User> getAllUsers() {
+        Collection<User> users = em.createQuery("FROM User", User.class).getResultList();
         if (users == null) {
             logger.error("Search for users has failed.");
         } else {
