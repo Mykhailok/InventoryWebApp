@@ -104,6 +104,10 @@ public class Product extends NamedEntity {
         this.productDescription = productDescription;
     }
 
+    public void addOwner (Owner owner){
+        this.owners.add(owner);
+    }
+
     @Override
     public String toString() {
         return "Product{" +

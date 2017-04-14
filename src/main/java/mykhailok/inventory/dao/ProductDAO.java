@@ -28,4 +28,10 @@ public interface ProductDAO extends AbstractDAO<Product> {
     @Transactional
     void updateWithOwner(Product product);
 
+    @Transactional
+    void saveOwnerId(BigInteger owner_id, BigInteger product_id);
+
+    @Transactional
+    void updateOwnerId(BigInteger owner_id, BigInteger product_id);
+
 }

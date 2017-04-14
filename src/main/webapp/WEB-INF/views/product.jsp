@@ -59,7 +59,7 @@
     </style>
 </head>
 <body>
-<a href="../../index.jsp">Back to main menu</a>
+<a href="../../InventoryWebApp">Back to main menu</a>
 
 <br/>
 <br/>

@@ -3,8 +3,7 @@ package mykhailok.inventory.dao;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.math.BigInteger;
-import java.util.List;
-import java.util.Set;
+import java.util.Collection;
 
 public interface AbstractDAO<T> {
 
@@ -18,6 +17,6 @@ public interface AbstractDAO<T> {
     T get(BigInteger id);
 
     @Transactional
-    List<T> getAll();
+    Collection<T> getAll();
 
 }
