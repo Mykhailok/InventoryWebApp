@@ -68,7 +68,7 @@
 <br/>
 <%--<a href="<c:url value="/registration"/>" target="_blank">Press to Start</a>--%>
 <p>
-    We present you the inventory inventory service.
+    We present you the inventory service.
     The service will help you keep track of all inventory that will be stored in one convenient place for you.
     <span class="word">Inventarium</span> provides the ability to add, delete, edit inventory items.
 </p>
