@@ -56,11 +56,13 @@
         <th width="80">ID</th>
         <th width="120">Username</th>
         <th width="120">Password</th>
+        <th width="120">Role</th>
     </tr>
     <tr>
         <td>${user.id}</td>
         <td>${user.username}</td>
         <td>${user.password}</td>
+        <td>${user.roles.toString().replaceAll("[\\[\\]]","")}</td>
     </tr>
 </table>
 </body>

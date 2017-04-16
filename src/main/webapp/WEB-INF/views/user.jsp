@@ -76,7 +76,7 @@
                 <td>${user.id}</td>
                 <td><a href="/userdata/${user.id}" target="_blank">${user.username}</a></td>
                 <td>${user.password}</td>
-                <td>${user.roles}</td>
+                <td>${user.roles.toString().replaceAll("[\\[\\]]","")}</td>
                 <td><a href="<c:url value='/editUser/${user.id}'/>">Edit</a></td>
                 <td><a href="<c:url value='/removeUser/${user.id}'/>">Delete</a></td>
             </tr>
