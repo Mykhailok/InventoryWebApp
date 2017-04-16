@@ -6,6 +6,7 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import java.math.BigInteger;
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.List;
 import java.util.Set;
 
@@ -58,11 +59,11 @@ class JpaGenericDAOImplTest {
 
     @Test
     void getAllTest() {
-        List<Owner> all = new ArrayList<>();
+        Collection<Owner> all = new ArrayList<>();
         all.add(new Owner(BigInteger.valueOf(1), "John", "Doe"));
         all.add(new Owner(BigInteger.valueOf(2),"Jane","Doe"));
         when(abstractDAO.getAll()).thenReturn(all);
-        List result = abstractDAO.getAll();
+        Collection result = abstractDAO.getAll();
         verify(abstractDAO).getAll();
     }
 

@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 import javax.servlet.http.HttpServletRequest;
 import java.math.BigInteger;
+import java.util.Set;
 
 @Controller
 public class ProductController {
@@ -28,12 +29,16 @@ public class ProductController {
 
     @RequestMapping(value = "/products/add", method = RequestMethod.POST)
     public String addProduct(@ModelAttribute("products") Product product, HttpServletRequest request){
-        String id = request.getParameter("listOfOwners");
+        String owner_id = request.getParameter("listOfOwners");
+
         if(product.getId() == null){
+            product.setOwner_id(BigInteger.valueOf(Long.parseLong(owner_id)));
             this.productService.add(product);
+            this.productService.saveOwnerId(BigInteger.valueOf(Long.parseLong(owner_id)), product.getId());
         }else {
             this.productService.update(product);
         }
+
         return "redirect:/products";
     }
 

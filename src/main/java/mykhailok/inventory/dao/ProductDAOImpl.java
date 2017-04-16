@@ -81,6 +81,27 @@ public class ProductDAOImpl extends JpaGenericDAOImpl<Product> implements Produc
         
     }
 
+    @Override
+    public void saveOwnerId(BigInteger owner_id, BigInteger product_id) {
+        Query query = em.createNativeQuery("INSERT INTO owner_product (owner_id, product_id) VALUES (?,?)");
+        query.setParameter(1, owner_id);
+        query.setParameter(2, product_id);
+        query.executeUpdate();
+
+    }
+
+    @Override
+    public void updateOwnerId(BigInteger owner_id, BigInteger product_id) {
+        Query query = em.createNativeQuery("UPDATE owner_product " +
+                "SET (owner_id, product_id) = (?,?) WHERE owner_id=? AND product_id=?");
+        query.setParameter(1, owner_id);
+        query.setParameter(2, product_id);
+
+        query.executeUpdate();
+    }
+
+
+
 
 
 

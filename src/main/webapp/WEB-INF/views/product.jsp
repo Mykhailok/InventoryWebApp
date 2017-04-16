@@ -65,11 +65,15 @@
 </head>
 <body>
 
+
 <h2>Welcome ${pageContext.request.userPrincipal.name} | <a onclick="document.forms['logoutForm'].submit()"   >Logout</a></h2>
 <a href="../../index.jsp">Back to main menu</a>
 <br/>
 <br/>
 <a href="../../admin">Admin</a>
+
+<a href="../../InventoryWebApp">Back to main menu</a>
+
 
 <br/>
 <br/>
