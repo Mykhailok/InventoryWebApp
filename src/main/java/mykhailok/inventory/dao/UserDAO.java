@@ -12,4 +12,5 @@ public interface UserDAO extends AbstractDAO<User>  {
 
     @Transactional
     BigInteger findMaxId();
+
 }

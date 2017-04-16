@@ -1,14 +1,13 @@
 package mykhailok.inventory.service;
 
 import mykhailok.inventory.dao.ProductDAO;
-import mykhailok.inventory.model.Owner;
 import mykhailok.inventory.model.Product;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.math.BigInteger;
-import java.util.List;
+import java.util.Collection;
 import java.util.Set;
 
 @Service
@@ -43,7 +42,7 @@ public class ProductServiceImpl implements ProductService {
 
     @Override
     @Transactional
-    public List<Product> getAll() {
+    public Collection<Product> getAll() {
         return productDAO.getAll();
     }
 
@@ -70,6 +69,16 @@ public class ProductServiceImpl implements ProductService {
     @Override
     public void updateWithOwner(Product product) {
         productDAO.updateWithOwner(product);
+    }
+
+    @Override
+    public void saveOwnerId(BigInteger owner_id, BigInteger product_id) {
+        productDAO.saveOwnerId(owner_id, product_id);
+    }
+
+    @Override
+    public void updateOwnerId(BigInteger owner_id, BigInteger product_id) {
+        productDAO.saveOwnerId(owner_id, product_id);
     }
 
 

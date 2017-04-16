@@ -24,8 +24,8 @@ public class Product extends NamedEntity {
     @Fetch(FetchMode.JOIN)
     @JoinTable(
             name = "owner_product",
-            joinColumns = @JoinColumn(name = "owner_id"),
-            inverseJoinColumns = @JoinColumn(name = "product_id")
+            joinColumns = @JoinColumn(name = "product_id"),
+            inverseJoinColumns = @JoinColumn(name = OWNER_ID)
     )
     private Set<Owner> owners;
 
@@ -102,6 +102,10 @@ public class Product extends NamedEntity {
 
     public void setProductDescription(String productDescription) {
         this.productDescription = productDescription;
+    }
+
+    public void addOwner (Owner owner){
+        this.owners.add(owner);
     }
 
     @Override

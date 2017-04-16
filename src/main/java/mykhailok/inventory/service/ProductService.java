@@ -1,11 +1,10 @@
 package mykhailok.inventory.service;
 
-import mykhailok.inventory.model.Owner;
 import mykhailok.inventory.model.Product;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.math.BigInteger;
-import java.util.List;
+import java.util.Collection;
 import java.util.Set;
 
 public interface ProductService {
@@ -19,7 +18,7 @@ public interface ProductService {
     @Transactional
     Product getById(BigInteger id);
     @Transactional
-    List<Product> getAll();
+    Collection<Product> getAll();
     @Transactional
     BigInteger findMaxId();
     @Transactional
@@ -30,5 +29,11 @@ public interface ProductService {
     void saveWithOwner(Product product);
     
     void updateWithOwner(Product product);
+
+    @Transactional
+    void saveOwnerId(BigInteger owner_id, BigInteger product_id);
+
+    @Transactional
+    void updateOwnerId(BigInteger owner_id, BigInteger product_id);
 
 }

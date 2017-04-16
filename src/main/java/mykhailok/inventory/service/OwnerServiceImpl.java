@@ -8,8 +8,6 @@ import org.springframework.transaction.annotation.Transactional;
 
 import java.math.BigInteger;
 import java.util.Collection;
-import java.util.List;
-import java.util.Set;
 
 @Service
 public class OwnerServiceImpl implements OwnerService {
@@ -43,7 +41,7 @@ public class OwnerServiceImpl implements OwnerService {
 
     @Override
     @Transactional
-    public List<Owner> getAll() {
+    public Collection<Owner> getAll() {
         return ownerDAO.getAll();
     }
 
