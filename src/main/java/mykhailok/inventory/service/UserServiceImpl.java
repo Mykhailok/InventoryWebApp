@@ -8,10 +8,8 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-
 import java.math.BigInteger;
-import java.util.Collections;
-import java.util.HashSet;
+import java.util.*;
 
 
 @Service
@@ -33,11 +31,20 @@ public class UserServiceImpl implements UserService {
 
     @Override
     @Transactional
+    public void update(User user) {userDAO.save(user);}
+
+    @Override
+    @Transactional
+    public Collection<User> getAllUsers() {return userDAO.getAllUsers();}
+
+    @Override
+    @Transactional
     public User findByUsername(String name) {
         return userDAO.findByUsername(name);
     }
 
     @Override
+    @Transactional
     public BigInteger findMaxId() {
       return userDAO.findMaxId();
     }
@@ -47,5 +54,11 @@ public class UserServiceImpl implements UserService {
     @Transactional
     public void deleteById (BigInteger id){
         userDAO.delete(id);
+    }
+
+    @Override
+    @Transactional
+    public User getById(BigInteger id) {
+      return userDAO.getById(id);
     }
 }

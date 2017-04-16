@@ -73,4 +73,10 @@ public class MainController {
         model.addAttribute("userForm", new Product());
         return "login";
     }
+
+    @RequestMapping(value = "/admin", method = RequestMethod.GET)
+    public String admin(Model model) {
+        return "admin";
+    }
+
 }

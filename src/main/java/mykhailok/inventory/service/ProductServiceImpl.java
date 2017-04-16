@@ -52,9 +52,7 @@ public class ProductServiceImpl implements ProductService {
     }
 
     @Override
-    public Set<Product> getAllProducts() {
-        return productDAO.getAllProducts();
-    }
+    public Set<Product> getAllProducts() {return productDAO.getAllProducts();}
 
     @Override
     public Product findByProductName(String name) {
