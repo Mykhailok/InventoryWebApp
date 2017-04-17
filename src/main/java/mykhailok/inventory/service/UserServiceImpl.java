@@ -46,7 +46,7 @@ public class UserServiceImpl implements UserService {
     @Override
     @Transactional
     public BigInteger findMaxId() {
-      return userDAO.findMaxId();
+        return userDAO.findMaxId();
     }
 
 
@@ -59,6 +59,6 @@ public class UserServiceImpl implements UserService {
     @Override
     @Transactional
     public User getById(BigInteger id) {
-      return userDAO.getById(id);
+        return userDAO.getById(id);
     }
 }

@@ -12,43 +12,6 @@
     <link href="${contextPath}/resources/css/common.css" rel="stylesheet">
 
     <style type="text/css">
-        .tg {
-            border-collapse: collapse;
-            border-spacing: 0;
-            border-color: #ccc;
-        }
-
-        .tg td {
-            font-family: Arial, sans-serif;
-            font-size: 14px;
-            padding: 10px 5px;
-            border-style: solid;
-            border-width: 1px;
-            overflow: hidden;
-            word-break: normal;
-            border-color: #ccc;
-            color: #333;
-            background-color: #fff;
-        }
-
-        .tg th {
-            font-family: Arial, sans-serif;
-            font-size: 14px;
-            font-weight: normal;
-            padding: 10px 5px;
-            border-style: solid;
-            border-width: 1px;
-            overflow: hidden;
-            word-break: normal;
-            border-color: #ccc;
-            color: #333;
-            background-color: #f0f0f0;
-        }
-
-        .tg .tg-4eph {
-            background-color: #f9f9f9
-        }
-
         input {
             width: 200px;
         }
@@ -58,7 +21,51 @@
 
         h2{
             text-align: right;
+            position: relative;
+            right: 10px;
 
+        }
+
+        table {
+            font-family: "Lucida Sans Unicode", "Lucida Grande", Sans-Serif;
+            font-size: 14px;
+            border-radius: 10px;
+            border-spacing: 0;
+            text-align: center;
+        }
+        th {
+            background: #BCEBDD;
+            color: dodgerblue;
+            text-shadow: 0 1px 1px #2D2020;
+            padding: 10px 20px;
+        }
+        th, td {
+            border-style: solid;
+            border-width: 0 1px 1px 0;
+            border-color: white;
+        }
+        th:first-child, td:first-child {
+            text-align: left;
+        }
+        th:first-child {
+            border-top-left-radius: 10px;
+        }
+        th:last-child {
+            border-top-right-radius: 10px;
+            border-right: none;
+        }
+        td {
+            padding: 10px 20px;
+            background: #F8E391;
+        }
+        tr:last-child td:first-child {
+            border-radius: 0 0 0 10px;
+        }
+        tr:last-child td:last-child {
+            border-radius: 0 0 10px 0;
+        }
+        tr td:last-child {
+            border-right: none;
         }
 
     </style>
@@ -66,13 +73,11 @@
 <body>
 
 
-<h2>Welcome ${pageContext.request.userPrincipal.name} | <a onclick="document.forms['logoutForm'].submit()"   >Logout</a></h2>
+<h2>Welcome ${pageContext.request.userPrincipal.name}</a></h2>
 <a href="../../index.jsp">Back to main menu</a>
 <br/>
 <br/>
 <a href="../../admin">Admin</a>
-
-<a href="../../InventoryWebApp">Back to main menu</a>
 
 
 <br/>
@@ -119,7 +124,7 @@
 </c:if>
 
 
-<h1>Add a Product</h1>
+<h1>Add a product</h1>
 
 <c:url var="addAction" value="/products/add"/>
 
@@ -177,7 +182,7 @@
             <td>
 
                 <select name="listOfOwners">
-                    <option>Выберите Владельца</option>
+                    <option>Choose owner</option>
                     <c:forEach items="${listProducts}" var="listProducts">
                         <option value=${listProducts.id} >${listProducts.owners.toString().replaceAll("[\\[\\]]","")}
                         </option>
