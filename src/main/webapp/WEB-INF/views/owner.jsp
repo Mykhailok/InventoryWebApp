@@ -12,46 +12,65 @@
     <link href="${contextPath}/resources/css/common.css" rel="stylesheet">
 
     <style type="text/css">
-        .tg {
-            border-collapse: collapse;
+        input {
+            width: 200px;
+        }
+        select {
+            width: 206px;
+        }
+
+        h2{
+            text-align: right;
+            position: relative;
+            right: 10px;
+
+        }
+
+        table {
+            font-family: "Lucida Sans Unicode", "Lucida Grande", Sans-Serif;
+            font-size: 14px;
+            border-radius: 10px;
             border-spacing: 0;
-            border-color: #ccc;
+            text-align: center;
         }
-
-        .tg td {
-            font-family: Arial, sans-serif;
-            font-size: 14px;
-            padding: 10px 5px;
+        th {
+            background: #BCEBDD;
+            color: dodgerblue;
+            text-shadow: 0 1px 1px #2D2020;
+            padding: 10px 20px;
+        }
+        th, td {
             border-style: solid;
-            border-width: 1px;
-            overflow: hidden;
-            word-break: normal;
-            border-color: #ccc;
-            color: #333;
-            background-color: #fff;
+            border-width: 0 1px 1px 0;
+            border-color: white;
         }
-
-        .tg th {
-            font-family: Arial, sans-serif;
-            font-size: 14px;
-            font-weight: normal;
-            padding: 10px 5px;
-            border-style: solid;
-            border-width: 1px;
-            overflow: hidden;
-            word-break: normal;
-            border-color: #ccc;
-            color: #333;
-            background-color: #f0f0f0;
+        th:first-child, td:first-child {
+            text-align: left;
         }
-
-        .tg .tg-4eph {
-            background-color: #f9f9f9
+        th:first-child {
+            border-top-left-radius: 10px;
+        }
+        th:last-child {
+            border-top-right-radius: 10px;
+            border-right: none;
+        }
+        td {
+            padding: 10px 20px;
+            background: #F8E391;
+        }
+        tr:last-child td:first-child {
+            border-radius: 0 0 0 10px;
+        }
+        tr:last-child td:last-child {
+            border-radius: 0 0 10px 0;
+        }
+        tr td:last-child {
+            border-right: none;
         }
     </style>
 </head>
 <body>
-    <a href="../../index.jsp">Back to main menu</a>
+    <a href="../../InventoryWebApp">Back to main menu</a>
     <br/>
     <br/>
 
@@ -70,7 +89,7 @@
                 <tr>
                     <td>${owner.id}</td>
                     <td>${owner.firstName}</td>
-                    <td><a href="/ownerdata/${owner.id}" target="_blank">${owner.lastName}</a></td>
+                    <td><a href="/InventoryWebApp/ownerdata/${owner.id}" target="_blank">${owner.lastName}</a></td>
                     <td><a href="<c:url value='/editOwner/${owner.id}'/>">Edit</a></td>
                     <td><a href="<c:url value='/removeOwner/${owner.id}'/>">Delete</a></td>
                 </tr>

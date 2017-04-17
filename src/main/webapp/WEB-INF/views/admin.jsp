@@ -35,9 +35,19 @@
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 <script src="${contextPath}/resources/js/bootstrap.min.js"></script>
-<h1>
+
+<a href="../../InventoryWebApp">Back to main menu</a>
+<br/>
+<br/>
+<h3>
     <a href="<c:url value="/users"/>" target="_blank">Users list</a>
-</h1>
+</h3>
+
+<br/>
+<br/>
+<h3>
+    <a href="<c:url value="/owners"/>" target="_blank">Owners list</a>
+</h3>
 
 
 </body>

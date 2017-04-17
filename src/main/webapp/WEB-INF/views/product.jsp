@@ -74,10 +74,13 @@
 
 
 <h2>Welcome ${pageContext.request.userPrincipal.name}</a></h2>
-<a href="../../index.jsp">Back to main menu</a>
+<a href="../../InventoryWebApp">Back to main menu</a>
 <br/>
 <br/>
-<a href="../../admin">Admin</a>
+<a href="/InventoryWebApp/admin/">Admin</a>
+<br/>
+<br/>
+<a href="/InventoryWebApp/owners/">Owners</a>
 
 
 <br/>
@@ -109,7 +112,7 @@
         <c:forEach items="${listProducts}" var="product">
             <tr>
                 <td>${product.id}</td>
-                <td><a href="/productdata/${product.id}" target="_blank">${product.productName}</a></td>
+                <td><a href="/InventoryWebApp/productdata/${product.id}" target="_blank">${product.productName}</a></td>
                 <td>${product.productManufacturer}</td>
                 <%--<td>${product.owners}</td>--%>
                 <td>${product.owners.toString().replaceAll("[\\[\\]]","")}</td>
