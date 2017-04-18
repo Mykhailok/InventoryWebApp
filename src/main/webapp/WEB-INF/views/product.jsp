@@ -10,6 +10,7 @@
 
     <link href="${contextPath}/resources/css/bootstrap.min.css" rel="stylesheet">
     <link href="${contextPath}/resources/css/common.css" rel="stylesheet">
+    <link href="${contextPath}/resources/css/table.css" rel="stylesheet">
 
     <style type="text/css">
         input {
@@ -18,56 +19,6 @@
         select {
             width: 206px;
         }
-
-        h2{
-            text-align: right;
-            position: relative;
-            right: 10px;
-
-        }
-
-        table {
-            font-family: "Lucida Sans Unicode", "Lucida Grande", Sans-Serif;
-            font-size: 14px;
-            border-radius: 10px;
-            border-spacing: 0;
-            text-align: center;
-        }
-        th {
-            background: #BCEBDD;
-            color: dodgerblue;
-            text-shadow: 0 1px 1px #2D2020;
-            padding: 10px 20px;
-        }
-        th, td {
-            border-style: solid;
-            border-width: 0 1px 1px 0;
-            border-color: white;
-        }
-        th:first-child, td:first-child {
-            text-align: left;
-        }
-        th:first-child {
-            border-top-left-radius: 10px;
-        }
-        th:last-child {
-            border-top-right-radius: 10px;
-            border-right: none;
-        }
-        td {
-            padding: 10px 20px;
-            background: #F8E391;
-        }
-        tr:last-child td:first-child {
-            border-radius: 0 0 0 10px;
-        }
-        tr:last-child td:last-child {
-            border-radius: 0 0 10px 0;
-        }
-        tr td:last-child {
-            border-right: none;
-        }
-
     </style>
 </head>
 <body>
@@ -82,16 +33,6 @@
 
 <br/>
 <br/>
-
-<%--<select name="listOfOwners">--%>
-    <%--<option>Выберите Владельца</option>--%>
-    <%--<c:forEach items="${listProducts}" var="listProducts">--%>
-        <%--<option value=${listProducts.id} >${listProducts.owners.toString().replaceAll("[\\[\\]]","")}--%>
-
-        <%--</option>--%>
-    <%--</c:forEach>--%>
-<%--</select>--%>
-
 <h1>Product List</h1>
 
 <c:if test="${!empty listProducts}">
