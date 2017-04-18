@@ -28,27 +28,25 @@
         <form id="logoutForm" method="post" action="${contextPath}/logout">
             <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
         </form>
-        <h2>Admin Page ${pageContext.request.userPrincipal.name} | <a onclick="document.forms['logoutForm'].submit()">Logout</a>
-        </h2>
+        <h6>Admin Page ${pageContext.request.userPrincipal.name} | <a onclick="document.forms['logoutForm'].submit()">Logout</a>
+        </h6>
     </c:if>
 </div>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 <script src="${contextPath}/resources/js/bootstrap.min.js"></script>
 
-<a href="../../InventoryWebApp">Back to main menu</a>
-<br/>
-<br/>
-<h3>
-    <a href="<c:url value="/users"/>" target="_blank">Users list</a>
-</h3>
+<a href="${contextPath}/InventoryWebApp">Back to main menu</a>
 
 <br/>
 <br/>
-<h3>
-    <a href="<c:url value="/owners"/>" target="_blank">Owners list</a>
-</h3>
-
+<a href="${contextPath}/owners/">Owners</a>
+<br/>
+<br/>
+<a href="${contextPath}/products/">Products</a>
+<br/>
+<br/>
+<a href="${contextPath}/users/">Users</a>
 
 </body>
 </html>

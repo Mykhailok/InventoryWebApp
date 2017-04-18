@@ -4,6 +4,8 @@
 <%@ taglib prefix="from" uri="http://www.springframework.org/tags/form" %>
 <%@ page session="false" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+
+<c:set var="contextPath" value="${pageContext.request.contextPath}"/>
 <html>
 <head>
     <title>User Page</title>
@@ -64,7 +66,21 @@
     </style>
 </head>
 <body>
+<a href="${contextPath}/InventoryWebApp">Back to main menu</a>
+<br/>
+<br/>
+<a href="${contextPath}/admin/">Admin</a>
+<br/>
+<br/>
+<a href="${contextPath}/products/">Products</a>
+<br/>
+<br/>
+<a href="${contextPath}/owners/">Owners</a>
+
+
 <h1>User List</h1>
+
+
 
 <c:if test="${!empty listUsers}">
     <table class="tg">
@@ -78,7 +94,7 @@
         <c:forEach items="${listUsers}" var="user">
             <tr>
                 <td>${user.id}</td>
-                <td><a href="/InventoryWebApp/userdata/${user.id}" target="_blank">${user.username}</a></td>
+                <td><a href="${contextPath}/userdata/${user.id}" target="_blank">${user.username}</a></td>
                 <td>${user.roles.toString().replaceAll("[\\[\\]]","")}</td>
                 <td><a href="<c:url value='/editUser/${user.id}'/>">Edit</a></td>
                 <td><a href="<c:url value='/removeUser/${user.id}'/>">Delete</a></td>
@@ -94,7 +110,7 @@
 
 <form:form action="${addAction}" commandName="user">
     <table>
-        <c:if test="${!empty user.username}">
+        <c:if test="${empty user.username}">
             <tr>
                 <td>
                     <form:label path="id">

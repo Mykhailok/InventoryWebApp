@@ -4,6 +4,7 @@
 <%@ taglib prefix="from" uri="http://www.springframework.org/tags/form" %>
 <%@ page session="false" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<c:set var="contextPath" value="${pageContext.request.contextPath}"/>
 <html>
 <head>
     <title>Product Page</title>
@@ -74,13 +75,16 @@
 
 
 <h2>Welcome ${pageContext.request.userPrincipal.name}</a></h2>
-<a href="../../InventoryWebApp">Back to main menu</a>
+<a href="${contextPath}/InventoryWebApp">Back to main menu</a>
 <br/>
 <br/>
-<a href="/InventoryWebApp/admin/">Admin</a>
+<a href="${contextPath}/admin/">Admin</a>
 <br/>
 <br/>
-<a href="/InventoryWebApp/owners/">Owners</a>
+<a href="${contextPath}/owners/">Owners</a>
+<br/>
+<br/>
+<a href="${contextPath}/users/">Users</a>
 
 
 <br/>
@@ -112,7 +116,7 @@
         <c:forEach items="${listProducts}" var="product">
             <tr>
                 <td>${product.id}</td>
-                <td><a href="/InventoryWebApp/productdata/${product.id}" target="_blank">${product.productName}</a></td>
+                <td><a href="${contextPath}/productdata/${product.id}" target="_blank">${product.productName}</a></td>
                 <td>${product.productManufacturer}</td>
                 <%--<td>${product.owners}</td>--%>
                 <td>${product.owners.toString().replaceAll("[\\[\\]]","")}</td>
@@ -184,13 +188,23 @@
             </td>
             <td>
 
+                <%--<select name="listOfOwners">--%>
+                    <%--<option>Choose owner</option>--%>
+                    <%--<c:forEach items="${listProducts}" var="listProducts">--%>
+                        <%--<option value=${listProducts.id} >${listProducts.owners.toString().replaceAll("[\\[\\]]","")}--%>
+                        <%--</option>--%>
+                    <%--</c:forEach>--%>
+                <%--</select>--%>
+
                 <select name="listOfOwners">
                     <option>Choose owner</option>
-                    <c:forEach items="${listProducts}" var="listProducts">
-                        <option value=${listProducts.id} >${listProducts.owners.toString().replaceAll("[\\[\\]]","")}
+                    <c:forEach items="${listFullOwners}" var="listFullOwners">
+                        <option value=${listFullOwners.id} >${listFullOwners.firstName.toString().replaceAll("[\\[\\]]","")}
+                                                            ${listFullOwners.lastName.toString().replaceAll("[\\[\\]]","")}
                         </option>
                     </c:forEach>
                 </select>
+
 
             </td>
         </tr>

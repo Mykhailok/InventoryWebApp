@@ -4,6 +4,8 @@
 <%@ taglib prefix="from" uri="http://www.springframework.org/tags/form" %>
 <%@ page session="false" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+
+<c:set var="contextPath" value="${pageContext.request.contextPath}"/>
 <html>
 <head>
     <title>Owner Page</title>
@@ -70,9 +72,16 @@
     </style>
 </head>
 <body>
-    <a href="../../InventoryWebApp">Back to main menu</a>
+    <a href="${contextPath}/InventoryWebApp">Back to main menu</a>
     <br/>
     <br/>
+    <a href="${contextPath}/admin/">Admin</a>
+    <br/>
+    <br/>
+    <a href="${contextPath}/products/">Products</a>
+    <br/>
+    <br/>
+    <a href="${contextPath}/users/">Users</a>
 
     <h1>Owner List</h1>
 
@@ -89,7 +98,7 @@
                 <tr>
                     <td>${owner.id}</td>
                     <td>${owner.firstName}</td>
-                    <td><a href="/InventoryWebApp/ownerdata/${owner.id}" target="_blank">${owner.lastName}</a></td>
+                    <td><a href="${contextPath}/ownerdata/${owner.id}" target="_blank">${owner.lastName}</a></td>
                     <td><a href="<c:url value='/editOwner/${owner.id}'/>">Edit</a></td>
                     <td><a href="<c:url value='/removeOwner/${owner.id}'/>">Delete</a></td>
                 </tr>

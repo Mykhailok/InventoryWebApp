@@ -63,7 +63,7 @@
 </head>
 <body>
 
-<a href="<c:url value="/registration"/>" class="button7">Start</a>
+<a href="<c:url value="/login"/>" class="button7">Start</a>
 <hr>
 <br/>
 <%--<a href="<c:url value="/registration"/>" target="_blank">Press to Start</a>--%>

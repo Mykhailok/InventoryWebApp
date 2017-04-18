@@ -26,11 +26,11 @@ public class OwnerController {
     }
 
     @RequestMapping(value = "/owners/add", method = RequestMethod.POST)
-    public String addOwner(@ModelAttribute("owners") Owner product){
-        if(product.getId() == null){
-            this.ownerService.add(product);
+    public String addOwner(@ModelAttribute("owners") Owner owner){
+        if(owner.getId() == null){
+            this.ownerService.add(owner);
         }else {
-            this.ownerService.update(product);
+            this.ownerService.update(owner);
         }
         return "redirect:/owners";
     }

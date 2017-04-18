@@ -1,6 +1,7 @@
 package mykhailok.inventory.controller;
 
 import mykhailok.inventory.model.Product;
+import mykhailok.inventory.service.OwnerService;
 import mykhailok.inventory.service.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -19,11 +20,14 @@ public class ProductController {
 
     @Autowired
     private ProductService productService;
+    @Autowired
+    private OwnerService ownerService;
 
     @RequestMapping(value = "products", method = RequestMethod.GET)
     public String listProducts(Model model){
         model.addAttribute("product", new Product());
         model.addAttribute("listProducts", this.productService.getAll());
+        model.addAttribute("listFullOwners", this.ownerService.getAllOwners());
         return "product";
     }
 
