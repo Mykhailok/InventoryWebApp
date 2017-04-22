@@ -75,7 +75,7 @@
 
 
 <h2>Welcome ${pageContext.request.userPrincipal.name}</a></h2>
-<a href="${contextPath}/InventoryWebApp">Back to main menu</a>
+<a href="${contextPath}">Back to main menu</a>
 <br/>
 <br/>
 <a href="${contextPath}/admin/">Admin</a>

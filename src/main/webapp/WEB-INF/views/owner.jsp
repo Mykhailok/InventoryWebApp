@@ -72,7 +72,7 @@
     </style>
 </head>
 <body>
-    <a href="${contextPath}/InventoryWebApp">Back to main menu</a>
+    <a href="${contextPath}">Back to main menu</a>
     <br/>
     <br/>
     <a href="${contextPath}/admin/">Admin</a>
