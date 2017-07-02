@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Products</title>
+	<link rel="stylesheet" href="css/src/reset.css">
+	<link rel="stylesheet" href="css/src/font.css">
+	<link rel="stylesheet" href="css/src/style.css">
+</head>
+<body>
+
+<div class="container">
+	<div class="wrapTable">
+	<table class="table">
+		<thead class="thead">
+			<tr>
+				<td>ID</td>
+				<td>Name</td>
+				<td>Manufacturer</td>
+				<td>Owner</td>
+				<td>Price</td>
+				<td>Description</td>
+				<td>Edit</td>
+				<td>Delete</td>
+			</tr>
+		</thead>
+		<tbody class="tbody">
+			<tr>
+				<td>1</td>
+				<td>Notebook</td>
+				<td>asus</td>
+				<td>Masha</td>
+				<td>1200</td>
+				<td>black</td>
+				<td><section title=".squaredThree">
+					<div class="squaredThree">
+						<input type="checkbox" value="None" id="squared1" name="check"  />
+						<label for="squared1"></label>
+					</div>
+				</section></td>
+				<td><section title=".squaredThree">
+					<div class="squaredThree">
+						<input type="checkbox" value="None" id="squared2" name="check" />
+						<label for="squared2"></label>
+					</div>
+				</section></td>
+			</tr>
+		</tbody>
+	</table>
+	</div>
+	<div class="wrapBatton">
+		<button class="btnAdd">add a product +</button>
+	</div>
+	<script type="text/template" id="table-template">
+		<% for (var i=0;i < data.length ; i++){%>
+		<tr>
+			<td><%= data[i].id %></td>
+			<td><%= data[i].name %></td>
+			<td><%= data[i].manufac %></td>
+			<td><%= data[i].owner %></td>
+			<td><%= data[i].price %></td>
+			<td><%= data[i].descrip %></td>
+			<td><section title=".squaredThree">
+				<div class="squaredThree">
+					<input type="checkbox" value="None" id="<%='ed'+ i %>" name="check"  />
+					<label for="<%='ed'+ i %>"></label>
+				</div>
+			</section></td>
+			<td><section title=".squaredThree">
+				<div class="squaredThree">
+					<input type="checkbox" value="None" id="<%='del'+ i %>" name="check" />
+					<label for="<%='del'+ i %>"></label>
+				</div>
+			</section></td>
+		</tr>
+	<%};%>
+	</script>
+
+</div>
+
+<script src="js/src/jquery-3.2.1.min.js"></script>
+<script src="js/src/lodash.js"></script>
+<script src="js/src/script1.js"></script>
+</body>
+</html>
