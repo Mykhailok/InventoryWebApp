@@ -17,10 +17,10 @@ $colorFontBody:#595857;
   flex-flow: row wrap;
   justify-content: center;
   align-items: flex-start;
-  background-image: url("../../img/backroundPage.jpg");
+  background-image: url("../../img/fon.png");
   background-size: cover;
-  max-width: 1200px;
-  height: 900px;
+  width: 100vw;
+  height: 100vh;
   font-family: 'SF UI Display';
 }
 .wrapTable {
@@ -33,15 +33,20 @@ $colorFontBody:#595857;
   .table {
     width: 100%;
     .thead{
-
-      background-color: $colorBackgrondThead;
+      border-radius: 10px;
       tr {
         height: $heightTdThead;
         display: flex;
         flex-flow: row wrap  ;
         justify-content: space-around;
         align-items: center;
-        td{
+        background-color: $colorBackgrondThead;
+        &:last-child {
+            margin-top: 2px;
+          width: 100%;
+          height: 2px;
+        }
+        th{
           height: 100%;
           font-size: $fontSizeThead;
           text-transform: uppercase;
@@ -64,6 +69,9 @@ $colorFontBody:#595857;
           {
             width: $widthMax;
           }
+          &:hover {
+            cursor: pointer;
+          }
         }
 
       }
@@ -78,6 +86,7 @@ $colorFontBody:#595857;
         flex-flow: row wrap  ;
         justify-content: space-around;
         align-items: center;
+
         td {
           height: 100%;
           font-size: $fontSizeTbody;
@@ -123,46 +132,26 @@ $colorFontBody:#595857;
   text-transform: uppercase;
   color: $colorFontHead;
   border-radius: 20px;
+  &:hover{
+    cursor: pointer;
+  }
 }
-/* .squaredThree */
-.squaredThree {
-  width: $fontSizeTbody;
-  position: relative;
-  margin: $fontSizeTbody auto;
-  label {
+.wrapSquaredBut {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: center;
+  button{
     width: $fontSizeTbody;
     height: $fontSizeTbody;
-    cursor: pointer;
-    position: absolute;
-    top: 0;
-    left: 0;
-    //background: linear-gradient(top, #222 0%, #45484d 100%);
-    background-color: $colorBackgrondThead;
-    border-radius: 4px;
-    box-shadow: inset 0px 1px 1px rgba(0,0,0,0.5), 0px 1px 0px rgba(255,255,255,.4);
-    &:after {
-      content: '';
-      width: 9px;
-      height: 5px;
-      position: absolute;
-      top: 4px;
-      left: 4px;
-      border: 3px solid #000;
-      border-top: none;
-      border-right: none;
-      background: transparent;
-      opacity: 0;
-      transform: rotate(-45deg);
-    }
-    &:hover::after {
-      opacity: 0.3;
+    background-color: #ffe200;
+    &:hover{
+      cursor: pointer;
     }
   }
-  input[type=checkbox] {
-    visibility: hidden;
-    &:checked + label:after {
-      opacity: 1;
-    }
-  }
+
 }
-/* end .squaredThree */
+
+

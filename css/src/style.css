@@ -4,10 +4,10 @@
   flex-flow: row wrap;
   justify-content: center;
   align-items: flex-start;
-  background-image: url("../../img/backroundPage.jpg");
+  background-image: url("../../img/fon.png");
   background-size: cover;
-  max-width: 1200px;
-  height: 900px;
+  width: 100vw;
+  height: 100vh;
   font-family: 'SF UI Display'; }
 
 .wrapTable {
@@ -20,14 +20,19 @@
   .wrapTable .table {
     width: 100%; }
     .wrapTable .table .thead {
-      background-color: #ffee17; }
+      border-radius: 10px; }
       .wrapTable .table .thead tr {
         height: 30px;
         display: flex;
         flex-flow: row wrap;
         justify-content: space-around;
-        align-items: center; }
-        .wrapTable .table .thead tr td {
+        align-items: center;
+        background-color: #ffee17; }
+        .wrapTable .table .thead tr:last-child {
+          margin-top: 2px;
+          width: 100%;
+          height: 2px; }
+        .wrapTable .table .thead tr th {
           height: 100%;
           font-size: 18px;
           text-transform: uppercase;
@@ -36,10 +41,12 @@
           flex-flow: row wrap;
           justify-content: center;
           align-items: center; }
-          .wrapTable .table .thead tr td:nth-child(1), .wrapTable .table .thead tr td:nth-child(7), .wrapTable .table .thead tr td:nth-child(8) {
+          .wrapTable .table .thead tr th:nth-child(1), .wrapTable .table .thead tr th:nth-child(7), .wrapTable .table .thead tr th:nth-child(8) {
             width: 30px; }
-          .wrapTable .table .thead tr td:nth-child(2), .wrapTable .table .thead tr td:nth-child(3), .wrapTable .table .thead tr td:nth-child(4), .wrapTable .table .thead tr td:nth-child(5), .wrapTable .table .thead tr td:nth-child(6) {
+          .wrapTable .table .thead tr th:nth-child(2), .wrapTable .table .thead tr th:nth-child(3), .wrapTable .table .thead tr th:nth-child(4), .wrapTable .table .thead tr th:nth-child(5), .wrapTable .table .thead tr th:nth-child(6) {
             width: 70px; }
+          .wrapTable .table .thead tr th:hover {
+            cursor: pointer; }
     .wrapTable .table .tbody {
       background-color: transparent; }
       .wrapTable .table .tbody tr {
@@ -77,42 +84,21 @@
   text-transform: uppercase;
   color: #2ea7e0;
   border-radius: 20px; }
+  .btnAdd:hover {
+    cursor: pointer; }
 
-/* .squaredThree */
-.squaredThree {
-  width: 18px;
-  position: relative;
-  margin: 18px auto; }
-  .squaredThree label {
+.wrapSquaredBut {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: center; }
+  .wrapSquaredBut button {
     width: 18px;
     height: 18px;
-    cursor: pointer;
-    position: absolute;
-    top: 0;
-    left: 0;
-    background-color: #ffee17;
-    border-radius: 4px;
-    box-shadow: inset 0px 1px 1px rgba(0, 0, 0, 0.5), 0px 1px 0px rgba(255, 255, 255, 0.4); }
-    .squaredThree label:after {
-      content: '';
-      width: 9px;
-      height: 5px;
-      position: absolute;
-      top: 4px;
-      left: 4px;
-      border: 3px solid #000;
-      border-top: none;
-      border-right: none;
-      background: transparent;
-      opacity: 0;
-      transform: rotate(-45deg); }
-    .squaredThree label:hover::after {
-      opacity: 0.3; }
-  .squaredThree input[type=checkbox] {
-    visibility: hidden; }
-    .squaredThree input[type=checkbox]:checked + label:after {
-      opacity: 1; }
-
-/* end .squaredThree */
+    background-color: #ffe200; }
+    .wrapSquaredBut button:hover {
+      cursor: pointer; }
 
 /*# sourceMappingURL=style.css.map */
