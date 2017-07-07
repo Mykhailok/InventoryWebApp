@@ -6,13 +6,17 @@
 	<link rel="stylesheet" href="css/src/reset.css">
 	<link rel="stylesheet" href="css/src/font.css">
 	<link rel="stylesheet" href="css/src/style.css">
+	<!--<link rel="stylesheet" href="css/dist/main.min.css">-->
 </head>
 <body>
 
 <div class="container">
+	<div class="wrapBattonAdd">
+		<button class="btnAdd">add a product +</button>
+	</div>
 	<div class="wrapTable">
 	<table id="grid" class="table">
-		<thead class="thead">
+		<thead class="thead" id="theadFix">
 			<tr>
 				<th data-type="number">ID</th>
 				<th data-type="string">Name</th>
@@ -25,19 +29,16 @@
 			</tr>
 			<tr ></tr>
 		</thead>
-
 		<tbody class="tbody">
 
 		</tbody>
 	</table>
 	</div>
-	<div class="wrapBatton">
-		<button class="btnAdd">add a product +</button>
-	</div>
+
 
 	<script type="text/template" id="table-template">
 		<% for (var i=0;i < data.length ; i++){%>
-		<tr>
+		<tr data-value="<%= data[i].id %>">
 			<td><%= data[i].id %></td>
 			<td><%= data[i].name %></td>
 			<td><%= data[i].manufac %></td>
@@ -46,7 +47,7 @@
 			<td><%= data[i].descrip %></td>
 			<td>
 				<div class="wrapSquaredBut">
-					<button class="editBtn" value="" data-value="<%= data[i].id %>"></button>
+					<button class="btnShowEditPage" value="" data-value="<%= data[i].id %>"></button>
 				</div>
 			</td>
 			<td>
@@ -57,9 +58,44 @@
 		</tr>
 		<%};%>
 	</script>
+	<div class="wrapEditHide" id="wrEdit">
+		<div class="wrapForm">
+			<form action="#" class="formEdit">
+				<h1>edit product</h1>
+				<div class="wrapEditLabel">
+				<label for="editId">id</label>
+					<input type="text" class="editInput" id="editId" disabled>
+				</div>
+				<div class="wrapEditLabel">
+					<label for="editName">Name</label>
+					<input type="text" class="editInput" id="editName">
+				</div>
+				<div class="wrapEditLabel">
+					<label for="editManufac">Manufacturer</label>
+					<input type="text" class="editInput" id="editManufac">
+				</div>
+				<div class="wrapEditLabel">
+					<label for="editOwner">Owner</label>
+					<input type="text" class="editInput" id="editOwner">
+				</div>
+				<div class="wrapEditLabel">
+					<label for="editPrice">Price</label>
+					<input type="text" class="editInput" id="editPrice">
+				</div>
+				<div class="wrapEditLabel">
+					<label for="editDescrip">Description</label>
+					<input type="text" class="editInput" id="editDescrip">
+				</div>
+				<div class="wrapEditBut">
+					<button id="btnEditSave">edit</button>
+				</div>
+			</form>
+		</div>
+	</div>
 </div>
 <script src="js/src/jquery-3.2.1.min.js"></script>
 <script src="js/src/lodash.js"></script>
 <script src="js/src/script1.js"></script>
+<!--<script src="js/dist/main.min.js"></script>-->
 </body>
 </html>
