@@ -23,7 +23,7 @@ $sizeButton:30px;
   background-size: cover;
   width: 100vw;
   height: 100vh;
-  font-family: 'SF UI Display';
+  font-family: 'SF UI Display', serif;
 }
 .wrapBattonAdd {
   width: 100%;
@@ -104,7 +104,7 @@ $sizeButton:30px;
       }
 
     }
-    .tbody{
+    .ttbody{
       background-color: $colorBackgrondTbody;
       tr{
         margin-top: $heightTdThead;
@@ -162,8 +162,11 @@ $sizeButton:30px;
     width: $sizeButton;
     height: $sizeButton;
     background-color: #ffe200;
+    border-radius: $sizeButton;
+    outline: transparent;
     &:hover{
       cursor: pointer;
+      background-color: #2ea7e0;
     }
   }
 }
@@ -217,6 +220,7 @@ $sizeButton:30px;
           text-transform: uppercase;
           text-align: left;
           margin-left: 10px;
+
         }
       input {
         width: 60%;
@@ -225,6 +229,16 @@ $sizeButton:30px;
         font-size: 18px;
         text-transform: uppercase;
         text-align: center;
+        border: 1px solid transparent;
+        border-bottom-color: #2ea7e0;
+        background-color: #e0f5fc;
+        &:focus {
+          border: 1px solid transparent;
+          border-bottom-color: #2ea7e0;
+          background-color: #e0f5fc;
+        }
+
+
       }
     }
     .wrapEditBut {
@@ -242,6 +256,10 @@ $sizeButton:30px;
         font-size: 30px;
         margin-right: 20px;
         outline: 1px transparent;
+        &:hover{
+          background-color:$colorBackgrondThead ;
+          color: #2ea7e0;
+        }
       }
     }
   }

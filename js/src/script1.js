@@ -171,17 +171,17 @@ function Model(data) {
 		if (item.length === 0) {
 			return;
 		}
-		console.log ('1editItemModel');
+		// alert ('1editItemModel');
 		self.data[index].id = item.id;
 		self.data[index].name = item.name;
 		self.data[index].manufac = item.manufac;
 		self.data[index].owner = item.owner;
 		self.data[index].price = item.price;
 		self.data[index].descrip = item.descrip;
-		console.log('editItemModel self.data[index].name '+ self.data[index].name);
+		// alert('editItemModel self.data[index].name '+ self.data[index].name);
 	};
 	self.removeItem = function (index) {
-		console.log ('2removeItemModel');
+		// alert ('2removeItemModel');
 		if (index === -1) {
 			return;
 		}
@@ -197,10 +197,14 @@ function View(model) {
 	}
 
 	self.renderList = function (data) {
-		let List = _.template($('#table-template').html());
+		let htmlTableTemplate = document.getElementById('table-template').innerHTML;
+		// let tbody = document.getElementsByClassName('ttbody');//НЕ РАБОТАЕТ
+		let tbody = document.getElementById('tbody');
+		let List = _.template(htmlTableTemplate);
 		let content = List({'data':data});
-		$('.tbody').html(content);
-		console.log ('3renderList');
+		tbody.innerHTML = content;
+		// alert ('3renderList');
+		
 	};
 	init();
 }
@@ -213,24 +217,27 @@ function Controller(model,view) {
 	let inpOwner = document.getElementById('editOwner');
 	let inpPrice = document.getElementById('editPrice');
 	let inpDescrip = document.getElementById('editDescrip');
+	let btnShowEditPage = document.getElementsByClassName('btnShowEditPage');
+	// alert('btnShowEditPage.length'+ btnShowEditPage.length);
+	let btnEditSave = document.getElementById('btnEditSave');
+	let delBtn = document.getElementsByClassName('delBtn');
 
-	$('.btnShowEditPage').on('click',showEditPage);
-	$('#btnEditSave').on('click',editSaveItem);
-	$('.delBtn').on('click',removeItem);
 
-	function showEditPage() {
-		console.log ('4showEditPageController');
-		let index = this.getAttribute('data-value')-1;
-		inpID.value = myData[index].id;
-		inpName.value = myData[index].name;
-		inpManufac.value = myData[index].manufac;
-		inpOwner.value = myData[index].owner;
-		inpPrice.value = myData[index].price;
-		inpDescrip.value = myData[index].descrip;
-		wrapEdit.setAttribute('class','wrapEditVisible');
+	for (let i = 0; i < btnShowEditPage.length; i++) {
+		btnShowEditPage[i].onclick = function () {
+			let index = btnShowEditPage[i].getAttribute('data-value')-1;
+			inpID.value = myData[index].id;
+			inpName.value = myData[index].name;
+			inpManufac.value = myData[index].manufac;
+			inpOwner.value = myData[index].owner;
+			inpPrice.value = myData[index].price;
+			inpDescrip.value = myData[index].descrip;
+			wrapEdit.setAttribute('class','wrapEditVisible');
+		}
 	}
-	function editSaveItem() {
-		console.log ('5editSaveItemController');
+
+	btnEditSave.onclick = function () {
+		// alert ('5editSaveItemController');
 		let index = inpID.value - 1;
 		let tempItem ={};
 		tempItem.id = inpID.value;
@@ -242,14 +249,20 @@ function Controller(model,view) {
 		wrapEdit.setAttribute('class','wrapEditHide');
 		model.editItem(tempItem, index);
 		view.renderList(model.data);
+	};
+
+
+	for (let i = 0; i < delBtn.length; i++) {
+		delBtn[i].onclick = function () {
+			// alert ('del # ' + i);
+			let index = delBtn[i].getAttribute('data-value')-1;
+			model.removeItem(index);
+			view.renderList(model.data);
+
+		};
+
 	}
 
-	function removeItem() {
-		console.log('6removeItemController');
-		let index = this.getAttribute('data-value') - 1;
-		model.removeItem(index);
-		view.renderList(model.data);
-	}
 }
 ////////////////////////////////////////////////////////////////
 
@@ -260,16 +273,14 @@ $(function () {
 	let controller = new Controller(model,view);
 
 ///////////////////////////////////////////////////////////////////////////
-	//sort 
+	//sort
 	let grid = document.getElementById('grid');
-
 	grid.onclick = function(e) {
 		if (e.target.tagName !== 'TH') return;
 
 		// Если TH -- сортируем
 		sortGrid(e.target.cellIndex, e.target.getAttribute('data-type'));
 	};
-
 	function sortGrid(colNum, type) {
 		let tbody = grid.getElementsByTagName('tbody')[0];
 

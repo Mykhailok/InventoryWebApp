@@ -9,7 +9,7 @@
   background-size: cover;
   width: 100vw;
   height: 100vh;
-  font-family: 'SF UI Display'; }
+  font-family: 'SF UI Display', serif; }
 
 .wrapBattonAdd {
   width: 100%;
@@ -72,16 +72,16 @@
             width: 70px; }
           .wrapTable .table .thead tr th:hover {
             cursor: pointer; }
-    .wrapTable .table .tbody {
+    .wrapTable .table .ttbody {
       background-color: transparent; }
-      .wrapTable .table .tbody tr {
+      .wrapTable .table .ttbody tr {
         margin-top: 30px;
         height: 20px;
         display: flex;
         flex-flow: row wrap;
         justify-content: space-around;
         align-items: center; }
-        .wrapTable .table .tbody tr td {
+        .wrapTable .table .ttbody tr td {
           height: 100%;
           font-size: 18px;
           color: #595857;
@@ -89,11 +89,11 @@
           flex-flow: row wrap;
           justify-content: center;
           align-items: center; }
-          .wrapTable .table .tbody tr td:nth-child(1), .wrapTable .table .tbody tr td:nth-child(7), .wrapTable .table .tbody tr td:nth-child(8) {
+          .wrapTable .table .ttbody tr td:nth-child(1), .wrapTable .table .ttbody tr td:nth-child(7), .wrapTable .table .ttbody tr td:nth-child(8) {
             width: 30px; }
-          .wrapTable .table .tbody tr td:nth-child(2), .wrapTable .table .tbody tr td:nth-child(3), .wrapTable .table .tbody tr td:nth-child(4), .wrapTable .table .tbody tr td:nth-child(5), .wrapTable .table .tbody tr td:nth-child(6) {
+          .wrapTable .table .ttbody tr td:nth-child(2), .wrapTable .table .ttbody tr td:nth-child(3), .wrapTable .table .ttbody tr td:nth-child(4), .wrapTable .table .ttbody tr td:nth-child(5), .wrapTable .table .ttbody tr td:nth-child(6) {
             width: 70px; }
-          .wrapTable .table .tbody tr td input {
+          .wrapTable .table .ttbody tr td input {
             font-size: 18px;
             background-color: yellow;
             border-radius: 18px;
@@ -109,9 +109,12 @@
   .wrapSquaredBut button {
     width: 30px;
     height: 30px;
-    background-color: #ffe200; }
+    background-color: #ffe200;
+    border-radius: 30px;
+    outline: transparent; }
     .wrapSquaredBut button:hover {
-      cursor: pointer; }
+      cursor: pointer;
+      background-color: #2ea7e0; }
 
 .wrapEditHide {
   display: none; }
@@ -168,7 +171,14 @@
         color: #2ea7e0;
         font-size: 18px;
         text-transform: uppercase;
-        text-align: center; }
+        text-align: center;
+        border: 1px solid transparent;
+        border-bottom-color: #2ea7e0;
+        background-color: #e0f5fc; }
+        .wrapForm form .wrapEditLabel input:focus {
+          border: 1px solid transparent;
+          border-bottom-color: #2ea7e0;
+          background-color: #e0f5fc; }
     .wrapForm form .wrapEditBut {
       display: flex;
       flex-flow: row wrap;
@@ -184,5 +194,8 @@
         font-size: 30px;
         margin-right: 20px;
         outline: 1px transparent; }
+        .wrapForm form .wrapEditBut button:hover {
+          background-color: #ffee17;
+          color: #2ea7e0; }
 
 /*# sourceMappingURL=style.css.map */
