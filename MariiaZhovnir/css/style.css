@@ -1,0 +1,307 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: -webkit-linear-gradient(30deg, #00b9e9, #acdcf8);
+    background: -o-linear-gradient(30deg, #00b9e9, #acdcf8);
+    background: linear-gradient(60deg, #00b9e9, #acdcf8);
+}
+
+.wrapper {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container {
+    width: 19rem;
+    padding: 1.3rem 1rem;
+    background: #e6f7fd;
+    -webkit-box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+    border-radius: 20px;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    z-index: 1;
+}
+
+.login-form {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+}
+
+/*Header*/
+.login-form h1 {
+    margin: 0 0 0.9rem;
+    font: normal 20px/1 "SFUIDisplay-Medium", sans-serif;
+    color: #2ea7e0;
+    text-transform: uppercase;
+}
+/*END Header*/
+
+/*Input options*/
+.login-form input {
+    width: 100%;
+    margin: 0 0 1px;
+    padding-top: 0.85rem;
+    background: #e6f7fd;
+    -webkit-box-shadow: 0 1px 0 0 rgba(137, 207, 239, 1);
+    box-shadow: 0 1px 0 0 rgba(137, 207, 239, 1);
+    border: 0;
+    border-bottom: 1px solid #2ea7e0;
+    outline: 0;
+    font: normal 14px/1 "SFUIDisplay-Medium", sans-serif;
+    text-align: center;
+    color: #2ea7e0;
+}
+
+.login-form input::-webkit-input-placeholder {
+    color: #64d3ff;
+    font: normal 12px/1 "SFUIDisplay-Light", sans-serif;
+}
+/*END Input options*/
+
+/*Submit button*/
+.login-form button {
+    margin-top: 1.4rem;
+    padding: 1.125rem 2rem;
+    background: -webkit-linear-gradient(30deg, #fbcd3d , #fee313);
+    background: -o-linear-gradient(30deg, #fbcd3d , #fee313);
+    background: linear-gradient(60deg, #fbcd3d , #fee313);
+    border: 1px solid #34a7e0;
+    border-radius: 25px;
+    outline: 0;
+    font: normal 0.8rem/1 "SFUIDisplay-Regular", sans-serif;
+    text-transform: uppercase;
+    color: #2ea7e0;
+    cursor: pointer;
+}
+
+.login-form button:hover,.login-form button:active,.login-form button:focus {
+    background: -webkit-linear-gradient(30deg, #00b9e9, #acdcf8);
+    background: -o-linear-gradient(30deg, #00b9e9, #acdcf8);
+    background: linear-gradient(60deg, #00b9e9, #acdcf8);
+    color: #fbcd3d;
+}
+/*!END Submit button*/
+
+/*Message under the form*/
+.login-form .message {
+    margin: 0.95rem 0 0;
+    font: normal 0.7rem/1 "SFUIDisplay-Light", sans-serif;
+    color: #b3b3b3;
+}
+/*END Message under the form*/
+
+/*Link to create an account*/
+.login-form .message a {
+    color: #2ea7e0;
+    text-decoration: none;
+}
+.login-form .message a:hover {
+    text-decoration: underline;
+}
+/*END Link to create an account*/
+
+/*Options for screens bigger than 480px*/
+@media screen and (min-width: 480px) {
+    .container {
+        width: 29rem;
+    }
+    .login-form input {
+        width: 80%;
+    }
+}
+/*END Options for screens bigger than 480px*/
+
+/*Icons location*/
+.icon__one {
+    position: absolute;
+    width: 33px;
+    height: 22px;
+    background: url(../img/sprite.png) 0 0 no-repeat;
+    left: 40%;
+    top: 1%;
+}
+
+.icon__two {
+    position: absolute;
+    width: 33px;
+    height: 22px;
+    background: url(../img/sprite.png) -196px 0 no-repeat;
+    left: 0;
+    top: 15%;
+}
+
+.icon__three {
+    position: absolute;
+    width: 53px;
+    height: 47px;
+    background: url(../img/sprite.png) -36px 0 no-repeat;
+    left: 11%;
+    top: 13%;
+}
+
+.icon__four {
+    position: absolute;
+    width: 33px;
+    height: 22px;
+    background: url(../img/sprite.png) 0 0 no-repeat;
+    left: 28%;
+    top: 9%;
+}
+
+.icon__five {
+    position: absolute;
+    width: 53px;
+    height: 47px;
+    background: url(../img/sprite.png) -90px 0 no-repeat;
+    right: 33%;
+    top: 5%;
+}
+
+.icon__six {
+    position: absolute;
+    width: 48px;
+    height: 31px;
+    background: url(../img/sprite.png) -146px 0 no-repeat;
+    left: 83%;
+    top: 4%;
+}
+
+.icon__seven {
+    position: absolute;
+    width: 33px;
+    height: 22px;
+    background: url(../img/sprite.png) -196px 0 no-repeat;
+    right: 30%;
+    top: 19%;
+}
+
+.icon__eight {
+    position: absolute;
+    width: 31px;
+    height: 40px;
+    background: url(../img/sprite.png) -232px 0 no-repeat;
+    right: 0;
+    top: 21%;
+}
+
+.icon__nine {
+    position: absolute;
+    width: 46px;
+    height: 43px;
+    background: url(../img/sprite.png) 0 -48px no-repeat;
+    transform: rotate(10deg);
+    left: 7%;
+    top: 40%;
+}
+
+.icon__ten {
+    position: absolute;
+    width: 33px;
+    height: 22px;
+    background: url(../img/sprite.png) -196px 0 no-repeat;
+    right: 7%;
+    top: 36%;
+}
+
+.icon__eleven {
+    position: absolute;
+    width: 47px;
+    height: 31px;
+    background: url(../img/sprite.png) -51px -49px no-repeat;
+    right: 1%;
+    top: 43%;
+}
+
+.icon__twelve {
+    position: absolute;
+    width: 33px;
+    height: 22px;
+    background: url(../img/sprite.png) -196px 0 no-repeat;
+    left: 17%;
+    bottom: 34%;
+}
+
+.icon__thirteen {
+    position: absolute;
+    width: 19px;
+    height: 47px;
+    background: url(../img/sprite.png) -209px -49px no-repeat;
+    left: 5%;
+    bottom: 17%;
+}
+
+.icon__fourteen {
+    position: absolute;
+    width: 47px;
+    height: 31px;
+    background: url(../img/sprite.png) -146px 0 no-repeat;
+    left: 19%;
+    bottom: 12%;
+}
+
+.icon__fifteen {
+    position: absolute;
+    width: 33px;
+    height: 22px;
+    background: url(../img/sprite.png) 0 0 no-repeat;
+    right: 39%;
+    bottom: 16%;
+}
+
+.icon__sixteen {
+    position: absolute;
+    width: 57px;
+    height: 44px;
+    background: url(../img/sprite.png) -147px -48px no-repeat;
+    right: 20%;
+    bottom: 20%;
+}
+
+.icon__seventeen {
+    position: absolute;
+    width: 39px;
+    height: 42px;
+    background: url(../img/sprite.png) -100px -47px no-repeat;
+    left: 0;
+    bottom: 0;
+}
+
+.icon__eighteen {
+    position: absolute;
+    width: 46px;
+    height: 43px;
+    background: url(../img/sprite.png) 0 -48px no-repeat;
+    transform: rotate(-20deg);
+    left: 45%;
+    bottom: 1%;
+}
+
+.icon__nineteen {
+    position: absolute;
+    width: 47px;
+    height: 31px;
+    background: url(../img/sprite.png) -51px -49px no-repeat;
+    right: 8%;
+    bottom: 6%;
+}
+/*END Icon location*/
