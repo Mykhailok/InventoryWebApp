@@ -201,7 +201,7 @@ function Controller(model, view) {
 	var delBtn = document.getElementsByClassName('delBtn');
 
 	var _loop = function _loop(i) {
-		btnShowEditPage[i].onclick = function () {
+		btnShowEditPage[i].addEventListener('click', function () {
 			var index = btnShowEditPage[i].getAttribute('data-value') - 1;
 			inpID.value = myData[index].id;
 			inpName.value = myData[index].name;
@@ -210,7 +210,7 @@ function Controller(model, view) {
 			inpPrice.value = myData[index].price;
 			inpDescrip.value = myData[index].descrip;
 			wrapEdit.setAttribute('class', 'wrapEditVisible');
-		};
+		});
 	};
 
 	for (var i = 0; i < btnShowEditPage.length; i++) {
@@ -233,12 +233,12 @@ function Controller(model, view) {
 	};
 
 	var _loop2 = function _loop2(i) {
-		delBtn[i].onclick = function () {
-			// alert ('del # ' + i);
+		delBtn[i].addEventListener('click', function () {
 			var index = delBtn[i].getAttribute('data-value') - 1;
 			model.removeItem(index);
 			view.renderList(model.data);
-		};
+			// alert ('This is delBtn.length'+ delBtn.length);
+		});
 	};
 
 	for (var i = 0; i < delBtn.length; i++) {

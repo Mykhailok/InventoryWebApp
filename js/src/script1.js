@@ -204,7 +204,6 @@ function View(model) {
 		let content = List({'data':data});
 		tbody.innerHTML = content;
 		// alert ('3renderList');
-		
 	};
 	init();
 }
@@ -222,9 +221,8 @@ function Controller(model,view) {
 	let btnEditSave = document.getElementById('btnEditSave');
 	let delBtn = document.getElementsByClassName('delBtn');
 
-
 	for (let i = 0; i < btnShowEditPage.length; i++) {
-		btnShowEditPage[i].onclick = function () {
+		btnShowEditPage[i].addEventListener('click', function () {
 			let index = btnShowEditPage[i].getAttribute('data-value')-1;
 			inpID.value = myData[index].id;
 			inpName.value = myData[index].name;
@@ -233,8 +231,10 @@ function Controller(model,view) {
 			inpPrice.value = myData[index].price;
 			inpDescrip.value = myData[index].descrip;
 			wrapEdit.setAttribute('class','wrapEditVisible');
-		}
+		})
 	}
+
+
 
 	btnEditSave.onclick = function () {
 		// alert ('5editSaveItemController');
@@ -253,14 +253,12 @@ function Controller(model,view) {
 
 
 	for (let i = 0; i < delBtn.length; i++) {
-		delBtn[i].onclick = function () {
-			// alert ('del # ' + i);
-			let index = delBtn[i].getAttribute('data-value')-1;
-			model.removeItem(index);
-			view.renderList(model.data);
-
-		};
-
+		delBtn[i].addEventListener('click',function () {
+				let index = delBtn[i].getAttribute('data-value')-1;
+				model.removeItem(index);
+				view.renderList(model.data);
+			// alert ('This is delBtn.length'+ delBtn.length);
+		});
 	}
 
 }
