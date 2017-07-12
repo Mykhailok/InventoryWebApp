@@ -195,14 +195,13 @@ function View(model) {
 	function init() {
 		self.renderList(model.data);
 	}
-
 	self.renderList = function (data) {
 		let htmlTableTemplate = document.getElementById('table-template').innerHTML;
 		// let tbody = document.getElementsByClassName('ttbody');//НЕ РАБОТАЕТ
 		let tbody = document.getElementById('tbody');
-		let List = _.template(htmlTableTemplate);
-		let content = List({'data':data});
-		tbody.innerHTML = content;
+		let list = _.template(htmlTableTemplate);
+		let listContent = list({'data':data});
+		tbody.innerHTML = listContent;
 		// alert ('3renderList');
 	};
 	init();
@@ -221,6 +220,35 @@ function Controller(model,view) {
 	let btnEditSave = document.getElementById('btnEditSave');
 	let delBtn = document.getElementsByClassName('delBtn');
 
+
+	// delBtn.addEventListener('click',removeItems);
+	// function removeItems() {
+	// 	let index = this.getAttribute('data-value')-1;
+	// 	model.removeItem(index);
+	// 	view.renderList(model.data);
+	//
+	// }
+	//
+	// function removeItems() {
+	// 	for (let i = 0; i < delBtn.length; i++) {
+	// 			delBtn[i].addEventListener('click',function () {
+	// 				let index = delBtn[i].getAttribute('data-value')-1;
+	// 				model.removeItem(index);
+	// 				view.renderList(model.data);
+	// 				// alert ('This is delBtn.length'+ delBtn.length);
+	// 			});
+	// 		}
+	//
+	// }
+
+	for (let i = 0; i < delBtn.length; i++) {
+		delBtn[i].addEventListener('click',function () {
+			let index = delBtn[i].getAttribute('data-value')-1;
+			model.removeItem(index);
+			view.renderList(model.data);
+			// alert ('This is delBtn.length'+ delBtn.length);
+		});
+	}
 	for (let i = 0; i < btnShowEditPage.length; i++) {
 		btnShowEditPage[i].addEventListener('click', function () {
 			let index = btnShowEditPage[i].getAttribute('data-value')-1;
@@ -252,26 +280,15 @@ function Controller(model,view) {
 	};
 
 
-	for (let i = 0; i < delBtn.length; i++) {
-		delBtn[i].addEventListener('click',function () {
-				let index = delBtn[i].getAttribute('data-value')-1;
-				model.removeItem(index);
-				view.renderList(model.data);
-			// alert ('This is delBtn.length'+ delBtn.length);
-		});
-	}
+
 
 }
 ////////////////////////////////////////////////////////////////
-
-
-$(function () {
+document.addEventListener("DOMContentLoaded", function () {
 	let model = new Model(myData);
 	let view = new View(model);
 	let controller = new Controller(model,view);
 
-///////////////////////////////////////////////////////////////////////////
-	//sort
 	let grid = document.getElementById('grid');
 	grid.onclick = function(e) {
 		if (e.target.tagName !== 'TH') return;
@@ -314,6 +331,57 @@ $(function () {
 		}
 		grid.appendChild(tbody);
 	}
+});
+
+// $(function () {
+// 	let model = new Model(myData);
+// 	let view = new View(model);
+// 	let controller = new Controller(model,view);
+
+///////////////////////////////////////////////////////////////////////////
+	//sort
+	// let grid = document.getElementById('grid');
+	// grid.onclick = function(e) {
+	// 	if (e.target.tagName !== 'TH') return;
+	//
+	// 	// Если TH -- сортируем
+	// 	sortGrid(e.target.cellIndex, e.target.getAttribute('data-type'));
+	// };
+	// function sortGrid(colNum, type) {
+	// 	let tbody = grid.getElementsByTagName('tbody')[0];
+	//
+	// 	// Составить массив из TR
+	// 	let rowsArray = [].slice.call(tbody.rows);
+	//
+	// 	// определить функцию сравнения, в зависимости от типа
+	// 	let compare;
+	//
+	// 	switch (type) {
+	// 		case 'number':
+	// 			compare = function(rowA, rowB) {
+	// 				return rowA.cells[colNum].innerHTML - rowB.cells[colNum].innerHTML;
+	// 			};
+	// 			break;
+	// 		case 'string':
+	// 			compare = function(rowA, rowB) {
+	// 				return rowA.cells[colNum].innerHTML > rowB.cells[colNum].innerHTML ? 1 : -1;
+	// 			};
+	// 			break;
+	// 	}
+	//
+	// 	// сортировать
+	// 	rowsArray.sort(compare);
+	//
+	// 	// Убрать tbody из большого DOM документа для лучшей производительности
+	// 	grid.removeChild(tbody);
+	//
+	// 	// добавить результат в нужном порядке в TBODY
+	// 	// они автоматически будут убраны со старых мест и вставлены в правильном порядке
+	// 	for (let i = 0; i < rowsArray.length; i++) {
+	// 		tbody.appendChild(rowsArray[i]);
+	// 	}
+	// 	grid.appendChild(tbody);
+	// }
 ////////////////////////////////////////////////////////////////////
 
-});
+// });

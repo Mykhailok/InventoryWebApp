@@ -174,14 +174,13 @@ function View(model) {
 	function init() {
 		self.renderList(model.data);
 	}
-
 	self.renderList = function (data) {
 		var htmlTableTemplate = document.getElementById('table-template').innerHTML;
 		// let tbody = document.getElementsByClassName('ttbody');//НЕ РАБОТАЕТ
 		var tbody = document.getElementById('tbody');
-		var List = _.template(htmlTableTemplate);
-		var content = List({ 'data': data });
-		tbody.innerHTML = content;
+		var list = _.template(htmlTableTemplate);
+		var listContent = list({ 'data': data });
+		tbody.innerHTML = listContent;
 		// alert ('3renderList');
 	};
 	init();
@@ -200,7 +199,40 @@ function Controller(model, view) {
 	var btnEditSave = document.getElementById('btnEditSave');
 	var delBtn = document.getElementsByClassName('delBtn');
 
+	// delBtn.addEventListener('click',removeItems);
+	// function removeItems() {
+	// 	let index = this.getAttribute('data-value')-1;
+	// 	model.removeItem(index);
+	// 	view.renderList(model.data);
+	//
+	// }
+	//
+	// function removeItems() {
+	// 	for (let i = 0; i < delBtn.length; i++) {
+	// 			delBtn[i].addEventListener('click',function () {
+	// 				let index = delBtn[i].getAttribute('data-value')-1;
+	// 				model.removeItem(index);
+	// 				view.renderList(model.data);
+	// 				// alert ('This is delBtn.length'+ delBtn.length);
+	// 			});
+	// 		}
+	//
+	// }
+
 	var _loop = function _loop(i) {
+		delBtn[i].addEventListener('click', function () {
+			var index = delBtn[i].getAttribute('data-value') - 1;
+			model.removeItem(index);
+			view.renderList(model.data);
+			// alert ('This is delBtn.length'+ delBtn.length);
+		});
+	};
+
+	for (var i = 0; i < delBtn.length; i++) {
+		_loop(i);
+	}
+
+	var _loop2 = function _loop2(i) {
 		btnShowEditPage[i].addEventListener('click', function () {
 			var index = btnShowEditPage[i].getAttribute('data-value') - 1;
 			inpID.value = myData[index].id;
@@ -214,7 +246,7 @@ function Controller(model, view) {
 	};
 
 	for (var i = 0; i < btnShowEditPage.length; i++) {
-		_loop(i);
+		_loop2(i);
 	}
 
 	btnEditSave.onclick = function () {
@@ -231,30 +263,13 @@ function Controller(model, view) {
 		model.editItem(tempItem, index);
 		view.renderList(model.data);
 	};
-
-	var _loop2 = function _loop2(i) {
-		delBtn[i].addEventListener('click', function () {
-			var index = delBtn[i].getAttribute('data-value') - 1;
-			model.removeItem(index);
-			view.renderList(model.data);
-			// alert ('This is delBtn.length'+ delBtn.length);
-		});
-	};
-
-	for (var i = 0; i < delBtn.length; i++) {
-		_loop2(i);
-	}
 }
 ////////////////////////////////////////////////////////////////
-
-
-$(function () {
+document.addEventListener("DOMContentLoaded", function () {
 	var model = new Model(myData);
 	var view = new View(model);
 	var controller = new Controller(model, view);
 
-	///////////////////////////////////////////////////////////////////////////
-	//sort
 	var grid = document.getElementById('grid');
 	grid.onclick = function (e) {
 		if (e.target.tagName !== 'TH') return;
@@ -297,6 +312,58 @@ $(function () {
 		}
 		grid.appendChild(tbody);
 	}
-	////////////////////////////////////////////////////////////////////
 });
+
+// $(function () {
+// 	let model = new Model(myData);
+// 	let view = new View(model);
+// 	let controller = new Controller(model,view);
+
+///////////////////////////////////////////////////////////////////////////
+//sort
+// let grid = document.getElementById('grid');
+// grid.onclick = function(e) {
+// 	if (e.target.tagName !== 'TH') return;
+//
+// 	// Если TH -- сортируем
+// 	sortGrid(e.target.cellIndex, e.target.getAttribute('data-type'));
+// };
+// function sortGrid(colNum, type) {
+// 	let tbody = grid.getElementsByTagName('tbody')[0];
+//
+// 	// Составить массив из TR
+// 	let rowsArray = [].slice.call(tbody.rows);
+//
+// 	// определить функцию сравнения, в зависимости от типа
+// 	let compare;
+//
+// 	switch (type) {
+// 		case 'number':
+// 			compare = function(rowA, rowB) {
+// 				return rowA.cells[colNum].innerHTML - rowB.cells[colNum].innerHTML;
+// 			};
+// 			break;
+// 		case 'string':
+// 			compare = function(rowA, rowB) {
+// 				return rowA.cells[colNum].innerHTML > rowB.cells[colNum].innerHTML ? 1 : -1;
+// 			};
+// 			break;
+// 	}
+//
+// 	// сортировать
+// 	rowsArray.sort(compare);
+//
+// 	// Убрать tbody из большого DOM документа для лучшей производительности
+// 	grid.removeChild(tbody);
+//
+// 	// добавить результат в нужном порядке в TBODY
+// 	// они автоматически будут убраны со старых мест и вставлены в правильном порядке
+// 	for (let i = 0; i < rowsArray.length; i++) {
+// 		tbody.appendChild(rowsArray[i]);
+// 	}
+// 	grid.appendChild(tbody);
+// }
+////////////////////////////////////////////////////////////////////
+
+// });
 //# sourceMappingURL=script1.js.map
