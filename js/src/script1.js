@@ -163,7 +163,9 @@ myData =[
 	}
 
 ];
-
+let grid = document.getElementById('grid');
+let tbody = document.getElementById('tbody');
+let rows = tbody.getElementsByTagName('tr');
 function Model(data) {
 	let self = this;
 	self.data = data.slice();
@@ -171,17 +173,14 @@ function Model(data) {
 		if (item.length === 0) {
 			return;
 		}
-		// alert ('1editItemModel');
 		self.data[index].id = item.id;
 		self.data[index].name = item.name;
 		self.data[index].manufac = item.manufac;
 		self.data[index].owner = item.owner;
 		self.data[index].price = item.price;
 		self.data[index].descrip = item.descrip;
-		// alert('editItemModel self.data[index].name '+ self.data[index].name);
 	};
 	self.removeItem = function (index) {
-		// alert ('2removeItemModel');
 		if (index === -1) {
 			return;
 		}
@@ -198,11 +197,9 @@ function View(model) {
 	self.renderList = function (data) {
 		let htmlTableTemplate = document.getElementById('table-template').innerHTML;
 		// let tbody = document.getElementsByClassName('ttbody');//НЕ РАБОТАЕТ
-		let tbody = document.getElementById('tbody');
 		let list = _.template(htmlTableTemplate);
 		let listContent = list({'data':data});
 		tbody.innerHTML = listContent;
-		// alert ('3renderList');
 	};
 	init();
 }
@@ -216,72 +213,79 @@ function Controller(model,view) {
 	let inpPrice = document.getElementById('editPrice');
 	let inpDescrip = document.getElementById('editDescrip');
 	let btnShowEditPage = document.getElementsByClassName('btnShowEditPage');
-	// alert('btnShowEditPage.length'+ btnShowEditPage.length);
 	let btnEditSave = document.getElementById('btnEditSave');
 	let delBtn = document.getElementsByClassName('delBtn');
 
-
-	// delBtn.addEventListener('click',removeItems);
-	// function removeItems() {
-	// 	let index = this.getAttribute('data-value')-1;
-	// 	model.removeItem(index);
-	// 	view.renderList(model.data);
-	//
-	// }
-	//
-	// function removeItems() {
-	// 	for (let i = 0; i < delBtn.length; i++) {
-	// 			delBtn[i].addEventListener('click',function () {
-	// 				let index = delBtn[i].getAttribute('data-value')-1;
-	// 				model.removeItem(index);
-	// 				view.renderList(model.data);
-	// 				// alert ('This is delBtn.length'+ delBtn.length);
-	// 			});
-	// 		}
-	//
-	// }
-
+//удаляем строки
 	for (let i = 0; i < delBtn.length; i++) {
 		delBtn[i].addEventListener('click',function () {
-			let index = delBtn[i].getAttribute('data-value')-1;
+			let id = +delBtn[i].getAttribute('data-value');
+			let index;
+			for (let i  in model.data) {
+				if (model.data[i].id === id) {
+					index = i;
+				}
+			}
 			model.removeItem(index);
-			view.renderList(model.data);
-			// alert ('This is delBtn.length'+ delBtn.length);
-		});
-	}
-	for (let i = 0; i < btnShowEditPage.length; i++) {
-		btnShowEditPage[i].addEventListener('click', function () {
-			let index = btnShowEditPage[i].getAttribute('data-value')-1;
-			inpID.value = myData[index].id;
-			inpName.value = myData[index].name;
-			inpManufac.value = myData[index].manufac;
-			inpOwner.value = myData[index].owner;
-			inpPrice.value = myData[index].price;
-			inpDescrip.value = myData[index].descrip;
-			wrapEdit.setAttribute('class','wrapEditVisible');
+			let tr = delBtn[i].parentNode.parentNode.parentNode;
+			grid.deleteRow(tr.rowIndex);
 		})
 	}
-
-
-
-	btnEditSave.onclick = function () {
-		// alert ('5editSaveItemController');
-		let index = inpID.value - 1;
+//показываем станицу редактирования
+		for (let i = 0; i < btnShowEditPage.length; i++) {
+			btnShowEditPage[i].addEventListener('click',function () {
+				let id = +btnShowEditPage[i].getAttribute('data-value');
+				let index;
+				for (let i  in model.data) {
+					if (model.data[i].id === id) {
+						index = i;
+					}
+				}
+				inpID.value = myData[index].id;
+				inpName.value = myData[index].name;
+				inpManufac.value = myData[index].manufac;
+				inpOwner.value = myData[index].owner;
+				inpPrice.value = myData[index].price;
+				inpDescrip.value = myData[index].descrip;
+				wrapEdit.setAttribute('class', 'wrapEditVisible');
+			})
+		}
+//сохраняем изменения после редактирования
+	btnEditSave.onclick = function EditSave() {
+		wrapEdit.setAttribute('class','wrapEditHide');
+		let id = +inpID.value ;
+		let index ;
+		for (let i  in model.data) {
+			if (model.data[i].id === id) {
+				index = i;
+			}
+		}
 		let tempItem ={};
+
+		//редактируем поля элемента
 		tempItem.id = inpID.value;
 		tempItem.name = inpName.value;
 		tempItem.manufac = inpManufac.value;
 		tempItem.owner = inpOwner.value;
 		tempItem.price = inpPrice.value;
 		tempItem.descrip = inpDescrip.value;
-		wrapEdit.setAttribute('class','wrapEditHide');
 		model.editItem(tempItem, index);
-		view.renderList(model.data);
+
+//находим нужную строку
+		for (let i=0; i < rows.length ; i++){
+			if(+rows[i].getAttribute('data-value') === id){
+				//находим поля строки
+				let td = rows[i].getElementsByTagName('td');
+				//перерисуем редактируемую строку
+				td[0].innerHTML = inpID.value;
+				td[1].innerHTML = inpName.value;
+				td[2].innerHTML = inpManufac.value;
+				td[3].innerHTML = inpOwner.value;
+				td[4].innerHTML = inpPrice.value;
+				td[5].innerHTML = inpDescrip.value;
+			}
+		}
 	};
-
-
-
-
 }
 ////////////////////////////////////////////////////////////////
 document.addEventListener("DOMContentLoaded", function () {
@@ -289,7 +293,6 @@ document.addEventListener("DOMContentLoaded", function () {
 	let view = new View(model);
 	let controller = new Controller(model,view);
 
-	let grid = document.getElementById('grid');
 	grid.onclick = function(e) {
 		if (e.target.tagName !== 'TH') return;
 
@@ -333,55 +336,3 @@ document.addEventListener("DOMContentLoaded", function () {
 	}
 });
 
-// $(function () {
-// 	let model = new Model(myData);
-// 	let view = new View(model);
-// 	let controller = new Controller(model,view);
-
-///////////////////////////////////////////////////////////////////////////
-	//sort
-	// let grid = document.getElementById('grid');
-	// grid.onclick = function(e) {
-	// 	if (e.target.tagName !== 'TH') return;
-	//
-	// 	// Если TH -- сортируем
-	// 	sortGrid(e.target.cellIndex, e.target.getAttribute('data-type'));
-	// };
-	// function sortGrid(colNum, type) {
-	// 	let tbody = grid.getElementsByTagName('tbody')[0];
-	//
-	// 	// Составить массив из TR
-	// 	let rowsArray = [].slice.call(tbody.rows);
-	//
-	// 	// определить функцию сравнения, в зависимости от типа
-	// 	let compare;
-	//
-	// 	switch (type) {
-	// 		case 'number':
-	// 			compare = function(rowA, rowB) {
-	// 				return rowA.cells[colNum].innerHTML - rowB.cells[colNum].innerHTML;
-	// 			};
-	// 			break;
-	// 		case 'string':
-	// 			compare = function(rowA, rowB) {
-	// 				return rowA.cells[colNum].innerHTML > rowB.cells[colNum].innerHTML ? 1 : -1;
-	// 			};
-	// 			break;
-	// 	}
-	//
-	// 	// сортировать
-	// 	rowsArray.sort(compare);
-	//
-	// 	// Убрать tbody из большого DOM документа для лучшей производительности
-	// 	grid.removeChild(tbody);
-	//
-	// 	// добавить результат в нужном порядке в TBODY
-	// 	// они автоматически будут убраны со старых мест и вставлены в правильном порядке
-	// 	for (let i = 0; i < rowsArray.length; i++) {
-	// 		tbody.appendChild(rowsArray[i]);
-	// 	}
-	// 	grid.appendChild(tbody);
-	// }
-////////////////////////////////////////////////////////////////////
-
-// });
