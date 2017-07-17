@@ -1,0 +1,7 @@
+@media screen and (min-device-width: 480px) {
+
+    .container {
+      flex-direction: row;
+    }
+
+}
