@@ -44,3 +44,4 @@ target/classes/ua/
 target/generated-sources/
 jdbc.properties
 target
+/node_modules
