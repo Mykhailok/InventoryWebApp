@@ -163,9 +163,8 @@ myData =[
 	}
 
 ];
-let grid = document.getElementById('grid');
-let tbody = document.getElementById('tbody');
-let rows = tbody.getElementsByTagName('tr');
+
+
 function Model(data) {
 	let self = this;
 	self.data = data.slice();
@@ -215,43 +214,59 @@ function Controller(model,view) {
 	let btnShowEditPage = document.getElementsByClassName('btnShowEditPage');
 	let btnEditSave = document.getElementById('btnEditSave');
 	let delBtn = document.getElementsByClassName('delBtn');
+	let tbody = document.getElementById('tbody');
+	let rows = tbody.getElementsByTagName('tr');
+	let grid = document.getElementById('grid');
+//слушаем клики по btnShowEditPage
+	for (let i = 0; i < btnShowEditPage.length; i++) {
+		btnShowEditPage[i].addEventListener("click", showEditPage,false);
+	}
+//слушаем клики по btnShowEditPage
+	for (let i = 0; i < delBtn.length; i++) {
+		delBtn[i].addEventListener("click", delRow,false);
+	}
+//слушаем клики по btnEditSave
+	btnEditSave.addEventListener("click", EditSave,false);
+
 
 //удаляем строки
-	for (let i = 0; i < delBtn.length; i++) {
-		delBtn[i].addEventListener('click',function () {
-			let id = +delBtn[i].getAttribute('data-value');
-			let index;
-			for (let i  in model.data) {
-				if (model.data[i].id === id) {
-					index = i;
-				}
+//////////////////////////////////////////////////////////////////////////////
+	function delRow() {
+		let id = +this.getAttribute('data-value');
+		// alert('delRow '+ id);
+		let index;
+		for (let i  in model.data) {
+			if (model.data[i].id === id) {
+				index = i;
 			}
-			model.removeItem(index);
-			let tr = delBtn[i].parentNode.parentNode.parentNode;
-			grid.deleteRow(tr.rowIndex);
-		})
-	}
-//показываем станицу редактирования
-		for (let i = 0; i < btnShowEditPage.length; i++) {
-			btnShowEditPage[i].addEventListener('click',function () {
-				let id = +btnShowEditPage[i].getAttribute('data-value');
-				let index;
-				for (let i  in model.data) {
-					if (model.data[i].id === id) {
-						index = i;
-					}
-				}
-				inpID.value = myData[index].id;
-				inpName.value = myData[index].name;
-				inpManufac.value = myData[index].manufac;
-				inpOwner.value = myData[index].owner;
-				inpPrice.value = myData[index].price;
-				inpDescrip.value = myData[index].descrip;
-				wrapEdit.setAttribute('class', 'wrapEditVisible');
-			})
 		}
+		// alert('index '+ index);
+		model.removeItem(index);
+		let tr = this.parentNode.parentNode.parentNode;
+		grid.deleteRow(tr.rowIndex);
+	}
+
+////////////////////////////////////////////////////////////////
+//показываем станицу редактирования
+	function showEditPage() {
+		// alert('showEditPage');
+		let id = +this.getAttribute('data-value');
+		let index;
+		for (let i  in model.data) {
+			if (model.data[i].id === id) {
+				index = i;
+			}
+		}
+		inpID.value = myData[index].id;
+		inpName.value = myData[index].name;
+		inpManufac.value = myData[index].manufac;
+		inpOwner.value = myData[index].owner;
+		inpPrice.value = myData[index].price;
+		inpDescrip.value = myData[index].descrip;
+		wrapEdit.setAttribute('class', 'wrapEditVisible');
+	}
 //сохраняем изменения после редактирования
-	btnEditSave.onclick = function EditSave() {
+	 function EditSave() {
 		wrapEdit.setAttribute('class','wrapEditHide');
 		let id = +inpID.value ;
 		let index ;
@@ -285,25 +300,18 @@ function Controller(model,view) {
 				td[5].innerHTML = inpDescrip.value;
 			}
 		}
-	};
-}
-////////////////////////////////////////////////////////////////
-document.addEventListener("DOMContentLoaded", function () {
-	let model = new Model(myData);
-	let view = new View(model);
-	let controller = new Controller(model,view);
-
-	grid.onclick = function(e) {
+	}
+	grid.onclick = function (e) {
 		if (e.target.tagName !== 'TH') return;
 
 		// Если TH -- сортируем
 		sortGrid(e.target.cellIndex, e.target.getAttribute('data-type'));
 	};
 	function sortGrid(colNum, type) {
-		let tbody = grid.getElementsByTagName('tbody')[0];
+		let ttbody = grid.getElementsByTagName('tbody')[0];
 
 		// Составить массив из TR
-		let rowsArray = [].slice.call(tbody.rows);
+		let rowsArray = [].slice.call(ttbody.rows);
 
 		// определить функцию сравнения, в зависимости от типа
 		let compare;
@@ -324,15 +332,25 @@ document.addEventListener("DOMContentLoaded", function () {
 		// сортировать
 		rowsArray.sort(compare);
 
-		// Убрать tbody из большого DOM документа для лучшей производительности
-		grid.removeChild(tbody);
+		// Убрать ttbody из большого DOM документа для лучшей производительности
+		grid.removeChild(ttbody);
 
 		// добавить результат в нужном порядке в TBODY
 		// они автоматически будут убраны со старых мест и вставлены в правильном порядке
 		for (let i = 0; i < rowsArray.length; i++) {
-			tbody.appendChild(rowsArray[i]);
+			ttbody.appendChild(rowsArray[i]);
 		}
-		grid.appendChild(tbody);
+		grid.appendChild(ttbody);
 	}
+}
+
+////////////////////////////////////////////////////////////////
+document.addEventListener("DOMContentLoaded", function () {
+	let model = new Model(myData);
+	let view = new View(model);
+	let controller = new Controller(model,view);
+
+
+
 });
 

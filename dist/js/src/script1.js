@@ -142,9 +142,7 @@ myData = [{
 	price: 500,
 	descrip: 'red'
 }];
-var grid = document.getElementById('grid');
-var tbody = document.getElementById('tbody');
-var rows = tbody.getElementsByTagName('tr');
+
 function Model(data) {
 	var self = this;
 	self.data = data.slice();
@@ -194,59 +192,64 @@ function Controller(model, view) {
 	var btnShowEditPage = document.getElementsByClassName('btnShowEditPage');
 	var btnEditSave = document.getElementById('btnEditSave');
 	var delBtn = document.getElementsByClassName('delBtn');
+	var tbody = document.getElementById('tbody');
+	var rows = tbody.getElementsByTagName('tr');
+	var grid = document.getElementById('grid');
+	//слушаем клики по btnShowEditPage
+	for (var i = 0; i < btnShowEditPage.length; i++) {
+		btnShowEditPage[i].addEventListener("click", showEditPage, false);
+	}
+	//слушаем клики по btnShowEditPage
+	for (var _i = 0; _i < delBtn.length; _i++) {
+		delBtn[_i].addEventListener("click", delRow, false);
+	}
+	//слушаем клики по btnEditSave
+	btnEditSave.addEventListener("click", EditSave, false);
 
 	//удаляем строки
-
-	var _loop = function _loop(i) {
-		delBtn[i].addEventListener('click', function () {
-			var id = +delBtn[i].getAttribute('data-value');
-			var index = void 0;
-			for (var _i2 in model.data) {
-				if (model.data[_i2].id === id) {
-					index = _i2;
-				}
+	//////////////////////////////////////////////////////////////////////////////
+	function delRow() {
+		var id = +this.getAttribute('data-value');
+		// alert('delRow '+ id);
+		var index = void 0;
+		for (var _i2 in model.data) {
+			if (model.data[_i2].id === id) {
+				index = _i2;
 			}
-			model.removeItem(index);
-			var tr = delBtn[i].parentNode.parentNode.parentNode;
-			grid.deleteRow(tr.rowIndex);
-		});
-	};
-
-	for (var i = 0; i < delBtn.length; i++) {
-		_loop(i);
+		}
+		// alert('index '+ index);
+		model.removeItem(index);
+		var tr = this.parentNode.parentNode.parentNode;
+		grid.deleteRow(tr.rowIndex);
 	}
+
+	////////////////////////////////////////////////////////////////
 	//показываем станицу редактирования
-
-	var _loop2 = function _loop2(i) {
-		btnShowEditPage[i].addEventListener('click', function () {
-			var id = +btnShowEditPage[i].getAttribute('data-value');
-			var index = void 0;
-			for (var _i3 in model.data) {
-				if (model.data[_i3].id === id) {
-					index = _i3;
-				}
+	function showEditPage() {
+		// alert('showEditPage');
+		var id = +this.getAttribute('data-value');
+		var index = void 0;
+		for (var _i3 in model.data) {
+			if (model.data[_i3].id === id) {
+				index = _i3;
 			}
-			inpID.value = myData[index].id;
-			inpName.value = myData[index].name;
-			inpManufac.value = myData[index].manufac;
-			inpOwner.value = myData[index].owner;
-			inpPrice.value = myData[index].price;
-			inpDescrip.value = myData[index].descrip;
-			wrapEdit.setAttribute('class', 'wrapEditVisible');
-		});
-	};
-
-	for (var i = 0; i < btnShowEditPage.length; i++) {
-		_loop2(i);
+		}
+		inpID.value = myData[index].id;
+		inpName.value = myData[index].name;
+		inpManufac.value = myData[index].manufac;
+		inpOwner.value = myData[index].owner;
+		inpPrice.value = myData[index].price;
+		inpDescrip.value = myData[index].descrip;
+		wrapEdit.setAttribute('class', 'wrapEditVisible');
 	}
 	//сохраняем изменения после редактирования
-	btnEditSave.onclick = function EditSave() {
+	function EditSave() {
 		wrapEdit.setAttribute('class', 'wrapEditHide');
 		var id = +inpID.value;
 		var index = void 0;
-		for (var i in model.data) {
-			if (model.data[i].id === id) {
-				index = i;
+		for (var _i4 in model.data) {
+			if (model.data[_i4].id === id) {
+				index = _i4;
 			}
 		}
 		var tempItem = {};
@@ -261,10 +264,10 @@ function Controller(model, view) {
 		model.editItem(tempItem, index);
 
 		//находим нужную строку
-		for (var _i = 0; _i < rows.length; _i++) {
-			if (+rows[_i].getAttribute('data-value') === id) {
+		for (var _i5 = 0; _i5 < rows.length; _i5++) {
+			if (+rows[_i5].getAttribute('data-value') === id) {
 				//находим поля строки
-				var td = rows[_i].getElementsByTagName('td');
+				var td = rows[_i5].getElementsByTagName('td');
 				//перерисуем редактируемую строку
 				td[0].innerHTML = inpID.value;
 				td[1].innerHTML = inpName.value;
@@ -274,14 +277,7 @@ function Controller(model, view) {
 				td[5].innerHTML = inpDescrip.value;
 			}
 		}
-	};
-}
-////////////////////////////////////////////////////////////////
-document.addEventListener("DOMContentLoaded", function () {
-	var model = new Model(myData);
-	var view = new View(model);
-	var controller = new Controller(model, view);
-
+	}
 	grid.onclick = function (e) {
 		if (e.target.tagName !== 'TH') return;
 
@@ -289,10 +285,10 @@ document.addEventListener("DOMContentLoaded", function () {
 		sortGrid(e.target.cellIndex, e.target.getAttribute('data-type'));
 	};
 	function sortGrid(colNum, type) {
-		var tbody = grid.getElementsByTagName('tbody')[0];
+		var ttbody = grid.getElementsByTagName('tbody')[0];
 
 		// Составить массив из TR
-		var rowsArray = [].slice.call(tbody.rows);
+		var rowsArray = [].slice.call(ttbody.rows);
 
 		// определить функцию сравнения, в зависимости от типа
 		var compare = void 0;
@@ -313,15 +309,22 @@ document.addEventListener("DOMContentLoaded", function () {
 		// сортировать
 		rowsArray.sort(compare);
 
-		// Убрать tbody из большого DOM документа для лучшей производительности
-		grid.removeChild(tbody);
+		// Убрать ttbody из большого DOM документа для лучшей производительности
+		grid.removeChild(ttbody);
 
 		// добавить результат в нужном порядке в TBODY
 		// они автоматически будут убраны со старых мест и вставлены в правильном порядке
-		for (var i = 0; i < rowsArray.length; i++) {
-			tbody.appendChild(rowsArray[i]);
+		for (var _i6 = 0; _i6 < rowsArray.length; _i6++) {
+			ttbody.appendChild(rowsArray[_i6]);
 		}
-		grid.appendChild(tbody);
+		grid.appendChild(ttbody);
 	}
+}
+
+////////////////////////////////////////////////////////////////
+document.addEventListener("DOMContentLoaded", function () {
+	var model = new Model(myData);
+	var view = new View(model);
+	var controller = new Controller(model, view);
 });
 //# sourceMappingURL=script1.js.map
