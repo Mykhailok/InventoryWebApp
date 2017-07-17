@@ -2,100 +2,43 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>Products</title>
-	<link rel="stylesheet" href="css/src/reset.css">
-	<link rel="stylesheet" href="css/src/font.css">
-	<link rel="stylesheet" href="css/src/style.css">
-	<!--<link rel="stylesheet" href="css/dist/main.min.css">-->
+  <title>Inventarization</title>
+  <link rel="stylesheet" href="src/main/webapp/resources/css/homeFonts.css">
+  <link rel="stylesheet" href="src/main/webapp/resources/css/homeStyle320.css">
+  <link rel="stylesheet" href="src/main/webapp/resources/css/homeStyle768.css">
+  <link rel="stylesheet" href="src/main/webapp/resources/css/normalize.css">
 </head>
 <body>
-
-<div class="container">
-	<div class="wrapBattonAdd">
-		<button class="btnAdd">add a product +</button>
-	</div>
-	<div class="wrapTable">
-	<table id="grid" class="table">
-		<thead class="thead" id="theadFix">
-			<tr>
-				<th data-type="number">ID</th>
-				<th data-type="string">Name</th>
-				<th data-type="string">Manufacturer</th>
-				<th data-type="string">Owner</th>
-				<th data-type="number">Price</th>
-				<th data-type="string">Description</th>
-				<th data-type="string">Edit</th>
-				<th data-type="string">Delete</th>
-			</tr>
-			<tr ></tr>
-		</thead>
-		<tbody class="tbody">
-
-		</tbody>
-	</table>
-	</div>
-
-
-	<script type="text/template" id="table-template">
-		<% for (var i=0;i < data.length ; i++){%>
-		<tr data-value="<%= data[i].id %>">
-			<td><%= data[i].id %></td>
-			<td><%= data[i].name %></td>
-			<td><%= data[i].manufac %></td>
-			<td><%= data[i].owner %></td>
-			<td><%= data[i].price %></td>
-			<td><%= data[i].descrip %></td>
-			<td>
-				<div class="wrapSquaredBut">
-					<button class="btnShowEditPage" value="" data-value="<%= data[i].id %>"></button>
-				</div>
-			</td>
-			<td>
-				<div class="wrapSquaredBut">
-					<button class="delBtn" value="" data-value="<%= data[i].id %>"></button>
-				</div>
-			</td>
-		</tr>
-		<%};%>
-	</script>
-	<div class="wrapEditHide" id="wrEdit">
-		<div class="wrapForm">
-			<form action="#" class="formEdit">
-				<h1>edit product</h1>
-				<div class="wrapEditLabel">
-				<label for="editId">id</label>
-					<input type="text" class="editInput" id="editId" disabled>
-				</div>
-				<div class="wrapEditLabel">
-					<label for="editName">Name</label>
-					<input type="text" class="editInput" id="editName">
-				</div>
-				<div class="wrapEditLabel">
-					<label for="editManufac">Manufacturer</label>
-					<input type="text" class="editInput" id="editManufac">
-				</div>
-				<div class="wrapEditLabel">
-					<label for="editOwner">Owner</label>
-					<input type="text" class="editInput" id="editOwner">
-				</div>
-				<div class="wrapEditLabel">
-					<label for="editPrice">Price</label>
-					<input type="text" class="editInput" id="editPrice">
-				</div>
-				<div class="wrapEditLabel">
-					<label for="editDescrip">Description</label>
-					<input type="text" class="editInput" id="editDescrip">
-				</div>
-				<div class="wrapEditBut">
-					<button id="btnEditSave">edit</button>
-				</div>
-			</form>
-		</div>
-	</div>
+<div class="fonIcons">
+  <i class="iconsOne"></i>
+  <i class="iconsTwo"></i>
+  <i class="iconsThree"></i>
+  <i class="iconsFour"></i>
+  <i class="iconsFive"></i>
+  <i class="iconsSix"></i>
+  <i class="iconsSeven"></i>
+  <i class="iconsEight"></i>
+  <i class="iconsNine"></i>
+  <i class="iconsTen"></i>
+  <i class="iconsEleven"></i>
+  <i class="iconsTwelve"></i>
 </div>
-<script src="js/src/jquery-3.2.1.min.js"></script>
-<script src="js/src/lodash.js"></script>
-<script src="js/src/script1.js"></script>
-<!--<script src="js/dist/main.min.js"></script>-->
+<div class="container">
+  <header  class="header">
+    <a href="login.html" class="inventarium">INVENTARIUM</a>
+  </header>
+  <main class="main">
+    <p class="text">Inventarium and its channel network provide software  solutions for a number of verticals and industries</p>
+  </main>
+</div>
+<footer class="footer">
+  <ul class="contacts">
+    <li><a href="https://www.facebook.com" target="_blank"><img src="src/main/webapp/resources/images/1.png" alt=""></a></li>
+    <li><a href="https://twitter.com" target="_blank"><img src="src/main/webapp/resources/images/2.png" alt=""></a></li>
+    <li><a href="https://plus.google.com" target="_blank"><img src="src/main/webapp/resources/images/3.png" alt=""></a></li>
+    <li><a href="https://www.instagram.com" target="_blank"><img src="src/main/webapp/resources/images/4.png" alt=""></a></li>
+    <li><a href="https://www.youtube.com" target="_blank"><img src="src/main/webapp/resources/images/5.png" alt=""></a></li>
+  </ul>
+</footer>
 </body>
 </html>
