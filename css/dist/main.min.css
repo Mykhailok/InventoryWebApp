@@ -1,0 +1,496 @@
+@font-face {
+  font-family: 'SF UI Display';
+  src: url("../../font/SFUIDisplay-Regular.eot");
+  src: url("../../font/SFUIDisplay-Regular.eot?#iefix") format("embedded-opentype"),url("../../font/SFUIDisplay-Regular.woff") format("woff"),url("../../font/SFUIDisplay-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+* {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+menu,
+nav,
+section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+blockquote,
+q {
+  quotes: none;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: '';
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+.clearfix:after {
+  content: ".";
+  visibility: hidden;
+  display: block;
+  height: 0;
+  clear: both;
+}
+.container {
+  position: relative;
+  margin: 0 auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-flow: column wrap;
+  flex-flow: column wrap;
+  -webkit-box-pack: start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  background-image: url("../../img/backroundPage.jpg");
+  background-size: cover;
+  width: 100vw;
+  height: 100vh;
+  font-family: 'SF UI Display';
+}
+
+.wrapBattonAdd {
+  width: 100%;
+  margin-top: 65px;
+  text-align: left;
+  outline: 1px solid green;
+}
+
+.btnAdd {
+  margin-left: 50px;
+  width: 200px;
+  height: 30px;
+  background-color: #ffc200;
+  font-size: 18px;
+  text-transform: uppercase;
+  color: #2ea7e0;
+  border-radius: 20px;
+  outline: 1px transparent;
+}
+
+.btnAdd:hover {
+  cursor: pointer;
+}
+
+.wrapTable {
+  width: 100%;
+  margin-top: 65px;
+  height: 80%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-flow: column wrap;
+  flex-flow: column wrap;
+  -webkit-box-pack: start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  outline: 1px solid red;
+  overflow: auto;
+}
+
+.wrapTable .table {
+  width: 95%;
+}
+
+.wrapTable .table .thead {
+  border-radius: 10px;
+}
+
+.wrapTable .table .thead tr {
+  height: 30px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-flow: row wrap;
+  flex-flow: row wrap;
+  -ms-flex-pack: distribute;
+  justify-content: space-around;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  background-color: #ffee17;
+}
+
+.wrapTable .table .thead tr:last-child {
+  margin-top: 2px;
+  width: 100%;
+  height: 2px;
+}
+
+.wrapTable .table .thead tr th {
+  height: 100%;
+  font-size: 18px;
+  text-transform: uppercase;
+  color: #2ea7e0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-flow: row wrap;
+  flex-flow: row wrap;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.wrapTable .table .thead tr th:nth-child(1),
+.wrapTable .table .thead tr th:nth-child(7),
+.wrapTable .table .thead tr th:nth-child(8) {
+  width: 30px;
+}
+
+.wrapTable .table .thead tr th:nth-child(2),
+.wrapTable .table .thead tr th:nth-child(3),
+.wrapTable .table .thead tr th:nth-child(4),
+.wrapTable .table .thead tr th:nth-child(5),
+.wrapTable .table .thead tr th:nth-child(6) {
+  width: 70px;
+}
+
+.wrapTable .table .thead tr th:hover {
+  cursor: pointer;
+}
+
+.wrapTable .table .tbody {
+  background-color: transparent;
+}
+
+.wrapTable .table .tbody tr {
+  margin-top: 30px;
+  height: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-flow: row wrap;
+  flex-flow: row wrap;
+  -ms-flex-pack: distribute;
+  justify-content: space-around;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.wrapTable .table .tbody tr td {
+  height: 100%;
+  font-size: 18px;
+  color: #595857;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-flow: row wrap;
+  flex-flow: row wrap;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.wrapTable .table .tbody tr td:nth-child(1),
+.wrapTable .table .tbody tr td:nth-child(7),
+.wrapTable .table .tbody tr td:nth-child(8) {
+  width: 30px;
+}
+
+.wrapTable .table .tbody tr td:nth-child(2),
+.wrapTable .table .tbody tr td:nth-child(3),
+.wrapTable .table .tbody tr td:nth-child(4),
+.wrapTable .table .tbody tr td:nth-child(5),
+.wrapTable .table .tbody tr td:nth-child(6) {
+  width: 70px;
+}
+
+.wrapTable .table .tbody tr td input {
+  font-size: 18px;
+  background-color: yellow;
+  border-radius: 18px;
+  border: 1px solid blue;
+}
+
+.wrapSquaredBut {
+  width: 100%;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-flow: row wrap;
+  flex-flow: row wrap;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.wrapSquaredBut button {
+  width: 30px;
+  height: 30px;
+  background-color: #ffe200;
+}
+
+.wrapSquaredBut button:hover {
+  cursor: pointer;
+}
+
+.wrapEditHide {
+  display: none;
+}
+
+.wrapEditVisible {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 9999999;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-flow: column wrap;
+  flex-flow: column wrap;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  background-color: rgba(0,0,0,0.5);
+}
+
+.wrapForm {
+  background-image: url("../../img/BackgroundEdit.png");
+  width: 544px;
+  height: 798px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-flow: column wrap;
+  flex-flow: column wrap;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.wrapForm form {
+  width: 517px;
+  height: 400px;
+  background-color: #e0f5fc;
+  border-radius: 20px;
+}
+
+.wrapForm form h1 {
+  margin-top: 22px;
+  margin-bottom: 35px;
+  text-transform: uppercase;
+  text-align: center;
+  color: #f8b62d;
+  font-size: 26px;
+}
+
+.wrapForm form .wrapEditLabel {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-flow: row wrap;
+  flex-flow: row wrap;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.wrapForm form .wrapEditLabel label {
+  display: inline-block;
+  font-size: 18px;
+  color: #595857;
+  text-transform: uppercase;
+  text-align: left;
+  margin-left: 10px;
+}
+
+.wrapForm form .wrapEditLabel input {
+  width: 60%;
+  margin-right: 10px;
+  color: #2ea7e0;
+  font-size: 18px;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.wrapForm form .wrapEditBut {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-flow: row wrap;
+  flex-flow: row wrap;
+  -webkit-box-pack: end;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.wrapForm form .wrapEditBut button {
+  width: 120px;
+  height: 50px;
+  border-radius: 25px;
+  background-color: #2ea7e0;
+  color: #fff;
+  text-transform: uppercase;
+  font-size: 30px;
+  margin-right: 20px;
+  outline: 1px transparent;
+}
