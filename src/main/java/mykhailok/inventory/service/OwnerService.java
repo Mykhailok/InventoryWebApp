@@ -1,5 +1,5 @@
 package mykhailok.inventory.service;
-
+//Service for owners
 import mykhailok.inventory.model.Owner;
 
 import java.math.BigInteger;
