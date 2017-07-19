@@ -1,0 +1,250 @@
+$marginTop:40px;
+$widthMin:30px;
+$widthMax:70px;
+$heightTdThead:30px;
+$heightTdTbody:20px;
+$colorBackgrondThead:#ffee17;
+$colorBackgrondTbody:transparent;
+$fontSizeThead:18px;
+$fontSizeTbody:18px;
+$colorFontHead:#2ea7e0;
+$colorFontBody:#595857;
+$sizeButton:30px;
+
+
+.container {
+  position: relative;
+  margin: 0 auto;
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: flex-start;
+  align-items: center;
+  background-image: url("../../img/backroundPage.jpg");
+  background-size: cover;
+  width: 100vw;
+  height: 100vh;
+  font-family: 'SF UI Display';
+}
+.wrapBattonAdd {
+  width: 100%;
+  margin-top: $marginTop;
+  text-align: left;
+}
+.btnAdd {
+  margin-left: 50px;
+  width: 200px;
+  height: $heightTdThead;
+  background-color: #ffc200;
+  font-size: $fontSizeThead;
+  text-transform: uppercase;
+  color: $colorFontHead;
+  border-radius: 20px;
+  outline: 1px transparent;
+  &:hover{
+    cursor: pointer;
+  }
+}
+.wrapTable {
+  width: 100%;
+  margin-top: $marginTop;
+  height: 80%;
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: flex-start;
+  align-items: center;
+  overflow: auto;
+  .table {
+    width: 95%;
+    .thead{
+      border-radius: 40px;
+      position: fixed;
+      top: 80px;
+      left: 2.5%;
+      width: 95%;
+      tr {
+        height: $heightTdThead;
+        display: flex;
+        flex-flow: row wrap  ;
+        justify-content: space-around;
+        align-items: center;
+        background-color: $colorBackgrondThead;
+        &:last-child {
+            margin-top: 2px;
+          width: 100%;
+          height: 2px;
+        }
+        th{
+          height: 100%;
+          font-size: $fontSizeThead;
+          text-transform: uppercase;
+          color: $colorFontHead;
+          display: flex;
+          flex-flow: row wrap;
+          justify-content: center;
+          align-items: center;
+          &:nth-child(1),
+          &:nth-child(7),
+          &:nth-child(8)
+          {
+            width: $widthMin;
+          }
+          &:nth-child(2),
+          &:nth-child(3),
+          &:nth-child(4),
+          &:nth-child(5),
+          &:nth-child(6)
+          {
+            width: $widthMax;
+          }
+          &:hover {
+            cursor: pointer;
+          }
+        }
+
+      }
+
+    }
+    .tbody{
+      background-color: $colorBackgrondTbody;
+      tr{
+        margin-top: $heightTdThead;
+        height: $heightTdTbody;
+        display: flex;
+        flex-flow: row wrap  ;
+        justify-content: space-around;
+        align-items: center;
+
+        td {
+          height: 100%;
+          font-size: $fontSizeTbody;
+          color: $colorFontBody;
+          display: flex;
+          flex-flow: row wrap;
+          justify-content: center;
+          align-items: center;
+          &:nth-child(1),
+          &:nth-child(7),
+          &:nth-child(8)
+          {
+            width: $widthMin;
+          }
+          &:nth-child(2),
+          &:nth-child(3),
+          &:nth-child(4),
+          &:nth-child(5),
+          &:nth-child(6)
+          {
+            width: $widthMax;
+          }
+          input {
+            font-size: $fontSizeTbody;
+            background-color: yellow;
+            border-radius:$fontSizeTbody ;
+            border: 1px solid blue;
+            
+          }
+        }
+      }
+
+    }
+
+  }
+}
+
+.wrapSquaredBut {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: center;
+  button{
+    width: $sizeButton;
+    height: $sizeButton;
+    background-color: #ffe200;
+    &:hover{
+      cursor: pointer;
+    }
+  }
+}
+.wrapEditHide{
+  display: none;
+}
+.wrapEditVisible {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 9999999;
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0,0,0,0.5);
+}
+.wrapForm {
+  background-image: url("../../img/BackgroundEdit.png");
+  width: 544px;
+  height: 798px;
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+  align-items: center;
+  form{
+    width: 517px;
+    height: 400px;
+    background-color: #e0f5fc;
+    border-radius: 20px;
+    h1 {
+      margin-top: 22px;
+      margin-bottom: 35px;
+      text-transform: uppercase;
+      text-align: center;
+      color:#f8b62d ;
+      font-size: 26px;
+    }
+    .wrapEditLabel {
+      display: flex;
+      flex-flow: row wrap;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 15px;
+        label {
+          display: inline-block;
+          font-size: 18px;
+          color: $colorFontBody;
+          text-transform: uppercase;
+          text-align: left;
+          margin-left: 10px;
+        }
+      input {
+        width: 60%;
+        margin-right: 10px;
+        color: #2ea7e0;
+        font-size: 18px;
+        text-transform: uppercase;
+        text-align: center;
+      }
+    }
+    .wrapEditBut {
+      display: flex;
+      flex-flow: row wrap;
+      justify-content: flex-end;
+      align-items: center;
+      button{
+        width: 120px;
+        height: 50px;
+        border-radius: 25px;
+        background-color: #2ea7e0;
+        color: #ffffff;
+        text-transform: uppercase;
+        font-size: 30px;
+        margin-right: 20px;
+        outline: 1px transparent;
+      }
+    }
+  }
+}
+
+
