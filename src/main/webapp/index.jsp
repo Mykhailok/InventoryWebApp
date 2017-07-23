@@ -2,76 +2,48 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <html>
 <head>
+    <meta charset="UTF-8">
     <title>Inventory</title>
-    <link href="${contextPath}/resources/css/bootstrap.min.css" rel="stylesheet">
-    <link href="${contextPath}/resources/css/common.css" rel="stylesheet">
-
-    <style>
-        body {
-            background-image: url(resources/images/test.jpg);
-            background-repeat: no-repeat;
-            background-color: #ffffff;
-        }
-
-        a.button7 {
-            display: inline-block;
-            color: dodgerblue;
-            height: 40px;
-            width: 100px;
-            font-size: large;
-            text-align: center  ;
-            font-weight: 500;
-            text-decoration: none;
-            user-select: none;
-            position: relative;
-            left: 650px;
-            top: 185px;
-            outline: none;
-            border: 2px solid;
-            border-radius: 1px;
-            transition: 0.2s;
-        }
-        a.button7:hover { background: ghostwhite; }
-        a.button7:active { background: aliceblue; }
-
-
-        hr {
-            position: relative;
-            top: 365px;
-            border: none;
-            background-color: darkslateblue;
-            color: darkslateblue;
-            height: 2px;
-        }
-        .word{
-            color: skyblue;
-        }
-
-        p {
-            position: relative;
-            top: 400px;
-            text-align: center;
-            margin-left: 60px;
-            margin-right: 10px;
-            font-size: 20pt;
-            font-family: Oriya MN;
-            color: lightslategrey;
-        }
-
-    </style>
-
+    <link rel="stylesheet" href="resources/css/homeFonts.css">
+    <link rel="stylesheet" href="resources/css/homeStyle320.css">
+    <link rel="stylesheet" href="resources/css/homeStyle768.css">
+    <link rel="stylesheet" href="resources/css/normalize.css">
+    <%--<link href="${contextPath}/resources/css/bootstrap.min.css" rel="stylesheet">--%>
+    <%--<link href="${contextPath}/resources/css/common.css" rel="stylesheet">--%>
 </head>
 <body>
-
-<a href="<c:url value="/login"/>" class="button7">Start</a>
-<hr>
-<br/>
+<div class="fonIcons">
+    <i class="iconsOne"></i>
+    <i class="iconsTwo"></i>
+    <i class="iconsThree"></i>
+    <i class="iconsFour"></i>
+    <i class="iconsFive"></i>
+    <i class="iconsSix"></i>
+    <i class="iconsSeven"></i>
+    <i class="iconsEight"></i>
+    <i class="iconsNine"></i>
+    <i class="iconsTen"></i>
+    <i class="iconsEleven"></i>
+    <i class="iconsTwelve"></i>
+</div>
+<div class="container">
+    <header  class="header">
+        <%--<a href="login.html" class="inventarium">INVENTARIUM</a>--%>
+        <a href="<c:url value="/login"/>" class="inventarium">INVENTARIUM</a>
+    </header>
+    <main class="main">
+        <p class="text">Inventarium and its channel network provide software  solutions for a number of verticals and industries</p>
+    </main>
+</div>
+<%--<a href="<c:url value="/login"/>" class="button7">Start</a>--%>
+<%--<hr>--%>
+<%--<br/>--%>
 <%--<a href="<c:url value="/registration"/>" target="_blank">Press to Start</a>--%>
-<p>
-    We present you the inventory service.
-    The service will help you keep track of all inventory that will be stored in one convenient place for you.
-    <span class="word">Inventarium</span> provides the ability to add, delete, edit inventory items.
-</p>
+<%--<p>--%>
+    <%--We present you the inventory service.--%>
+    <%--The service will help you keep track of all inventory that will be stored in one convenient place for you.--%>
+    <%--<span class="word">Inventarium</span> provides the ability to add, delete, edit inventory items.--%>
+<%--</p>--%>
 
 
 <%--a href="<c:url value="/products"/>" target="_blank">Product list</a>
@@ -79,5 +51,14 @@
 <br/>
 <a href="<c:url value="/owners"/>" target="_blank">Owner list</a>
 <br/--%>
+<footer class="footer">
+    <ul class="contacts">
+        <li><a href="https://www.facebook.com" target="_blank"><img src="resources/images/1.png" alt=""></a></li>
+        <li><a href="https://twitter.com" target="_blank"><img src="resources/images/2.png" alt=""></a></li>
+        <li><a href="https://plus.google.com" target="_blank"><img src="resources/images/3.png" alt=""></a></li>
+        <li><a href="https://www.instagram.com" target="_blank"><img src="resources/images/4.png" alt=""></a></li>
+        <li><a href="https://www.youtube.com" target="_blank"><img src="resources/images/5.png" alt=""></a></li>
+    </ul>
+</footer>
 </body>
 </html>

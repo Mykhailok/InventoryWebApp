@@ -161,7 +161,7 @@ table {
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  background-image: url("../../img/backroundPage.jpg");
+  background-image: url("../../images/backroundPage.jpg");
   background-size: cover;
   width: 100vw;
   height: 100vh;
@@ -398,7 +398,7 @@ table {
 }
 
 .wrapForm {
-  background-image: url("../../img/BackgroundEdit.png");
+  background-image: url("../../images/BackgroundEdit.png");
   width: 544px;
   height: 798px;
   display: -webkit-box;
