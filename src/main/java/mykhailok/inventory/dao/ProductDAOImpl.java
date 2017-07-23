@@ -12,7 +12,6 @@ import javax.persistence.Query;
 import java.math.BigInteger;
 import java.util.Set;
 
-
 @Repository
 public class ProductDAOImpl extends JpaGenericDAOImpl<Product> implements ProductDAO {
     private Product product;
