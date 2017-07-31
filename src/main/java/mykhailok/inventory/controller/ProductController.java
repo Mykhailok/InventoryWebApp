@@ -31,6 +31,15 @@ public class ProductController {
         return "product";
     }
 
+    @RequestMapping(value = "productAdd", method = RequestMethod.GET)
+    public String ProductAdd(Model model){
+        model.addAttribute("product", new Product());
+        model.addAttribute("listProducts", this.productService.getAll());
+        model.addAttribute("listFullOwners", this.ownerService.getAllOwners());
+        return "productAdd";
+    }
+
+
     @RequestMapping(value = "/products/add", method = RequestMethod.POST)
     public String addProduct(@ModelAttribute("products") Product product, HttpServletRequest request){
         String owner_id = request.getParameter("listOfOwners");
