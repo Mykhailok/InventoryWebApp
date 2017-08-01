@@ -1,4 +1,3 @@
-<%--<jsp:useBean id="_csrf" scope="request" type="org.springframework.web.bind.MissingServletRequestParameterException"/>--%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ taglib uri="http://www.springframework.org/tags" prefix="spring" %>
 <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form" %>
@@ -6,7 +5,6 @@
 <%@ page session="false" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <c:set var="contextPath" value="${pageContext.request.contextPath}"/>
-
 <html>
 <head>
     <meta charset="UTF-8">
@@ -44,12 +42,10 @@
 <%--</select>--%>
 
 <div class="container">
-
-
-    <form   class="wrapBattonAdd" >
-        <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
-        <button class="btnAdd"  href="productData" >add a product +</button>
-    </form>
+    <div class="wrapBattonAdd">
+        <%--<button class="btnAdd">add a product +</button>--%>
+        <a href="<c:url value="${contextPath}/productAdd"/>" class="btnAdd">add a product +</a>
+    </div>
 
 <%--<h1>Product List</h1>--%>
 
@@ -162,16 +158,6 @@
                                 <%--<form:input path="productManufacturer"/>--%>
                             <%--</td>--%>
                         <%--</tr>--%>
-                        <%--&lt;%&ndash;<tr>&ndash;%&gt;--%>
-                            <%--&lt;%&ndash;<td>&ndash;%&gt;--%>
-                                <%--&lt;%&ndash;<form:label path="owner_id">&ndash;%&gt;--%>
-                                    <%--&lt;%&ndash;<spring:message text="Owner"/>&ndash;%&gt;--%>
-                                <%--&lt;%&ndash;</form:label>&ndash;%&gt;--%>
-                            <%--&lt;%&ndash;</td>&ndash;%&gt;--%>
-                            <%--&lt;%&ndash;<td>&ndash;%&gt;--%>
-                                <%--&lt;%&ndash;<form:input path="owner_id"/>&ndash;%&gt;--%>
-                            <%--&lt;%&ndash;</td>&ndash;%&gt;--%>
-                        <%--&lt;%&ndash;</tr>&ndash;%&gt;--%>
                         <%--<tr>--%>
                             <%--<td>--%>
                                 <%--<form:label path="owner_id">--%>
@@ -179,15 +165,6 @@
                                 <%--</form:label>--%>
                             <%--</td>--%>
                             <%--<td>--%>
-
-                                <%--&lt;%&ndash;<select name="listOfOwners">&ndash;%&gt;--%>
-                                    <%--&lt;%&ndash;<option>Choose owner</option>&ndash;%&gt;--%>
-                                    <%--&lt;%&ndash;<c:forEach items="${listProducts}" var="listProducts">&ndash;%&gt;--%>
-                                        <%--&lt;%&ndash;<option value=${listProducts.id} >${listProducts.owners.toString().replaceAll("[\\[\\]]","")}&ndash;%&gt;--%>
-                                        <%--&lt;%&ndash;</option>&ndash;%&gt;--%>
-                                    <%--&lt;%&ndash;</c:forEach>&ndash;%&gt;--%>
-                                <%--&lt;%&ndash;</select>&ndash;%&gt;--%>
-
                                 <%--<select name="listOfOwners">--%>
                                     <%--<option>Choose owner</option>--%>
                                     <%--<c:forEach items="${listFullOwners}" var="listFullOwners">--%>
@@ -200,9 +177,7 @@
 
                             <%--</td>--%>
                         <%--</tr>--%>
-
-
-
+                        <%----%>
                         <%--<tr>--%>
                             <%--<td>--%>
                                 <%--<form:label path="price">--%>
