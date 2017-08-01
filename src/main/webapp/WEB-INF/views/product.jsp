@@ -1,3 +1,4 @@
+<%--<jsp:useBean id="_csrf" scope="request" type="org.springframework.web.bind.MissingServletRequestParameterException"/>--%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ taglib uri="http://www.springframework.org/tags" prefix="spring" %>
 <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form" %>
@@ -5,6 +6,7 @@
 <%@ page session="false" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <c:set var="contextPath" value="${pageContext.request.contextPath}"/>
+
 <html>
 <head>
     <meta charset="UTF-8">
@@ -42,9 +44,12 @@
 <%--</select>--%>
 
 <div class="container">
-    <div class="wrapBattonAdd">
-        <button class="btnAdd">add a product +</button>
-    </div>
+
+
+    <form   class="wrapBattonAdd" >
+        <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
+        <button class="btnAdd"  href="productData" >add a product +</button>
+    </form>
 
 <%--<h1>Product List</h1>--%>
 
@@ -112,51 +117,61 @@
 </c:if>
 
 
-<h1>Add a product</h1>
-    <div class="wrapEditHide" id="wrEdit">
-        <div class="wrapForm">
-        <c:url var="addAction" value="/products/add"/>
+<%--<h1>Add a product</h1>--%>
+    <%--<div class="wrapEditHide" id="wrEdit">--%>
+        <%--<div class="wrapForm">--%>
+        <%--<c:url var="addAction" value="/products/add"/>--%>
 
 
-            <%--<form action="#" class="formEdit">    --%>
+            <%--&lt;%&ndash;<form action="#" class="formEdit">    &ndash;%&gt;--%>
 
-                <form:form action="${addAction}" commandName="product" class="formEdit">
-                    <table>
-                        <c:if test="${!empty product.productName}">
-                            <tr>
-                                <td>
-                                    <div class="wrapEditLabel">
-                                    <form:label class="editInput" path="id">
-                                        <spring:message text="ID"/>
-                                    </form:label>
-                                    </div>
-                                </td>
-                                <td>
-                                    <form:input path="id" readonly="true" size="8" disabled="true"/>
-                                    <form:hidden path="id"/>
-                                </td>
-                            </tr>
-                        </c:if>
-                        <tr>
-                            <td>
-                                <form:label path="productName">
-                                    <spring:message text="Name"/>
-                                </form:label>
-                            </td>
-                            <td>
-                                <form:input path="productName"/>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <form:label path="productManufacturer">
-                                    <spring:message text="Manufacturer"/>
-                                </form:label>
-                            </td>
-                            <td>
-                                <form:input path="productManufacturer"/>
-                            </td>
-                        </tr>
+                <%--<form:form action="${addAction}" commandName="product" class="formEdit">--%>
+                    <%--<table>--%>
+                        <%--<c:if test="${!empty product.productName}">--%>
+                            <%--<tr>--%>
+                                <%--<td>--%>
+                                    <%--<div class="wrapEditLabel">--%>
+                                    <%--<form:label class="editInput" path="id">--%>
+                                        <%--<spring:message text="ID"/>--%>
+                                    <%--</form:label>--%>
+                                    <%--</div>--%>
+                                <%--</td>--%>
+                                <%--<td>--%>
+                                    <%--<form:input path="id" readonly="true" size="8" disabled="true"/>--%>
+                                    <%--<form:hidden path="id"/>--%>
+                                <%--</td>--%>
+                            <%--</tr>--%>
+                        <%--</c:if>--%>
+                        <%--<tr>--%>
+                            <%--<td>--%>
+                                <%--<form:label path="productName">--%>
+                                    <%--<spring:message text="Name"/>--%>
+                                <%--</form:label>--%>
+                            <%--</td>--%>
+                            <%--<td>--%>
+                                <%--<form:input path="productName"/>--%>
+                            <%--</td>--%>
+                        <%--</tr>--%>
+                        <%--<tr>--%>
+                            <%--<td>--%>
+                                <%--<form:label path="productManufacturer">--%>
+                                    <%--<spring:message text="Manufacturer"/>--%>
+                                <%--</form:label>--%>
+                            <%--</td>--%>
+                            <%--<td>--%>
+                                <%--<form:input path="productManufacturer"/>--%>
+                            <%--</td>--%>
+                        <%--</tr>--%>
+                        <%--&lt;%&ndash;<tr>&ndash;%&gt;--%>
+                            <%--&lt;%&ndash;<td>&ndash;%&gt;--%>
+                                <%--&lt;%&ndash;<form:label path="owner_id">&ndash;%&gt;--%>
+                                    <%--&lt;%&ndash;<spring:message text="Owner"/>&ndash;%&gt;--%>
+                                <%--&lt;%&ndash;</form:label>&ndash;%&gt;--%>
+                            <%--&lt;%&ndash;</td>&ndash;%&gt;--%>
+                            <%--&lt;%&ndash;<td>&ndash;%&gt;--%>
+                                <%--&lt;%&ndash;<form:input path="owner_id"/>&ndash;%&gt;--%>
+                            <%--&lt;%&ndash;</td>&ndash;%&gt;--%>
+                        <%--&lt;%&ndash;</tr>&ndash;%&gt;--%>
                         <%--<tr>--%>
                             <%--<td>--%>
                                 <%--<form:label path="owner_id">--%>
@@ -164,79 +179,69 @@
                                 <%--</form:label>--%>
                             <%--</td>--%>
                             <%--<td>--%>
-                                <%--<form:input path="owner_id"/>--%>
-                            <%--</td>--%>
-                        <%--</tr>--%>
-                        <tr>
-                            <td>
-                                <form:label path="owner_id">
-                                    <spring:message text="Owner"/>
-                                </form:label>
-                            </td>
-                            <td>
+
+                                <%--&lt;%&ndash;<select name="listOfOwners">&ndash;%&gt;--%>
+                                    <%--&lt;%&ndash;<option>Choose owner</option>&ndash;%&gt;--%>
+                                    <%--&lt;%&ndash;<c:forEach items="${listProducts}" var="listProducts">&ndash;%&gt;--%>
+                                        <%--&lt;%&ndash;<option value=${listProducts.id} >${listProducts.owners.toString().replaceAll("[\\[\\]]","")}&ndash;%&gt;--%>
+                                        <%--&lt;%&ndash;</option>&ndash;%&gt;--%>
+                                    <%--&lt;%&ndash;</c:forEach>&ndash;%&gt;--%>
+                                <%--&lt;%&ndash;</select>&ndash;%&gt;--%>
 
                                 <%--<select name="listOfOwners">--%>
                                     <%--<option>Choose owner</option>--%>
-                                    <%--<c:forEach items="${listProducts}" var="listProducts">--%>
-                                        <%--<option value=${listProducts.id} >${listProducts.owners.toString().replaceAll("[\\[\\]]","")}--%>
+                                    <%--<c:forEach items="${listFullOwners}" var="listFullOwners">--%>
+                                        <%--<option value=${listFullOwners.id} >${listFullOwners.firstName.toString().replaceAll("[\\[\\]]","")}--%>
+                                                                            <%--${listFullOwners.lastName.toString().replaceAll("[\\[\\]]","")}--%>
                                         <%--</option>--%>
                                     <%--</c:forEach>--%>
                                 <%--</select>--%>
 
-                                <select name="listOfOwners">
-                                    <option>Choose owner</option>
-                                    <c:forEach items="${listFullOwners}" var="listFullOwners">
-                                        <option value=${listFullOwners.id} >${listFullOwners.firstName.toString().replaceAll("[\\[\\]]","")}
-                                                                            ${listFullOwners.lastName.toString().replaceAll("[\\[\\]]","")}
-                                        </option>
-                                    </c:forEach>
-                                </select>
 
-
-                            </td>
-                        </tr>
+                            <%--</td>--%>
+                        <%--</tr>--%>
 
 
 
-                        <tr>
-                            <td>
-                                <form:label path="price">
-                                    <spring:message text="Price"/>
-                                </form:label>
-                            </td>
-                            <td>
-                                <form:input path="price"/>
-                            </td>
-                        </tr>
+                        <%--<tr>--%>
+                            <%--<td>--%>
+                                <%--<form:label path="price">--%>
+                                    <%--<spring:message text="Price"/>--%>
+                                <%--</form:label>--%>
+                            <%--</td>--%>
+                            <%--<td>--%>
+                                <%--<form:input path="price"/>--%>
+                            <%--</td>--%>
+                        <%--</tr>--%>
 
-                        <tr>
-                            <td>
-                                <form:label path="productDescription">
-                                    <spring:message text="Description"/>
-                                </form:label>
-                            </td>
-                            <td>
-                                <form:input path="productDescription"/>
-                            </td>
-                        </tr>
+                        <%--<tr>--%>
+                            <%--<td>--%>
+                                <%--<form:label path="productDescription">--%>
+                                    <%--<spring:message text="Description"/>--%>
+                                <%--</form:label>--%>
+                            <%--</td>--%>
+                            <%--<td>--%>
+                                <%--<form:input path="productDescription"/>--%>
+                            <%--</td>--%>
+                        <%--</tr>--%>
 
-                        <tr>
-                            <td colspan="2">
-                                <c:if test="${!empty product.productName}">
-                                    <input type="submit"
-                                           value="<spring:message text="Edit Product"/>"/>
-                                </c:if>
-                                <c:if test="${empty product.productName}">
-                                    <input type="submit"
-                                           value="<spring:message text="Add Product"/>"/>
-                                </c:if>
-                            </td>
-                        </tr>
-                    </table>
-                </form:form>
-            <%--</form>--%>
-        </div>
-    </div>
+                        <%--<tr>--%>
+                            <%--<td colspan="2">--%>
+                                <%--<c:if test="${!empty product.productName}">--%>
+                                    <%--<input type="submit"--%>
+                                           <%--value="<spring:message text="Edit Product"/>"/>--%>
+                                <%--</c:if>--%>
+                                <%--<c:if test="${empty product.productName}">--%>
+                                    <%--<input type="submit"--%>
+                                           <%--value="<spring:message text="Add Product"/>"/>--%>
+                                <%--</c:if>--%>
+                            <%--</td>--%>
+                        <%--</tr>--%>
+                    <%--</table>--%>
+                <%--</form:form>--%>
+            <%--&lt;%&ndash;</form>&ndash;%&gt;--%>
+        <%--</div>--%>
+    <%--</div>--%>
 </div>
 <script src="${contextPath}/resources/js/jquery-3.2.1.min.js"></script>
 <script src="${contextPath}/resources/js/lodash.js"></script>
