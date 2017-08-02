@@ -9,15 +9,16 @@
 <head>
     <meta charset="UTF-8">
     <title>Add a product</title>
-    <link rel="stylesheet" href="${contextPath}/resources/css/reset.css">
-    <link rel="stylesheet" href="${contextPath}/resources/css/font.css">
-    <link rel="stylesheet" href="${contextPath}/resources/css/styleProduct.css">
+    <link rel="stylesheet" href="/resources/css/reset.css">
+    <link rel="stylesheet" href="/resources/css/font.css">
+    <link rel="stylesheet" href="/resources/css/styleProduct.css">
 </head>
 <body>
 <c:forEach items="${listProducts}" var="product">
 </c:forEach>
 <div class="container">
-    <h1>Add a product</h1>
+
+    <%--<h1>Add a product</h1>--%>
     <%--<div class="wrapEditHide" id="wrEdit">--%>
         <div class="wrapForm">
             <c:url var="addAction" value="/products/add"/>
@@ -44,9 +45,11 @@
                     </c:if>
                     <tr>
                         <td>
-                            <form:label path="productName">
-                                <spring:message text="Name"/>
-                            </form:label>
+                            <div class="wrapEditLabel">
+                                <form:label path="productName">
+                                    <spring:message text="Name"/>
+                                </form:label>
+                            </div>
                         </td>
                         <td>
                             <form:input path="productName"/>
