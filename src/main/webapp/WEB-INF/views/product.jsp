@@ -96,7 +96,8 @@
                 <td>
                     <div class="wrapSquaredBut">
                         <%--<a href="<c:url value='/editProduct/${product.id}'/>">Edit</a>--%>
-                        <button class="btnShowEditPage" value="/editProduct/${product.id}" data-value="/editProduct/${product.id}"></button>
+                        <%--<button class="btnShowEditPage" value="/editProduct/${product.id}" data-value="/editProduct/${product.id}"></button>--%>
+                            <a href="<c:url value='${contextPath}/productEdit/${product.id}'/>" class="btnShowEditPage">Edit</a>
                     </div>
                 </td>
                 <td>
@@ -177,7 +178,7 @@
 
                             <%--</td>--%>
                         <%--</tr>--%>
-                        <%----%>
+
                         <%--<tr>--%>
                             <%--<td>--%>
                                 <%--<form:label path="price">--%>

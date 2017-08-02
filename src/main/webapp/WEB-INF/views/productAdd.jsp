@@ -65,16 +65,7 @@
                             <form:input path="productManufacturer"/>
                         </td>
                     </tr>
-                        <%--<tr>--%>
-                        <%--<td>--%>
-                        <%--<form:label path="owner_id">--%>
-                        <%--<spring:message text="Owner"/>--%>
-                        <%--</form:label>--%>
-                        <%--</td>--%>
-                        <%--<td>--%>
-                        <%--<form:input path="owner_id"/>--%>
-                        <%--</td>--%>
-                        <%--</tr>--%>
+
                     <tr>
                         <td>
                             <form:label path="owner_id">
@@ -82,14 +73,6 @@
                             </form:label>
                         </td>
                         <td>
-
-                                <%--<select name="listOfOwners">--%>
-                                <%--<option>Choose owner</option>--%>
-                                <%--<c:forEach items="${listProducts}" var="listProducts">--%>
-                                <%--<option value=${listProducts.id} >${listProducts.owners.toString().replaceAll("[\\[\\]]","")}--%>
-                                <%--</option>--%>
-                                <%--</c:forEach>--%>
-                                <%--</select>--%>
 
                             <select name="listOfOwners">
                                 <option>Choose owner</option>
@@ -103,8 +86,6 @@
 
                         </td>
                     </tr>
-
-
 
                     <tr>
                         <td>
