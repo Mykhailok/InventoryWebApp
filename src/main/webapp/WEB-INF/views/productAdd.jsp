@@ -115,16 +115,17 @@
                     <form:input path="price" name="productPrice" placeholder="PRICE"/>
                     <%--<input type="text" name="productDescription" placeholder="DESCRIPTION" required>--%>
                     <form:input path="productDescription" name="productDescription" placeholder="DESCRIPTION"/>
+                    <c:if test="${!empty product.productName}">
+                        <input type="submit"
+                               value="<spring:message text="Edit Product"/>"/>
+                    </c:if>
+                    <c:if test="${empty product.productName}">
+                        <input type="submit"
+                               value="<spring:message text="ADD"/>"/>
+                    </c:if>
                 </form:form>
                 <%--<button type="submit" form="add_product">ADD</button>--%>
-                <c:if test="${!empty product.productName}">
-                    <input type="submit"
-                           value="<spring:message text="Edit Product"/>"/>
-                </c:if>
-                <c:if test="${empty product.productName}">
-                    <input type="submit"
-                           value="<spring:message text="ADD"/>"/>
-                </c:if>
+
             </div>
         </div>
     </div>
