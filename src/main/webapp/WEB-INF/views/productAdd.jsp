@@ -56,7 +56,7 @@
                 </ul>
             </nav>
             <nav class="header__menu-drop menu-drop menu">
-                <img class="main-menu__drop" src="images/menu_button.png" alt="menu">
+                <img class="main-menu__drop" src="/resources/images/menu_button.png" alt="menu">
                 <ul class="menu-drop__list resp__menu">
                     <li class="menu-drop__item">
                         <a href="#" class="menu__link">
