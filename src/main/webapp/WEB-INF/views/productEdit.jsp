@@ -79,6 +79,7 @@
                                 <c:forEach items="${listFullOwners}" var="listFullOwners">
                                     <option value=${listFullOwners.id} >${listFullOwners.firstName.toString().replaceAll("[\\[\\]]","")}
                                             ${listFullOwners.lastName.toString().replaceAll("[\\[\\]]","")}
+                                        <%--selected="${product.owners}"--%>
                                     </option>
                                 </c:forEach>
                             </select>

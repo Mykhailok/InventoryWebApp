@@ -28,8 +28,10 @@
   text-align: center;
   color: #2ea7e0;
   border-radius: 20px;
-  outline: 1px transparent; }
+  outline: 1px transparent;
+  transition: all .5s ease-in;}
   .btnAdd:hover {
+    background: #fdff00;
     cursor: pointer; }
 
 .wrapTable {
@@ -46,7 +48,7 @@
     .wrapTable .table .thead {
       border-radius: 40px;
       position: fixed;
-      top: 80px;
+      top: 95px;
       left: 2.5%;
       width: 95%; }
       .wrapTable .table .thead tr {
@@ -117,7 +119,18 @@
     .wrapSquaredBut button:hover {
       cursor: pointer;
       background-color: #2ea7e0; }
-
+  .delBtn,
+  .btnShowEditPage {
+    width: 29px;
+    height: 29px;
+    background-color: #ffe200;
+    border: 2px outset #e1d2d2;
+    transition: all .3s ease-in;
+  }
+  .delBtn:hover,
+  .btnShowEditPage:hover {
+    background: #2ea7e0;
+  }
 .wrapEditHide {
   display: none; }
 
