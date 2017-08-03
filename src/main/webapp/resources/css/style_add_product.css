@@ -274,7 +274,7 @@ option {
 	/*padding-left: calc(50% - 1em);*/
 }
 
-button {
+input[type=submit] {
 	background: #2ea7e0;
 	border: 2px solid #2ea7e0;
 	-moz-border-radius: 25px;
@@ -289,7 +289,7 @@ button {
 	padding: 1.125rem 2rem;
 }
 
-button:hover {
+input[type=submit]:hover {
 	background: #f8b62d;
 }
 

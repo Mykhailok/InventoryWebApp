@@ -87,17 +87,44 @@
                 <%--<form id="add_product" action="#">--%>
                 <form:form action="${addAction}" commandName="product" class="formEdit">
                     <h1>ADD A PRODUCT</h1>
-                    <input type="text" name="productName" placeholder="NAME" required>
-                    <input type="text" name="productManufacturer" placeholder="MANUFACTURE" required>
-                    <input type="text" name="productOwner" placeholder="OWNER" required>
-                    <select name="CHOOSE OWNER" form="add_product" required>
-                        <option selected="selected">Choose Owner</option>
-                        <option>user</option>
+                    <c:if test="${!empty product.productName}">
+                        <form:label class="editInput" path="id">
+                            <spring:message text="ID"/>
+                        </form:label>
+                        <form:input path="id" readonly="true" size="8" disabled="true"/>
+                        <form:hidden path="id"/>
+                    </c:if>
+                    <%--<input type="text" name="productName" placeholder="NAME" required>--%>
+                    <form:input path="productName" name="productName" placeholder="NAME"/>
+                    <%--<input type="text" name="productManufacturer" placeholder="MANUFACTURE" required>--%>
+                    <form:input path="productManufacturer" name="productManufacturer" placeholder="MANUFACTURE"/>
+                    <input type="text" name="productOwner"  placeholder="OWNER" required>
+                    <%--<select name="CHOOSE OWNER" form="add_product" required>--%>
+                        <%--<option selected="selected">Choose Owner</option>--%>
+                        <%--<option>user</option>--%>
+                    <%--</select>--%>
+                    <select name="listOfOwners">
+                        <option>Choose owner</option>
+                        <c:forEach items="${listFullOwners}" var="listFullOwners">
+                            <option value=${listFullOwners.id} >${listFullOwners.firstName.toString().replaceAll("[\\[\\]]","")}
+                                    ${listFullOwners.lastName.toString().replaceAll("[\\[\\]]","")}
+                            </option>
+                        </c:forEach>
                     </select>
-                    <input type="text" name="productPrice" placeholder="PRICE" required>
-                    <input type="text" name="productDescription" placeholder="DESCRIPTION" required>
+                    <%--<input type="text" name="productPrice" placeholder="PRICE" required>--%>
+                    <form:input path="price" name="productPrice" placeholder="PRICE"/>
+                    <%--<input type="text" name="productDescription" placeholder="DESCRIPTION" required>--%>
+                    <form:input path="productDescription" name="productDescription" placeholder="DESCRIPTION"/>
                 </form:form>
-                <button type="submit" form="add_product">ADD</button>
+                <%--<button type="submit" form="add_product">ADD</button>--%>
+                <c:if test="${!empty product.productName}">
+                    <input type="submit"
+                           value="<spring:message text="Edit Product"/>"/>
+                </c:if>
+                <c:if test="${empty product.productName}">
+                    <input type="submit"
+                           value="<spring:message text="ADD"/>"/>
+                </c:if>
             </div>
         </div>
     </div>
