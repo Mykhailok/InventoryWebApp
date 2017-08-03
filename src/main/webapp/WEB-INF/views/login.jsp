@@ -36,6 +36,7 @@
 
                 <div class="form-group ${error != null ? 'has-error' : ''}">
                     <span>${message}</span>
+                </div>
                         <h1>log in to your account</h1>
                         <input name="username" type="text" class="form-control" placeholder="USERNAME" autofocus="true"/>
                         <input name="password" type="password" class="form-control" placeholder="PASSWORD"/>
@@ -51,7 +52,7 @@
 
                         <%--<button class="btn btn-lg btn-primary btn-block" type="submit">Log In</button>--%>
                         <%--<h4 class="text-center"><a href="${contextPath}/registration">Create an account</a></h4>--%>
-                </div>
+
             </form>
         <%--</form>--%>
 

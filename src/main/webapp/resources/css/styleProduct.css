@@ -19,10 +19,13 @@
 .btnAdd {
   margin-left: 50px;
   width: 200px;
-  height: 30px;
+  padding: 6px 0;
+  display: block;
+  border: 2px solid #b9aaaa;
   background-color: #ffc200;
   font-size: 18px;
   text-transform: uppercase;
+  text-align: center;
   color: #2ea7e0;
   border-radius: 20px;
   outline: 1px transparent; }
