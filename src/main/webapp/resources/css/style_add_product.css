@@ -161,8 +161,6 @@ body {
 
 /*MENU*/
 
-
-
 .menu {
 	display: block;
 	height: 117px;
@@ -209,6 +207,7 @@ body {
 }
 
 /*ADD PRODUCT*/
+
 .add_product {
 	background-color: rgba(218, 244, 252, 0.8);
 	border-radius: 20px;
@@ -236,7 +235,13 @@ input[type='text'] {
 	width: 95%;
 }
 
-input[type='text']:nth-child(4) {
+.owner {
+	background-color: rgba(0, 0, 0, 0);
+	border: none;
+	border-bottom: 2px solid #2ea7e0;
+	font: 14px 'SFUIDisplayLight', sans-serif;
+	padding-top: 0.1rem;
+	outline: none;
 	margin: 0 1% 0 0;
 	width: 20%;
 }
@@ -246,7 +251,7 @@ select {
 	border-radius: 0.75rem;
 	height: 24px;
 	outline: none;
-	width: 73%;
+	width: 80%;
 	/*отменяем стандартное отображение select'а*/
 	/*for WebKit*/
 	-webkit-appearance: none;

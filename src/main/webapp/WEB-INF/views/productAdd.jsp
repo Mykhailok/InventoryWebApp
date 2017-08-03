@@ -34,22 +34,22 @@
             <nav class="menu">
                 <ul class="menu__list resp__menu">
                     <li class="menu__item">
-                        <a href="#" class="menu__link">
+                        <a href="<c:url value="/users"/>" class="menu__link">
                             <div class="users_menu icon_menu"></div>
                         </a>
                     </li>
                     <li class="menu__item">
-                        <a href="#" class="menu__link">
+                        <a href="<c:url value="/owners"/>" class="menu__link">
                             <div class="owners_menu icon_menu"></div>
                         </a>
                     </li>
                     <li class="menu__item">
-                        <a href="#" class="menu__link">
+                        <a href="<c:url value="/admin"/>" class="menu__link">
                             <div class="admin_menu icon_menu"></div>
                         </a>
                     </li>
                     <li class="menu__item">
-                        <a href="#" class="menu__link">
+                        <a href="<c:url value="/"/>" class="menu__link">
                             <div class="main_menu icon_menu"></div>
                         </a>
                     </li>
@@ -59,22 +59,22 @@
                 <img class="main-menu__drop" src="/resources/images/menu_button.png" alt="menu">
                 <ul class="menu-drop__list resp__menu">
                     <li class="menu-drop__item">
-                        <a href="#" class="menu__link">
+                        <a href="<c:url value="/users"/>" class="menu__link">
                             <div class="users_menu"></div>
                         </a>
                     </li>
                     <li class="menu-drop__item">
-                        <a href="#" class="menu__link">
+                        <a href="<c:url value="/owners"/>" class="menu__link">
                             <div class="owners_menu"></div>
                         </a>
                     </li>
                     <li class="menu-drop__item">
-                        <a href="#" class="menu__link">
+                        <a href="<c:url value="/admin"/>" class="menu__link">
                             <div class="admin_menu"></div>
                         </a>
                     </li>
                     <li class="menu-drop__item">
-                        <a href="#" class="menu__link">
+                        <a href="<c:url value="/"/>" class="menu__link">
                             <div class="main_menu"></div>
                         </a>
                     </li>
@@ -98,7 +98,8 @@
                     <form:input path="productName" name="productName" placeholder="NAME"/>
                     <%--<input type="text" name="productManufacturer" placeholder="MANUFACTURE" required>--%>
                     <form:input path="productManufacturer" name="productManufacturer" placeholder="MANUFACTURE"/>
-                    <input type="text" name="productOwner"  placeholder="OWNER" required>
+                    <%--<input type="text" name="productOwner"  placeholder="OWNER" required>--%>
+                    <span class="owner">OWNER</span>
                     <%--<select name="CHOOSE OWNER" form="add_product" required>--%>
                         <%--<option selected="selected">Choose Owner</option>--%>
                         <%--<option>user</option>--%>
