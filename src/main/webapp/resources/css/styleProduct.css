@@ -5,8 +5,8 @@
   flex-flow: column wrap;
   justify-content: flex-start;
   align-items: center;
-  background-image: url("../images/backroundPage.jpg");
-  background-size: cover;
+  /*background-image: url("../images/backroundPage.jpg");*/
+  /*background-size: cover;*/
   width: 100vw;
   height: 100vh;
   font-family: 'SF UI Display', serif; }
