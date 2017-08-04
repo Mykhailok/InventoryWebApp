@@ -239,6 +239,7 @@ input[type='text'] {
 	background-color: rgba(0, 0, 0, 0);
 	border: none;
 	border-bottom: 2px solid #2ea7e0;
+	color: #7f7f7f;
 	font: 14px 'SFUIDisplayLight', sans-serif;
 	padding-top: 0.1rem;
 	outline: none;
@@ -277,6 +278,10 @@ option {
 	text-align: center;
 	text-align-last: center;
 	/*padding-left: calc(50% - 1em);*/
+}
+
+input[type='text']:nth-child(5) {
+	margin: 3px 0 0 0;
 }
 
 input[type=submit] {
