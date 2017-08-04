@@ -122,7 +122,7 @@
                     </c:if>
                     <c:if test="${empty product.productName}">
                         <input type="submit"
-                               value="<spring:message text="ADD"/>"/>
+                               value="<spring:message text="ADD PRODUCT"/>"/>
                     </c:if>
                     <%--<form method="LINK" action="<c:url value="${contextPath}/product"/>">
                         <input type="submit" value="CANCEL" class="btnCancel">
