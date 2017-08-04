@@ -390,11 +390,19 @@ h1 {
 		width: 300px;
 	}
 
+	select {
+		width: 73%;
+	}
+
 }
 
 @media screen and (min-width: 480px) {
 	.add_product {
 		width: 29rem;
+	}
+
+	select {
+		width: 80%;
 	}
 }
 
