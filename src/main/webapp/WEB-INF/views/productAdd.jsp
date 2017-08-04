@@ -127,11 +127,11 @@
                     <%--<form method="LINK" action="<c:url value="${contextPath}/product"/>">
                         <input type="submit" value="CANCEL" class="btnCancel">
                     </form>--%>
+                    <div class="battonCancel">
+                        <a href="<c:url value="${contextPath}/products"/>" class="btnCancel">CANCEL</a>
+                    </div>
                 </form:form>
-                <%--<button type="submit" form="add_product">ADD</button>--%>                
-                <div class="battonCancel">        
-                    <a href="<c:url value="${contextPath}/product"/>" class="btnCancel">Cancel</a>
-                </div>
+            <%--<button type="submit" form="add_product">ADD</button>--%>
             </div>
         </div>
     </div>

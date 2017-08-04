@@ -308,6 +308,7 @@ input[type=submit] {
 	margin: 20px 0 5px 0;
 	outline: none;
 	padding: 1.125rem 2rem;
+	text-decoration: none;
 }
 
 .btnCancel:hover {
