@@ -86,7 +86,7 @@
                 <c:url var="addAction" value="/products/add"/>
                 <%--<form id="add_product" action="#">--%>
                 <form:form action="${addAction}" commandName="product" class="formEdit">
-                    <h1>ADD A PRODUCT</h1>
+                    <h1>ADD PRODUCT</h1>
                     <c:if test="${!empty product.productName}">
                         <form:label class="editInput" path="id">
                             <spring:message text="ID"/>
