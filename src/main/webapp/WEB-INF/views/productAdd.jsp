@@ -126,7 +126,9 @@
                     </c:if>
                 </form:form>
                 <%--<button type="submit" form="add_product">ADD</button>--%>
-
+                <div class="battonCancel">        
+                    <a href="<c:url value="${contextPath}/product"/>" class="btnCancel">Cancel</a>
+                </div>
             </div>
         </div>
     </div>
