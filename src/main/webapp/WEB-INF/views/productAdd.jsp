@@ -124,8 +124,11 @@
                         <input type="submit"
                                value="<spring:message text="ADD"/>"/>
                     </c:if>
+                    <%--<form method="LINK" action="<c:url value="${contextPath}/product"/>">
+                        <input type="submit" value="CANCEL" class="btnCancel">
+                    </form>--%>
                 </form:form>
-                <%--<button type="submit" form="add_product">ADD</button>--%>
+                <%--<button type="submit" form="add_product">ADD</button>--%>                
                 <div class="battonCancel">        
                     <a href="<c:url value="${contextPath}/product"/>" class="btnCancel">Cancel</a>
                 </div>
