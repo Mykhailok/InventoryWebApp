@@ -243,7 +243,7 @@ input[type='text'] {
 	font: 14px 'SFUIDisplayLight', sans-serif;
 	padding-top: 0.1rem;
 	outline: none;
-	margin: 0 1% 0 0;
+	margin: 0 1% 11px 0;
 	width: 20%;
 }
 
@@ -278,10 +278,6 @@ option {
 	text-align: center;
 	text-align-last: center;
 	/*padding-left: calc(50% - 1em);*/
-}
-
-input[type='text']:nth-child(5) {
-	margin: 3px 0 0 0;
 }
 
 input[type=submit] {
@@ -394,11 +390,19 @@ h1 {
 		width: 300px;
 	}
 
+	select {
+		width: 73%;
+	}
+
 }
 
 @media screen and (min-width: 480px) {
 	.add_product {
 		width: 29rem;
+	}
+
+	select {
+		width: 80%;
 	}
 }
 
