@@ -25,6 +25,17 @@
     <i class="iconsTen"></i>
     <i class="iconsEleven"></i>
     <i class="iconsTwelve"></i>
+    <i class="iconThirteen"></i>
+    <i class="iconFourteen"></i>
+    <i class="iconFifteen"></i>
+    <i class="iconSixteen"></i>
+    <i class="iconSeventeen"></i>
+    <i class="iconEighteen"></i>
+    <i class="iconNineteen"></i>
+    <i class="iconTwenty"></i>
+    <i class="iconTwentyOne"></i>
+    <i class="iconTwentyTwo"></i>
+    <i class="iconTwentyThree"></i>
 </div>
 <div class="container">
     <header  class="header">

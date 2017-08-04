@@ -12,9 +12,34 @@
     <link rel="stylesheet" href="${contextPath}/resources/css/reset.css">
     <link rel="stylesheet" href="${contextPath}/resources/css/font.css">
     <link rel="stylesheet" href="${contextPath}/resources/css/styleProduct.css">
+    <link rel="stylesheet" href="${contextPath}/resources/css/fonIcons.css">
 </head>
 <body>
-
+<div class="fonIcons">
+    <i class="iconsOne"></i>
+    <i class="iconsTwo"></i>
+    <i class="iconsThree"></i>
+    <i class="iconsFour"></i>
+    <i class="iconsFive"></i>
+    <i class="iconsSix"></i>
+    <i class="iconsSeven"></i>
+    <i class="iconsEight"></i>
+    <i class="iconsNine"></i>
+    <i class="iconsTen"></i>
+    <i class="iconsEleven"></i>
+    <i class="iconsTwelve"></i>
+    <i class="iconThirteen"></i>
+    <i class="iconFourteen"></i>
+    <i class="iconFifteen"></i>
+    <i class="iconSixteen"></i>
+    <i class="iconSeventeen"></i>
+    <i class="iconEighteen"></i>
+    <i class="iconNineteen"></i>
+    <i class="iconTwenty"></i>
+    <i class="iconTwentyOne"></i>
+    <i class="iconTwentyTwo"></i>
+    <i class="iconTwentyThree"></i>
+</div>
 
 <%--<h2>Welcome ${pageContext.request.userPrincipal.name}</a></h2>--%>
 <%--<a href="${contextPath}">Back to main menu</a>--%>
