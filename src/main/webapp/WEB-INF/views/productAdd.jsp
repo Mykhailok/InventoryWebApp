@@ -66,31 +66,31 @@
                     </li>
                 </ul>
             </nav>
-            <nav class="header__menu-drop menu-drop menu">
-                <img class="main-menu__drop" src="/resources/images/menu_button.png" alt="menu">
-                <ul class="menu-drop__list resp__menu">
-                    <li class="menu-drop__item">
-                        <a href="<c:url value="/users"/>" class="menu__link">
-                            <div class="users_menu"></div>
-                        </a>
-                    </li>
-                    <li class="menu-drop__item">
-                        <a href="<c:url value="/owners"/>" class="menu__link">
-                            <div class="owners_menu"></div>
-                        </a>
-                    </li>
-                    <li class="menu-drop__item">
-                        <a href="<c:url value="/admin"/>" class="menu__link">
-                            <div class="admin_menu"></div>
-                        </a>
-                    </li>
-                    <li class="menu-drop__item">
-                        <a href="<c:url value="/"/>" class="menu__link">
-                            <div class="main_menu"></div>
-                        </a>
-                    </li>
-                </ul>
-            </nav>
+            <%--<nav class="header__menu-drop menu-drop menu">--%>
+                <%--<img class="main-menu__drop" src="/resources/images/menu_button.png" alt="menu">--%>
+                <%--<ul class="menu-drop__list resp__menu">--%>
+                    <%--<li class="menu-drop__item">--%>
+                        <%--<a href="<c:url value="/users"/>" class="menu__link">--%>
+                            <%--<div class="users_menu"></div>--%>
+                        <%--</a>--%>
+                    <%--</li>--%>
+                    <%--<li class="menu-drop__item">--%>
+                        <%--<a href="<c:url value="/owners"/>" class="menu__link">--%>
+                            <%--<div class="owners_menu"></div>--%>
+                        <%--</a>--%>
+                    <%--</li>--%>
+                    <%--<li class="menu-drop__item">--%>
+                        <%--<a href="<c:url value="/admin"/>" class="menu__link">--%>
+                            <%--<div class="admin_menu"></div>--%>
+                        <%--</a>--%>
+                    <%--</li>--%>
+                    <%--<li class="menu-drop__item">--%>
+                        <%--<a href="<c:url value="/"/>" class="menu__link">--%>
+                            <%--<div class="main_menu"></div>--%>
+                        <%--</a>--%>
+                    <%--</li>--%>
+                <%--</ul>--%>
+            <%--</nav>--%>
         </header>
         <div class="content__container">
             <div class="add_product">

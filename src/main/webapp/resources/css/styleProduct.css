@@ -5,6 +5,7 @@
   flex-flow: column wrap;
   justify-content: flex-start;
   align-items: center;
+  background: linear-gradient(60deg, #00b9e9, #acdcf8);
   /*background-image: url("../images/backroundPage.jpg");*/
   /*background-size: cover;*/
   width: 100vw;
@@ -17,11 +18,13 @@
   text-align: left; }
 
 .btnAdd {
-  margin-left: 50px;
+  position: absolute;
+  top: 100px;
+  left: 23px;
   width: 200px;
   padding: 6px 0;
   display: block;
-  border: 2px solid #b9aaaa;
+  border: 2px outset #dfcdcd;
   background-color: #ffc200;
   font-size: 18px;
   text-transform: uppercase;
@@ -29,15 +32,16 @@
   color: #2ea7e0;
   border-radius: 20px;
   outline: 1px transparent;
-  transition: all .5s ease-in;}
-  .btnAdd:hover {
-    background: #fdff00;
-    cursor: pointer; }
+  transition: all .5s ease-in;
+}
+.btnAdd:hover {
+  background: #fdff00;
+  cursor: pointer; }
 
 .wrapTable {
   width: 100%;
   margin-top: 40px;
-  height: 80%;
+  height: 69%;
   display: flex;
   flex-flow: column wrap;
   justify-content: flex-start;
@@ -48,7 +52,7 @@
     .wrapTable .table .thead {
       border-radius: 40px;
       position: fixed;
-      top: 95px;
+      top: 159px;
       left: 2.5%;
       width: 95%; }
       .wrapTable .table .thead tr {
@@ -214,3 +218,254 @@
           color: #2ea7e0; }
 
 /*# sourceMappingURL=styleProduct.css.map */
+
+.mainNav {
+  padding: 20px 0;
+  margin-left: 50px;
+  z-index: 50;
+}
+
+.main-nav-link {
+  display: inline-block;
+  width: 116px;
+  height: 116px;
+  color: #2ea7e0;
+  padding-top: 90px;
+  margin-right: 10px;
+  background: #ffe000;
+  border-radius: 50%;
+  font-family: 'SFUIDisplay-Light', sans-serif;
+  font-size: 12px;
+  text-align: center;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: all .5s ease-in;
+}
+
+.main-nav-link:hover {
+  color: #fdff00;
+  box-shadow: 0 0 35px #fdff00;
+}
+
+.main-nav-link.main-menu {
+  background: url(../images/main_menu4.png) center center no-repeat, #ffb600;
+}
+
+.main-nav-link.admin {
+  background: url(../images/admin1.png) center 20px no-repeat, #ffb600;
+}
+
+.main-nav-link.users {
+  background: url(../images/user.png) center center no-repeat, #ffe000;
+}
+
+.main-nav-link.owners {
+  background: url(../images/owner.png) center center no-repeat, #ffe000;
+}
+
+.iconsOne {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  background: url(../images/icons.png) 0 0 no-repeat;
+  right: 0;
+  top: 20%;
+}
+
+.iconsTwo {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  background: url(../images/icons.png) -60px 0 no-repeat;
+  left: 40%;
+  top: 1%;
+}
+
+.iconsThree {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  background: url(../images/icons.png) -120px 0 no-repeat;
+  left: 1%;
+  top: 42%;
+}
+
+.iconsFour {
+  position: absolute;
+  width: 60px;
+  height: 50px;
+  background: url(../images/icons.png) -185px 0 no-repeat;
+  left: 3%;
+  bottom: 0.5%;
+}
+
+.iconsFive {
+  position: absolute;
+  width: 60px;
+  height: 50px;
+  background: url(../images/icons.png) -255px 0 no-repeat;
+  right: 2%;
+  bottom: 30%;
+}
+
+.iconsSix {
+  position: absolute;
+  width: 40px;
+  height: 50px;
+  background: url(../images/icons.png) -320px 0 no-repeat;
+  left: 0;
+  top: 70%;
+}
+
+.iconsSeven {
+  position: absolute;
+  width: 40px;
+  height: 50px;
+  background: url(../images/icons.png) 0 -80px no-repeat;
+  left: 15%;
+  top: 2%;
+}
+
+.iconsEight {
+  position: absolute;
+  width: 50px;
+  height: 40px;
+  background: url(../images/icons.png) -50px -80px no-repeat;
+  right: 5%;
+  bottom: 0;
+}
+
+.iconsNine {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  background: url(../images/icons.png) -100px -73px no-repeat;
+  right: 4%;
+  top: 44%;
+}
+
+.iconsTen {
+  position: absolute;
+  width: 55px;
+  height: 50px;
+  background: url(../images/icons.png) -165px -70px no-repeat;
+  left: 72%;
+  top: 6%;
+}
+
+.iconsEleven {
+  position: absolute;
+  width: 60px;
+  height: 50px;
+  background: url(../images/icons.png) -238px -65px no-repeat;
+  left: 0;
+  top: 17%;
+}
+
+.iconsTwelve {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  background: url(../images/icons.png) -290px -65px no-repeat;
+  right: 0;
+  top: 0;
+}
+
+.iconThirteen {
+  position: absolute;
+  width: 33px;
+  height: 22px;
+  background: url(../images/loginSprite.png) 0 0 no-repeat;
+  left: 34%;
+  top: 24%;
+}
+
+.iconFourteen {
+  position: absolute;
+  width: 33px;
+  height: 22px;
+  background: url(../images/loginSprite.png) -196px 0 no-repeat;
+  left: 12%;
+  top: 30%;
+}
+
+.iconFifteen {
+  position: absolute;
+  width: 33px;
+  height: 22px;
+  background: url(../images/loginSprite.png) 0 0 no-repeat;
+  left: 28%;
+  top: 9%;
+}
+
+.iconSixteen {
+  position: absolute;
+  width: 48px;
+  height: 31px;
+  background: url(../images/loginSprite.png) -146px 0 no-repeat;
+  left: 83%;
+  top: 4%;
+}
+
+.iconSeventeen {
+  position: absolute;
+  width: 33px;
+  height: 22px;
+  background: url(../images/loginSprite.png) -196px 0 no-repeat;
+  right: 30%;
+  top: 19%;
+}
+
+.iconEighteen {
+  position: absolute;
+  width: 33px;
+  height: 22px;
+  background: url(../images/loginSprite.png) -196px 0 no-repeat;
+  right: 15%;
+  top: 36%;
+}
+
+.iconNineteen {
+  position: absolute;
+  width: 47px;
+  height: 31px;
+  background: url(../images/loginSprite.png) -51px -49px no-repeat;
+  right: 20%;
+  top: 52%;
+}
+
+.iconTwenty {
+  position: absolute;
+  width: 33px;
+  height: 22px;
+  background: url(../images/loginSprite.png) -196px 0 no-repeat;
+  left: 21%;
+  bottom: 39%;
+}
+
+.iconTwentyOne {
+  position: absolute;
+  width: 47px;
+  height: 31px;
+  background: url(../images/loginSprite.png) -146px 0 no-repeat;
+  left: 19%;
+  bottom: 12%;
+}
+
+.iconTwentyTwo {
+  position: absolute;
+  width: 33px;
+  height: 22px;
+  background: url(../images/loginSprite.png) 0 0 no-repeat;
+  right: 39%;
+  bottom: 16%;
+}
+
+.iconTwentyThree {
+  position: absolute;
+  width: 47px;
+  height: 31px;
+  background: url(../images/loginSprite.png) -51px -49px no-repeat;
+  right: 26%;
+  bottom: 14%;
+}

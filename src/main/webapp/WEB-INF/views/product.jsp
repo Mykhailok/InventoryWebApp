@@ -67,10 +67,14 @@
 <%--</select>--%>
 
 <div class="container">
-    <div class="wrapBattonAdd">
         <%--<button class="btnAdd">add a product +</button>--%>
         <a href="<c:url value="${contextPath}/productAdd"/>" class="btnAdd">add a product +</a>
-    </div>
+            <nav class="mainNav">
+                <a href="<c:url value="/"/>" class="main-nav-link main-menu">Main menu</a>
+                <a href="<c:url value="/admin"/>" class="main-nav-link admin">Admin</a>
+                <a href="<c:url value="/owners"/>" class="main-nav-link owners">Owners</a>
+                <a href="<c:url value="/users"/>" class="main-nav-link users">Users</a>
+            </nav>
 
 <%--<h1>Product List</h1>--%>
 
