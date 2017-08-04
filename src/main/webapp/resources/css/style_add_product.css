@@ -295,6 +295,25 @@ input[type=submit] {
 	padding: 1.125rem 2rem;
 }
 
+.btnCancel {
+	background: #2ea7e0;
+	border: 2px solid #2ea7e0;
+	-moz-border-radius: 25px;
+	-webkit-border-radius: 25px;
+	border-radius: 25px;
+	color: #fff;
+	cursor: pointer;
+	font: 0.8rem 'SFUIDisplayRegular', sans-serif;
+	float: left;
+	margin: 20px 0 5px 0;
+	outline: none;
+	padding: 1.125rem 2rem;
+}
+
+.btnCancel:hover {
+	background: #f8b62d;
+}
+
 input[type=submit]:hover {
 	background: #f8b62d;
 }
