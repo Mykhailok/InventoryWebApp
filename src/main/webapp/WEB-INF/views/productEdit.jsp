@@ -125,6 +125,9 @@
                         <input type="submit"
                                value="<spring:message text="ADD"/>"/>
                     </c:if>
+                    <div class="battonCancel">
+                        <a href="<c:url value="${contextPath}/products"/>" class="btnCancel">CANCEL</a>
+                    </div>
                 </form:form>
             </div>
         </div>
