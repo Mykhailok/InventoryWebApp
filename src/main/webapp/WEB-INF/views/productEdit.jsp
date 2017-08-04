@@ -87,7 +87,7 @@
                 <c:url var="addAction" value="/products/add"/>
                 <%--<form id="add_product" action="#">--%>
                 <form:form action="${addAction}" commandName="product" class="formEdit">
-                    <h1>EDIT A PRODUCT</h1>
+                    <h1>EDIT PRODUCT</h1>
                     <c:if test="${!empty product.productName}">
                         <form:label class="editInput" path="id">
                             <spring:message text="ID"/>
@@ -100,7 +100,7 @@
                     <%--<input type="text" name="productManufacturer" placeholder="MANUFACTURE" required>--%>
                     <form:input path="productManufacturer" name="productManufacturer" placeholder="MANUFACTURE"/>
                     <%--<input type="text" name="productOwner"  placeholder="OWNER" required>--%>
-                    <span class="owner">OWNER</span>
+                    <span class="ownerEdit">OWNER</span>
                     <%--<select name="CHOOSE OWNER" form="add_product" required>--%>
                         <%--<option selected="selected">Choose Owner</option>--%>
                         <%--<option>user</option>--%>
