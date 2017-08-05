@@ -33,6 +33,7 @@
   border-radius: 20px;
   outline: 1px transparent;
   transition: all .5s ease-in;
+  z-index: 1020;
 }
 .btnAdd:hover {
   background: #fdff00;
@@ -48,6 +49,7 @@
   align-items: center;
   overflow: auto; }
   .wrapTable .table {
+    z-index: 1020;
     width: 95%; }
     .wrapTable .table .thead {
       border-radius: 40px;
@@ -106,7 +108,7 @@
             font-size: 18px;
             background-color: yellow;
             border-radius: 18px;
-            border: 1px solid blue; }
+            border: 1px solid blue;}
 
 .wrapSquaredBut {
   width: 100%;
@@ -130,6 +132,7 @@
     background-color: #ffe200;
     border: 2px outset #e1d2d2;
     transition: all .3s ease-in;
+    z-index: 1020;
   }
   .delBtn:hover,
   .btnShowEditPage:hover {
@@ -222,7 +225,7 @@
 .mainNav {
   padding: 20px 0;
   margin-left: 50px;
-  z-index: 50;
+  z-index: 1020;
 }
 
 .main-nav-link {

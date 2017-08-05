@@ -211,3 +211,7 @@ body {
     right: 26%;
     bottom: 14%;
 }
+
+.fonIcons i {
+    z-index: 1000;
+}
