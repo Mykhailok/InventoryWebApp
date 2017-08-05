@@ -245,6 +245,12 @@
   transition: all .5s ease-in;
 }
 
+@media screen and (min-device-width: 481px) and (max-device-width: 768px) {
+  .main-nav-link {
+    display: block;
+  }
+}
+
 .main-nav-link:hover {
   color: #fdff00;
   box-shadow: 0 0 35px #fdff00;
