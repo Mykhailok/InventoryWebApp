@@ -58,8 +58,8 @@
 <div class="container">
     <div class="button users"><a href="${contextPath}/users/"><img src="${contextPath}/resources/images/user.png" alt=""></a><h1>USERS</h1></div>
     <div class="button owners"><a href="${contextPath}/owners/"><img src="${contextPath}/resources/images/owner.png" alt=""></a><h1>OWNERS</h1></div>
-    <div class="button admin"><a href="${contextPath}//"><img src="${contextPath}/resources/images/admin1.png" alt=""></a><h1>ADMIN</h1></div>
     <div class="button main_menu"><a href="<c:url value="/products"/>"><img src="${contextPath}/resources/images/main_menu4.png" alt=""></a><h1>PRODUCTS</h1></div>
+    <div class="button admin"><a href="/"><img src="${contextPath}/resources/images/admin1.png" alt=""></a><h1>MAIN MENU</h1></div>
 </div>
 <div class="fonIcons">
     <i class="iconsOne"></i>
