@@ -1,6 +1,6 @@
 $marginTop:40px;
 $widthMin:30px;
-$widthMax:70px;
+$widthMax:15%;
 $heightTdThead:30px;
 $heightTdTbody:20px;
 $colorBackgrondThead:#ffee17;
@@ -19,8 +19,9 @@ $sizeButton:30px;
   flex-flow: column wrap;
   justify-content: flex-start;
   align-items: center;
-  background-image: url("../images/backroundPage.jpg");
-  background-size: cover;
+  background: linear-gradient(60deg, #00b9e9, #acdcf8);
+  /*background-image: url("../images/backroundPage.jpg");*/
+  /*background-size: cover;*/
   width: 100vw;
   height: 100vh;
   font-family: 'SF UI Display', serif;
@@ -31,24 +32,32 @@ $sizeButton:30px;
   text-align: left;
 }
 .btnAdd {
-  margin-left: 50px;
+  position: absolute;
+  top: 100px;
+  left: 23px;
   width: 200px;
-  text-decoration-line: none;
-  height: $heightTdThead;
+  padding: 6px 0;
+  display: block;
+  border: 2px outset #dfcdcd;
   background-color: #ffc200;
-  font-size: $fontSizeThead;
+  font-size: 18px;
   text-transform: uppercase;
-  color: $colorFontHead;
+  text-align: center;
+  color: #2ea7e0;
   border-radius: 20px;
   outline: 1px transparent;
+  transition: all .5s ease-in;
+  z-index: 1020;
   &:hover{
     cursor: pointer;
+    background: #fdff00;
   }
 }
 .wrapTable {
   width: 100%;
   margin-top: $marginTop;
   height: 80%;
+  height: 69%;
   display: flex;
   flex-flow: column wrap;
   justify-content: flex-start;
@@ -56,10 +65,11 @@ $sizeButton:30px;
   overflow: auto;
   .table {
     width: 95%;
+    //outline: 1px solid red;
     .thead{
       border-radius: 40px;
       position: fixed;
-      top: 80px;
+      top: 159px;
       left: 2.5%;
       width: 95%;
       tr {
@@ -70,7 +80,7 @@ $sizeButton:30px;
         align-items: center;
         background-color: $colorBackgrondThead;
         &:last-child {
-            margin-top: 2px;
+          margin-top: 2px;
           width: 100%;
           height: 2px;
         }
@@ -95,7 +105,7 @@ $sizeButton:30px;
           &:nth-child(5),
           &:nth-child(6)
           {
-            width: $widthMax;
+           min-width: $widthMax;
           }
           &:hover {
             cursor: pointer;
@@ -123,6 +133,7 @@ $sizeButton:30px;
           flex-flow: row wrap;
           justify-content: center;
           align-items: center;
+          //outline: 1px solid green;
           &:nth-child(1),
           &:nth-child(7),
           &:nth-child(8)
@@ -171,9 +182,22 @@ $sizeButton:30px;
     }
   }
 }
-.wrapEditHide{
-  display: none;
+.delBtn,
+.btnShowEditPage {
+  width: 29px;
+  height: 29px;
+  background-color: #ffe200;
+  border: 2px outset #e1d2d2;
+  transition: all .3s ease-in;
+  z-index: 1020;
 }
+.delBtn:hover,
+.btnShowEditPage:hover {
+  background: #2ea7e0;
+}
+.wrapEditHide {
+  display: none; }
+
 .wrapEditVisible {
   position: absolute;
   width: 100%;
@@ -185,8 +209,8 @@ $sizeButton:30px;
   flex-flow: column wrap;
   justify-content: center;
   align-items: center;
-  background-color: rgba(0,0,0,0.5);
-}
+  background-color: rgba(0, 0, 0, 0.5); }
+
 .wrapForm {
   background-image: url("../images/BackgroundEdit.png");
   width: 544px;
@@ -194,76 +218,321 @@ $sizeButton:30px;
   display: flex;
   flex-flow: column wrap;
   justify-content: center;
+  align-items: center; }
+.wrapForm form {
+  width: 517px;
+  height: 400px;
+  background-color: #e0f5fc;
+  border-radius: 20px; }
+.wrapForm form h1 {
+  margin-top: 22px;
+  margin-bottom: 35px;
+  text-transform: uppercase;
+  text-align: center;
+  color: #f8b62d;
+  font-size: 26px; }
+.wrapForm form .wrapEditLabel {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
   align-items: center;
-  form{
-    width: 517px;
-    height: 400px;
-    background-color: #e0f5fc;
-    border-radius: 20px;
-    h1 {
-      margin-top: 22px;
-      margin-bottom: 35px;
-      text-transform: uppercase;
-      text-align: center;
-      color:#f8b62d ;
-      font-size: 26px;
-    }
-    .wrapEditLabel {
-      display: flex;
-      flex-flow: row wrap;
-      justify-content: space-between;
-      align-items: center;
-      margin-bottom: 15px;
-        label {
-          display: inline-block;
-          font-size: 18px;
-          color: $colorFontBody;
-          text-transform: uppercase;
-          text-align: left;
-          margin-left: 10px;
+  margin-bottom: 15px; }
+.wrapForm form .wrapEditLabel label {
+  display: inline-block;
+  font-size: 18px;
+  color: #595857;
+  text-transform: uppercase;
+  text-align: left;
+  margin-left: 10px; }
+.wrapForm form .wrapEditLabel input {
+  width: 60%;
+  margin-right: 10px;
+  color: #2ea7e0;
+  font-size: 18px;
+  text-transform: uppercase;
+  text-align: center;
+  border: 1px solid transparent;
+  border-bottom-color: #2ea7e0;
+  background-color: #e0f5fc; }
+.wrapForm form .wrapEditLabel input:focus {
+  border: 1px solid transparent;
+  border-bottom-color: #2ea7e0;
+  background-color: #e0f5fc; }
+.wrapForm form .wrapEditBut {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: flex-end;
+  align-items: center; }
+.wrapForm form .wrapEditBut button {
+  width: 120px;
+  height: 50px;
+  border-radius: 25px;
+  background-color: #2ea7e0;
+  color: #ffffff;
+  text-transform: uppercase;
+  font-size: 30px;
+  margin-right: 20px;
+  outline: 1px transparent; }
+.wrapForm form .wrapEditBut button:hover {
+  background-color: #ffee17;
+  color: #2ea7e0; }
 
-        }
-      input {
-        width: 60%;
-        margin-right: 10px;
-        color: #2ea7e0;
-        font-size: 18px;
-        text-transform: uppercase;
-        text-align: center;
-        border: 1px solid transparent;
-        border-bottom-color: #2ea7e0;
-        background-color: #e0f5fc;
-        &:focus {
-          border: 1px solid transparent;
-          border-bottom-color: #2ea7e0;
-          background-color: #e0f5fc;
-        }
+/*# sourceMappingURL=styleProduct.css.map */
 
+.mainNav {
+  padding: 20px 0;
+  margin-left: 50px;
+  z-index: 1020;
+}
 
-      }
-    }
-    .wrapEditBut {
-      display: flex;
-      flex-flow: row wrap;
-      justify-content: flex-end;
-      align-items: center;
-      button{
-        width: 120px;
-        height: 50px;
-        border-radius: 25px;
-        background-color: #2ea7e0;
-        color: #ffffff;
-        text-transform: uppercase;
-        font-size: 30px;
-        margin-right: 20px;
-        outline: 1px transparent;
-        &:hover{
-          background-color:$colorBackgrondThead ;
-          color: #2ea7e0;
-        }
-      }
-    }
+.main-nav-link {
+  display: inline-block;
+  width: 116px;
+  height: 116px;
+  color: #2ea7e0;
+  padding-top: 90px;
+  margin-right: 10px;
+  background: #ffe000;
+  border-radius: 50%;
+  font-family: 'SFUIDisplay-Light', sans-serif;
+  font-size: 12px;
+  text-align: center;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: all .5s ease-in;
+}
+
+@media screen and (min-device-width: 481px) and (max-device-width: 768px) {
+  .main-nav-link {
+    display: block;
   }
 }
 
+.main-nav-link:hover {
+  color: #fdff00;
+  box-shadow: 0 0 35px #fdff00;
+}
+
+.main-nav-link.main-menu {
+  background: url(../images/main_menu4.png) center center no-repeat, #ffb600;
+}
+
+.main-nav-link.admin {
+  background: url(../images/admin1.png) center 20px no-repeat, #ffb600;
+}
+
+.main-nav-link.users {
+  background: url(../images/user.png) center center no-repeat, #ffe000;
+}
+
+.main-nav-link.owners {
+  background: url(../images/owner.png) center center no-repeat, #ffe000;
+}
+
+.iconsOne {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  background: url(../images/icons.png) 0 0 no-repeat;
+  right: 0;
+  top: 20%;
+}
+
+.iconsTwo {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  background: url(../images/icons.png) -60px 0 no-repeat;
+  left: 40%;
+  top: 1%;
+}
+
+.iconsThree {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  background: url(../images/icons.png) -120px 0 no-repeat;
+  left: 1%;
+  top: 42%;
+}
+
+.iconsFour {
+  position: absolute;
+  width: 60px;
+  height: 50px;
+  background: url(../images/icons.png) -185px 0 no-repeat;
+  left: 3%;
+  bottom: 0.5%;
+}
+
+.iconsFive {
+  position: absolute;
+  width: 60px;
+  height: 50px;
+  background: url(../images/icons.png) -255px 0 no-repeat;
+  right: 2%;
+  bottom: 30%;
+}
+
+.iconsSix {
+  position: absolute;
+  width: 40px;
+  height: 50px;
+  background: url(../images/icons.png) -320px 0 no-repeat;
+  left: 0;
+  top: 70%;
+}
+
+.iconsSeven {
+  position: absolute;
+  width: 40px;
+  height: 50px;
+  background: url(../images/icons.png) 0 -80px no-repeat;
+  left: 15%;
+  top: 2%;
+}
+
+.iconsEight {
+  position: absolute;
+  width: 50px;
+  height: 40px;
+  background: url(../images/icons.png) -50px -80px no-repeat;
+  right: 5%;
+  bottom: 0;
+}
+
+.iconsNine {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  background: url(../images/icons.png) -100px -73px no-repeat;
+  right: 4%;
+  top: 44%;
+}
+
+.iconsTen {
+  position: absolute;
+  width: 55px;
+  height: 50px;
+  background: url(../images/icons.png) -165px -70px no-repeat;
+  left: 72%;
+  top: 6%;
+}
+
+.iconsEleven {
+  position: absolute;
+  width: 60px;
+  height: 50px;
+  background: url(../images/icons.png) -238px -65px no-repeat;
+  left: 0;
+  top: 17%;
+}
+
+.iconsTwelve {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  background: url(../images/icons.png) -290px -65px no-repeat;
+  right: 0;
+  top: 0;
+}
+
+.iconThirteen {
+  position: absolute;
+  width: 33px;
+  height: 22px;
+  background: url(../images/loginSprite.png) 0 0 no-repeat;
+  left: 34%;
+  top: 24%;
+}
+
+.iconFourteen {
+  position: absolute;
+  width: 33px;
+  height: 22px;
+  background: url(../images/loginSprite.png) -196px 0 no-repeat;
+  left: 12%;
+  top: 30%;
+}
+
+.iconFifteen {
+  position: absolute;
+  width: 33px;
+  height: 22px;
+  background: url(../images/loginSprite.png) 0 0 no-repeat;
+  left: 28%;
+  top: 9%;
+}
+
+.iconSixteen {
+  position: absolute;
+  width: 48px;
+  height: 31px;
+  background: url(../images/loginSprite.png) -146px 0 no-repeat;
+  left: 83%;
+  top: 4%;
+}
+
+.iconSeventeen {
+  position: absolute;
+  width: 33px;
+  height: 22px;
+  background: url(../images/loginSprite.png) -196px 0 no-repeat;
+  right: 30%;
+  top: 19%;
+}
+
+.iconEighteen {
+  position: absolute;
+  width: 33px;
+  height: 22px;
+  background: url(../images/loginSprite.png) -196px 0 no-repeat;
+  right: 15%;
+  top: 36%;
+}
+
+.iconNineteen {
+  position: absolute;
+  width: 47px;
+  height: 31px;
+  background: url(../images/loginSprite.png) -51px -49px no-repeat;
+  right: 20%;
+  top: 52%;
+}
+
+.iconTwenty {
+  position: absolute;
+  width: 33px;
+  height: 22px;
+  background: url(../images/loginSprite.png) -196px 0 no-repeat;
+  left: 21%;
+  bottom: 39%;
+}
+
+.iconTwentyOne {
+  position: absolute;
+  width: 47px;
+  height: 31px;
+  background: url(../images/loginSprite.png) -146px 0 no-repeat;
+  left: 19%;
+  bottom: 12%;
+}
+
+.iconTwentyTwo {
+  position: absolute;
+  width: 33px;
+  height: 22px;
+  background: url(../images/loginSprite.png) 0 0 no-repeat;
+  right: 39%;
+  bottom: 16%;
+}
+
+.iconTwentyThree {
+  position: absolute;
+  width: 47px;
+  height: 31px;
+  background: url(../images/loginSprite.png) -51px -49px no-repeat;
+  right: 26%;
+  bottom: 14%;
+}
 
