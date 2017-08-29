@@ -39,7 +39,6 @@ public class ProductController {
         return "productAdd";
     }
 
-
     @RequestMapping(value = "/products/add", method = RequestMethod.POST)
     public String addProduct(@ModelAttribute("products") Product product, HttpServletRequest request){
         String owner_id = request.getParameter("listOfOwners");
@@ -50,6 +49,7 @@ public class ProductController {
             this.productService.saveOwnerId(BigInteger.valueOf(Long.parseLong(owner_id)), product.getId());
         }else {
             this.productService.update(product);
+            this.productService.saveOwnerId(BigInteger.valueOf(Long.parseLong(owner_id)), product.getId());
         }
 
         return "redirect:/products";
@@ -61,11 +61,20 @@ public class ProductController {
         return "redirect:/products";
     }
 
+    @RequestMapping(value = "productEdit/{id}")
+    public String ProductEdit(@PathVariable("id") BigInteger id, Model model){
+        model.addAttribute("product", this.productService.getById(id));
+        model.addAttribute("listProducts", this.productService.getAll());
+        model.addAttribute("listFullOwners", this.ownerService.getAllOwners());
+        return "productEdit";
+    }
+
     @RequestMapping("editProduct/{id}")
     public String editProduct(@PathVariable("id") BigInteger id, Model model){
         model.addAttribute("product", this.productService.getById(id));
         model.addAttribute("listProducts", this.productService.getAll());
         return "product";
+
     }
 
     @RequestMapping("productdata/{id}")

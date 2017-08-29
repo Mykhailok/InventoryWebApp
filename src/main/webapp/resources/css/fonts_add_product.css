@@ -1,0 +1,13 @@
+@font-face {
+	font-family: "SFUIDisplay";
+	url("../font/SFUIDisplayLight.otf") format("truetype");
+	font-style: normal;
+	font-weight: normal;
+}
+
+@font-face {
+	font-family: "SFUIDisplay";
+url("../font/SFUIDisplayRegular.otf") format("truetype");
+	font-style: normal;
+	font-weight: normal;
+}

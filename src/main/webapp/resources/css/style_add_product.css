@@ -1,0 +1,541 @@
+/*Подключаем normalize.css*/
+@import url(normalize.css);
+
+/*Подключаем шрифты*/
+@import url(fonts_add_product.css);
+
+html,
+body {
+	height: 100%;
+}
+
+body {
+	background: -webkit-linear-gradient(30deg, #00b9e9, #acdcf8);
+	background: -o-linear-gradient(30deg, #00b9e9, #acdcf8);
+	background: linear-gradient(60deg, #00b9e9, #acdcf8);
+	height: 100vh;
+}
+
+.users_menu {
+	background: url("../images/icons_sprite2.png") 0 0 no-repeat;
+	height: 117px;
+	width: 117px;
+}
+
+.owners_menu {
+	background: url("../images/icons_sprite2.png") -118px 0 no-repeat;
+	height: 117px;
+	width: 117px;
+}
+
+.admin_menu {
+	background: url("../images/icons_sprite2.png") -236px 0 no-repeat;
+	height: 117px;
+	width: 117px;
+}
+
+.main_menu {
+	background: url("../images/icons_sprite2.png") -354px 0 no-repeat;
+	height: 117px;
+	width: 117px;
+}
+
+.iconsOne {
+	position: absolute;
+	width: 50px;
+	height: 50px;
+	background: url(../images/icons.png) 0 0 no-repeat;
+	right: 0;
+	top: 20%;
+}
+
+.iconsTwo {
+	position: absolute;
+	width: 50px;
+	height: 50px;
+	background: url(../images/icons.png) -60px 0 no-repeat;
+	left: 40%;
+	top: 1%;
+}
+
+.iconsThree {
+	position: absolute;
+	width: 50px;
+	height: 50px;
+	background: url(../images/icons.png) -120px 0 no-repeat;
+	left: 1%;
+	top: 42%;
+}
+
+.iconsFour {
+	position: absolute;
+	width: 60px;
+	height: 50px;
+	background: url(../images/icons.png) -185px 0 no-repeat;
+	left: 3%;
+	bottom: 0.5%;
+}
+
+.iconsFive {
+	position: absolute;
+	width: 60px;
+	height: 50px;
+	background: url(../images/icons.png) -255px 0 no-repeat;
+	right: 2%;
+	bottom: 30%;
+}
+
+.iconsSix {
+	position: absolute;
+	width: 40px;
+	height: 50px;
+	background: url(../images/icons.png) -320px 0 no-repeat;
+	left: 0;
+	top: 70%;
+}
+
+.iconsSeven {
+	position: absolute;
+	width: 40px;
+	height: 50px;
+	background: url(../images/icons.png) 0 -80px no-repeat;
+	left: 15%;
+	top: 2%;
+}
+
+.iconsEight {
+	position: absolute;
+	width: 50px;
+	height: 40px;
+	background: url(../images/icons.png) -50px -80px no-repeat;
+	right: 5%;
+	bottom: 0;
+}
+
+.iconsNine {
+	position: absolute;
+	width: 50px;
+	height: 50px;
+	background: url(../images/icons.png) -100px -73px no-repeat;
+	right: 4%;
+	top: 44%;
+}
+
+.iconsTen {
+	position: absolute;
+	width: 55px;
+	height: 50px;
+	background: url(../images/icons.png) -165px -70px no-repeat;
+	left: 72%;
+	top: 6%;
+}
+
+.iconsEleven {
+	position: absolute;
+	width: 60px;
+	height: 50px;
+	background: url(../images/icons.png) -238px -65px no-repeat;
+	left: 0;
+	top: 17%;
+}
+
+.iconsTwelve {
+	position: absolute;
+	width: 50px;
+	height: 50px;
+	background: url(../images/icons.png) -290px -65px no-repeat;
+	right: 0;
+	top: 0;
+}
+
+.iconThirteen {
+	position: absolute;
+	width: 33px;
+	height: 22px;
+	background: url(../images/loginSprite.png) 0 0 no-repeat;
+	left: 34%;
+	top: 24%;
+}
+
+.iconFourteen {
+	position: absolute;
+	width: 33px;
+	height: 22px;
+	background: url(../images/loginSprite.png) -196px 0 no-repeat;
+	left: 12%;
+	top: 30%;
+}
+
+.iconFifteen {
+	position: absolute;
+	width: 33px;
+	height: 22px;
+	background: url(../images/loginSprite.png) 0 0 no-repeat;
+	left: 28%;
+	top: 9%;
+}
+
+.iconSixteen {
+	position: absolute;
+	width: 48px;
+	height: 31px;
+	background: url(../images/loginSprite.png) -146px 0 no-repeat;
+	left: 83%;
+	top: 4%;
+}
+
+.iconSeventeen {
+	position: absolute;
+	width: 33px;
+	height: 22px;
+	background: url(../images/loginSprite.png) -196px 0 no-repeat;
+	right: 30%;
+	top: 19%;
+}
+
+.iconEighteen {
+	position: absolute;
+	width: 33px;
+	height: 22px;
+	background: url(../images/loginSprite.png) -196px 0 no-repeat;
+	right: 15%;
+	top: 36%;
+}
+
+.iconNineteen {
+	position: absolute;
+	width: 47px;
+	height: 31px;
+	background: url(../images/loginSprite.png) -51px -49px no-repeat;
+	right: 20%;
+	top: 52%;
+}
+
+.iconTwenty {
+	position: absolute;
+	width: 33px;
+	height: 22px;
+	background: url(../images/loginSprite.png) -196px 0 no-repeat;
+	left: 21%;
+	bottom: 39%;
+}
+
+.iconTwentyOne {
+	position: absolute;
+	width: 47px;
+	height: 31px;
+	background: url(../images/loginSprite.png) -146px 0 no-repeat;
+	left: 19%;
+	bottom: 12%;
+}
+
+.iconTwentyTwo {
+	position: absolute;
+	width: 33px;
+	height: 22px;
+	background: url(../images/loginSprite.png) 0 0 no-repeat;
+	right: 39%;
+	bottom: 16%;
+}
+
+.iconTwentyThree {
+	position: absolute;
+	width: 47px;
+	height: 31px;
+	background: url(../images/loginSprite.png) -51px -49px no-repeat;
+	right: 26%;
+	bottom: 14%;
+}
+
+.container {
+	height: 100vh;
+	margin: 0 auto;
+	min-width: 320px;
+	overflow: auto;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+}
+
+/*MENU*/
+
+.menu {
+	display: block;
+	height: 117px;
+	margin: 40px auto 40px;
+	width: 528px;
+	z-index: 2;
+}
+
+.menu__list {
+	padding: 0;
+	margin: 0;
+	list-style: none;
+	-ms-box-orient: horizontal;
+	display: -webkit-box;
+	display: -moz-box;
+	display: -ms-flexbox;
+	display: -moz-flex;
+	display: -webkit-flex;
+	display: flex;
+}
+
+.resp__menu {
+	-webkit-flex-wrap: wrap;
+	flex-wrap: wrap;
+	justify-content: space-around;
+	align-items: center;
+	align-content: center;
+}
+
+.menu__item {
+	width: 117px;
+	height: 117px;
+	line-height: 117px;
+	-moz-border-radius: 50%;
+	-webkit-border-radius: 50%;
+	border-radius: 50%;
+	-webkit-box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+	box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+}
+
+.content__container {
+	display: flex;
+	height: 50%;
+}
+
+/*ADD PRODUCT*/
+
+.add_product {
+	background-color: rgba(218, 244, 252, 0.8);
+	border-radius: 20px;
+	-webkit-box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+	box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+	margin: auto;
+	padding: 1.2rem 1rem 0 1rem;
+	z-index: 1;
+	width: 19rem;
+}
+
+form {
+	font: 14px 'SFUIDisplayLight', sans-serif;
+}
+
+input[type='text'] {
+	background-color: rgba(0, 0, 0, 0);
+	border: none;
+	border-bottom: 2px solid #2ea7e0;
+	margin: 0 0 11px 0;
+	padding-top: 0.1rem;
+	outline: none;
+	width: 95%;
+}
+
+.owner {
+	background-color: rgba(0, 0, 0, 0);
+	border: none;
+	border-bottom: 2px solid #2ea7e0;
+	color: #7f7f7f;
+	font: 14px 'SFUIDisplayLight', sans-serif;
+	padding-top: 0.1rem;
+	outline: none;
+	margin: 0 1% 11px 0;
+	width: 20%;
+}
+
+.ownerEdit {
+	color: inherit;
+}
+
+select {
+	border:2px solid #2ea7e0;
+	border-radius: 0.75rem;
+	height: 24px;
+	outline: none;
+	width: 80%;
+	/*отменяем стандартное отображение select'а*/
+	/*for WebKit*/
+	-webkit-appearance: none;
+	/* for FF */
+	-moz-appearance: none;
+	text-indent: 0.01px;
+	text-overflow: '';
+	/* for IE */
+	-ms-appearance: none;
+	appearance: none!important;
+	/*задаем вид стрелочки*/
+	background: #efefef url('../images/arrow.png') no-repeat right center;
+	text-align: center;
+	text-align-last: center;
+}
+
+/*дополнение для IE*/
+select::-ms-expand {
+	display: none;
+}
+
+option {
+	text-align: center;
+	text-align-last: center;
+	/*padding-left: calc(50% - 1em);*/
+}
+
+input[type=submit] {
+	background: #2ea7e0;
+	border: 2px solid #2ea7e0;
+	-moz-border-radius: 25px;
+	-webkit-border-radius: 25px;
+	border-radius: 25px;
+	color: #fff;
+	cursor: pointer;
+	font: 0.8rem 'SFUIDisplayRegular', sans-serif;
+	float: left;
+	margin: 20px 0 5px 0;
+	outline: none;
+	padding: 1.125rem 2rem;
+}
+
+.btnCancel {
+	background: #2ea7e0;
+	border: 2px solid #2ea7e0;
+	-moz-border-radius: 25px;
+	-webkit-border-radius: 25px;
+	border-radius: 25px;
+	color: #fff;
+	cursor: pointer;
+	font: 0.8rem 'SFUIDisplayRegular', sans-serif;
+	float: right;
+	margin: 20px 0 5px 0;
+	outline: none;
+	padding: 1.125rem 2rem;
+	text-decoration: none;
+}
+
+.btnCancel:hover {
+	background: #f8b62d;
+}
+
+input[type=submit]:hover {
+	background: #f8b62d;
+}
+
+h1 {
+	color: #f8b62d;
+	font: 20px 'SFUIDisplayRegular', sans-serif;
+	margin: 0 0 1rem 0;
+	text-align: center;
+}
+
+/*MENU DROP*/
+
+.header__menu-drop {
+	margin: 0 auto;
+	position: relative;
+}
+
+.menu-drop {
+	display: none;
+	position: relative;
+	text-align: center;
+	width: 50px;
+	z-index: 2;
+}
+
+.menu-drop__list {
+	display: none;
+	padding: 0;
+	margin: 0;
+	list-style: none;
+}
+
+.menu-drop__item {
+	margin: 70px 0 0 0;
+	-moz-border-radius: 50%;
+	-webkit-border-radius: 50%;
+	border-radius: 50%;
+	-webkit-box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+	box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+}
+
+.menu-drop:hover .menu-drop__list {
+	-ms-box-orient: horizontal;
+	display: -webkit-box;
+	display: -moz-box;
+	display: -ms-flexbox;
+	display: -moz-flex;
+	display: -webkit-flex;
+	display: flex;
+}
+
+@media screen and (min-device-width: 320px) and (max-device-width: 679px) {
+	.main-menu__drop {
+		display: block;
+		position: absolute;
+		top: 10px;
+		right: 0;
+		width: 45px;
+	}
+
+	.menu {
+		margin: 10px auto 30px;
+	}
+
+	.menu__list {
+		display: none;
+	}
+
+	.menu {
+		display: none;
+	}
+
+	.menu-drop__list {
+		padding: 0;
+		margin: 0;
+		list-style: none;
+		-ms-box-orient: horizontal;
+		display: -webkit-box;
+		display: -moz-box;
+		display: -ms-flexbox;
+		display: -moz-flex;
+		display: -webkit-flex;
+		display: none;
+	}
+
+	.header__menu-drop {
+		display: block;
+	}
+
+	.menu-drop {
+		display: block;
+		width: 300px;
+	}
+
+	select {
+		width: 73%;
+	}
+
+}
+
+@media screen and (min-width: 480px) {
+	.add_product {
+		width: 29rem;
+	}
+
+	select {
+		width: 80%;
+	}
+}
+
+@media screen and (min-device-width: 768px) {
+	.header__menu-drop .menu-drop menu {
+		display: none;
+	}
+
+	.main-menu__drop {
+		display: none;
+	}
+}
+
