@@ -10,7 +10,7 @@
     <meta charset="UTF-8">
     <title>Add a product - Inventarium</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="/resources/css/style_add_product.css">
+    <link rel="stylesheet" href="${contextPath}/resources/css/style_add_product.css">
 </head>
 <body>
     <div class="fonIcons">
@@ -139,7 +139,7 @@
                         <input type="submit" value="CANCEL" class="btnCancel">
                     </form>--%>
                     <div class="battonCancel">
-                        <a href="<c:url value="${contextPath}/products"/>" class="btnCancel">CANCEL</a>
+                        <a href="<c:url value="/products"/>" class="btnCancel">CANCEL</a>
                     </div>
                 </form:form>
             <%--<button type="submit" form="add_product">ADD</button>--%>

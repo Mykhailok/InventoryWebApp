@@ -10,7 +10,7 @@
     <meta charset="UTF-8">
     <title>Edit a product - Inventarium</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="/resources/css/style_add_product.css">
+    <link rel="stylesheet" href="${contextPath}/resources/css/style_add_product.css">
 </head>
 
 <body>
@@ -68,7 +68,7 @@
                 </ul>
             </nav>
             <nav class="header__menu-drop menu-drop menu">
-                <img class="main-menu__drop" src="/resources/images/menu_button.png" alt="menu">
+                <img class="main-menu__drop" src="${contextPath}/resources/images/menu_button.png" alt="menu">
                 <ul class="menu-drop__list resp__menu">
                     <li class="menu-drop__item">
                         <a href="<c:url value="/users"/>" class="menu__link">
@@ -137,7 +137,7 @@
                                value="<spring:message text="ADD PRODUCT"/>"/>
                     </c:if>
                     <div class="battonCancel">
-                        <a href="<c:url value="${contextPath}/products"/>" class="btnCancel">CANCEL</a>
+                        <a href="<c:url value="/products"/>" class="btnCancel">CANCEL</a>
                     </div>
                 </form:form>
             </div>

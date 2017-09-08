@@ -28,11 +28,11 @@ INSERT INTO owner_product (owner_id, product_id) VALUES
 
 INSERT INTO users (username, password) VALUES
   ('admin', '$2a$11$bRQR2FxnBrKnr/PS0eaDUeEQzO2ZtYJllGPIkdekZ0q6rJVJrCmXm'), -- password = '1111'
-	('user', '$2a$11$bRQR2FxnBrKnr/PS0eaDUeEQzO2ZtYJllGPIkdekZ0q6rJVJrCmXm');  -- password = '1111'
+ 	('user', '$2a$11$bRQR2FxnBrKnr/PS0eaDUeEQzO2ZtYJllGPIkdekZ0q6rJVJrCmXm');  -- password = '1111'
 
 INSERT INTO user_roles (role, user_id) VALUES
 	('ROLE_ADMIN', 1),
 	('ROLE_USER', 1),
-	('ROLE_USER', 2);
+ 	('ROLE_USER', 2);
 
 

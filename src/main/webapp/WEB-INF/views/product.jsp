@@ -68,7 +68,7 @@
 
 <div class="container">
         <%--<button class="btnAdd">add a product +</button>--%>
-        <a href="<c:url value="${contextPath}/productAdd"/>" class="btnAdd">add a product +</a>
+        <a href="<c:url value="/productAdd"/>" class="btnAdd">add a product +</a>
             <nav class="mainNav">
                 <a href="<c:url value="/"/>" class="main-nav-link main-menu">Main menu</a>
                 <a href="<c:url value="/admin"/>" class="main-nav-link admin">Admin</a>
@@ -109,7 +109,7 @@
                             <div class="wrapSquaredBut">
                                     <%--<a href="<c:url value='/editProduct/${product.id}'/>">Edit</a>--%>
                                     <%--<button class="btnShowEditPage" value="/editProduct/${product.id}" data-value="/editProduct/${product.id}"></button>--%>
-                                <a href="<c:url value='${contextPath}/productEdit/${product.id}'/>" class="btnShowEditPage"></a>
+                                <a href="<c:url value='/productEdit/${product.id}'/>" class="btnShowEditPage"></a>
                             </div>
                         </td>
                         <td>
