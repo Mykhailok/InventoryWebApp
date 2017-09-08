@@ -11,7 +11,10 @@ $colorFontHead:#2ea7e0;
 $colorFontBody:#595857;
 $sizeButton:30px;
 
+body{
+  background: linear-gradient(60deg, #00b9e9, #acdcf8);
 
+}
 .container {
   position: relative;
   margin: 0 auto;
@@ -19,11 +22,8 @@ $sizeButton:30px;
   flex-flow: column wrap;
   justify-content: flex-start;
   align-items: center;
-  background: linear-gradient(60deg, #00b9e9, #acdcf8);
-  /*background-image: url("../images/backroundPage.jpg");*/
-  /*background-size: cover;*/
-  width: 100vw;
-  height: 100vh;
+  max-width: 1200px;
+  //outline: 1px solid red;
   font-family: 'SF UI Display', serif;
 }
 .wrapBattonAdd {
@@ -47,6 +47,7 @@ $sizeButton:30px;
   border-radius: 20px;
   outline: 1px transparent;
   transition: all .5s ease-in;
+  text-decoration: none;
   z-index: 1020;
   &:hover{
     cursor: pointer;
@@ -55,23 +56,23 @@ $sizeButton:30px;
 }
 .wrapTable {
   width: 100%;
-  margin-top: $marginTop;
-  height: 80%;
-  height: 69%;
+  margin-top: 0;
   display: flex;
   flex-flow: column wrap;
   justify-content: flex-start;
   align-items: center;
   overflow: auto;
   .table {
-    width: 95%;
-    //outline: 1px solid red;
+    z-index: 1022;
+    width: 99%;
+    margin-bottom: 20px;
+    position: relative;
     .thead{
       border-radius: 40px;
-      position: fixed;
-      top: 159px;
-      left: 2.5%;
-      width: 95%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
       tr {
         height: $heightTdThead;
         display: flex;
@@ -79,6 +80,7 @@ $sizeButton:30px;
         justify-content: space-around;
         align-items: center;
         background-color: $colorBackgrondThead;
+        width: 100%;
         &:last-child {
           margin-top: 2px;
           width: 100%;
@@ -111,12 +113,12 @@ $sizeButton:30px;
             cursor: pointer;
           }
         }
-
       }
-
     }
     .ttbody{
       background-color: $colorBackgrondTbody;
+      padding-bottom: 1px;
+      width: 100%;
       tr{
         margin-top: $heightTdThead;
         height: $heightTdTbody;
@@ -124,7 +126,9 @@ $sizeButton:30px;
         flex-flow: row wrap  ;
         justify-content: space-around;
         align-items: center;
-
+        &:nth-child(1){
+          margin-top: 50px;
+        }
         td {
           height: 100%;
           font-size: $fontSizeTbody;
@@ -133,7 +137,6 @@ $sizeButton:30px;
           flex-flow: row wrap;
           justify-content: center;
           align-items: center;
-          //outline: 1px solid green;
           &:nth-child(1),
           &:nth-child(7),
           &:nth-child(8)
@@ -157,9 +160,7 @@ $sizeButton:30px;
           }
         }
       }
-
     }
-
   }
 }
 

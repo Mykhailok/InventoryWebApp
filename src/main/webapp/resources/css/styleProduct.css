@@ -1,3 +1,6 @@
+body {
+  background: linear-gradient(60deg, #00b9e9, #acdcf8); }
+
 .container {
   position: relative;
   margin: 0 auto;
@@ -5,11 +8,7 @@
   flex-flow: column wrap;
   justify-content: flex-start;
   align-items: center;
-  background: linear-gradient(60deg, #00b9e9, #acdcf8);
-  /*background-image: url("../images/backroundPage.jpg");*/
-  /*background-size: cover;*/
-  width: 100vw;
-  height: 100vh;
+  max-width: 1200px;
   font-family: 'SF UI Display', serif; }
 
 .wrapBattonAdd {
@@ -33,6 +32,7 @@
   border-radius: 20px;
   outline: 1px transparent;
   transition: all .5s ease-in;
+  text-decoration: none;
   z-index: 1020; }
   .btnAdd:hover {
     cursor: pointer;
@@ -40,29 +40,31 @@
 
 .wrapTable {
   width: 100%;
-  margin-top: 40px;
-  height: 80%;
-  height: 69%;
+  margin-top: 0;
   display: flex;
   flex-flow: column wrap;
   justify-content: flex-start;
   align-items: center;
   overflow: auto; }
   .wrapTable .table {
-    width: 95%; }
+    z-index: 1022;
+    width: 99%;
+    margin-bottom: 20px;
+    position: relative; }
     .wrapTable .table .thead {
       border-radius: 40px;
-      position: fixed;
-      top: 159px;
-      left: 2.5%;
-      width: 95%; }
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%; }
       .wrapTable .table .thead tr {
         height: 30px;
         display: flex;
         flex-flow: row wrap;
         justify-content: space-around;
         align-items: center;
-        background-color: #ffee17; }
+        background-color: #ffee17;
+        width: 100%; }
         .wrapTable .table .thead tr:last-child {
           margin-top: 2px;
           width: 100%;
@@ -83,7 +85,9 @@
           .wrapTable .table .thead tr th:hover {
             cursor: pointer; }
     .wrapTable .table .ttbody {
-      background-color: transparent; }
+      background-color: transparent;
+      padding-bottom: 1px;
+      width: 100%; }
       .wrapTable .table .ttbody tr {
         margin-top: 30px;
         height: 20px;
@@ -91,6 +95,8 @@
         flex-flow: row wrap;
         justify-content: space-around;
         align-items: center; }
+        .wrapTable .table .ttbody tr:nth-child(1) {
+          margin-top: 50px; }
         .wrapTable .table .ttbody tr td {
           height: 100%;
           font-size: 18px;
