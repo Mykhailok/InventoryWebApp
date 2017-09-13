@@ -74,6 +74,7 @@
                 <a href="<c:url value="/admin"/>" class="main-nav-link admin">Admin</a>
                 <a href="<c:url value="/owners"/>" class="main-nav-link owners">Owners</a>
                 <a href="<c:url value="/users"/>" class="main-nav-link users">Users</a>
+                <%--<a href="<c:url value="/products"/>" class="main-nav-link owners">Products</a>--%>
             </nav>
 
 <%--<h1>Product List</h1>--%>
@@ -90,7 +91,7 @@
                 <th data-type="number">Price</th>
                 <th data-type="string">Description</th>
                 <th data-type="string">Edit</th>
-                <th data-type="string">Delete</th>
+                <th data-type="string">Del</th>
             </tr>
             <tr ></tr>
             </thead>

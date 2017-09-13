@@ -17,28 +17,26 @@
     <meta name="author" content="">
 
     <title>Admin</title>
-    <link rel="stylesheet" href="${contextPath}/resources/css/buttonFonts.css">
+    <link rel="stylesheet" href="${contextPath}/resources/css/reset.css">
+    <link rel="stylesheet" href="${contextPath}/resources/css/font.css">
+    <link rel="stylesheet" href="${contextPath}/resources/css/styleProduct.css">
+    <link rel="stylesheet" href="${contextPath}/resources/css/fonIcons.css">
     <link rel="stylesheet" href="${contextPath}/resources/css/buttonStyle320.css">
-    <link rel="stylesheet" href="${contextPath}/resources/css/buttonStyle480.css">
-    <link rel="stylesheet" href="${contextPath}/resources/css/buttonStyle768.css">
-    <link rel="stylesheet" href="${contextPath}/resources/css/normalize.css">
-    <%--<link href="${contextPath}/resources/css/bootstrap.min.css" rel="stylesheet">--%>
-    <%--<link href="${contextPath}/resources/css/common.css" rel="stylesheet">--%>
 </head>
 
 <body>
-<div class="container">
-    <c:if test="${pageContext.request.userPrincipal.name != null}">
-        <form id="logoutForm" method="post" action="${contextPath}/logout">
-            <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
-        </form>
-        <%--<h6> ${pageContext.request.userPrincipal.name} | <a onclick="document.forms['logoutForm'].submit()"></a>--%>
-        <%--</h6>--%>
-    </c:if>
-</div>
+<%--<div class="container">--%>
+    <%--<c:if test="${pageContext.request.userPrincipal.name != null}">--%>
+        <%--<form id="logoutForm" method="post" action="${contextPath}/logout">--%>
+            <%--<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>--%>
+        <%--</form>--%>
+        <%--&lt;%&ndash;<h6> ${pageContext.request.userPrincipal.name} | <a onclick="document.forms['logoutForm'].submit()"></a>&ndash;%&gt;--%>
+        <%--&lt;%&ndash;</h6>&ndash;%&gt;--%>
+    <%--</c:if>--%>
+<%--</div>--%>
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-<script src="${contextPath}/resources/js/bootstrap.min.js"></script>
+<%--<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>--%>
+<%--<script src="${contextPath}/resources/js/bootstrap.min.js"></script>--%>
 
 <%--<a href="${contextPath}">Back to main menu</a>--%>
 
@@ -55,25 +53,34 @@
 <%--</body>--%>
 <%--</html>--%>
 
-<div class="container">
-    <div class="button users"><a href="/users/"><img src="${contextPath}/resources/images/user.png" alt=""></a><h1>USERS</h1></div>
-    <div class="button owners"><a href="/owners/"><img src="${contextPath}/resources/images/owner.png" alt=""></a><h1>OWNERS</h1></div>
-    <div class="button main_menu"><a href="<c:url value="/products"/>"><img src="${contextPath}/resources/images/main_menu4.png" alt=""></a><h1>PRODUCTS</h1></div>
-    <div class="button admin"><a href="/"><img src="${contextPath}/resources/images/admin1.png" alt=""></a><h1>MAIN MENU</h1></div>
-</div>
-<div class="fonIcons">
-    <i class="iconsOne"></i>
-    <i class="iconsTwo"></i>
-    <i class="iconsThree"></i>
-    <i class="iconsFour"></i>
-    <i class="iconsFive"></i>
-    <i class="iconsSix"></i>
-    <i class="iconsSeven"></i>
-    <i class="iconsEight"></i>
-    <i class="iconsNine"></i>
-    <i class="iconsTen"></i>
-    <i class="iconsEleven"></i>
-    <i class="iconsTwelve"></i>
+<%--<div class="container">--%>
+    <%--<div class="button users"><a href="/users/"><img src="${contextPath}/resources/images/user.png" alt=""></a><h1>USERS</h1></div>--%>
+    <%--<div class="button owners"><a href="/owners/"><img src="${contextPath}/resources/images/owner.png" alt=""></a><h1>OWNERS</h1></div>--%>
+    <%--<div class="button main_menu"><a href="<c:url value="/products"/>"><img src="${contextPath}/resources/images/main_menu4.png" alt=""></a><h1>PRODUCTS</h1></div>--%>
+    <%--<div class="button admin"><a href="/"><img src="${contextPath}/resources/images/admin1.png" alt=""></a><h1>MAIN MENU</h1></div>--%>
+<%--</div>--%>
+<div class="container contAdmin">
+    <nav class="mainNav">
+        <a href="<c:url value="/"/>" class="main-nav-link main-menu">Main menu</a>
+        <%--<a href="<c:url value="/admin"/>" class="main-nav-link admin">Admin</a>--%>
+        <a href="<c:url value="/owners"/>" class="main-nav-link owners">Owners</a>
+        <a href="<c:url value="/users"/>" class="main-nav-link users">Users</a>
+        <a href="<c:url value="/products"/>" class="main-nav-link owners">Products</a>
+    </nav>
+    <div class="fonIcons">
+        <i class="iconsOne"></i>
+        <i class="iconsTwo"></i>
+        <i class="iconsThree"></i>
+        <i class="iconsFour"></i>
+        <i class="iconsFive"></i>
+        <i class="iconsSix"></i>
+        <i class="iconsSeven"></i>
+        <i class="iconsEight"></i>
+        <i class="iconsNine"></i>
+        <i class="iconsTen"></i>
+        <i class="iconsEleven"></i>
+        <i class="iconsTwelve"></i>
+    </div>
 </div>
 </body>
 </html>

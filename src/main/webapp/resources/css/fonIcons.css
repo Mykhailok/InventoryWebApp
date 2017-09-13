@@ -4,7 +4,12 @@ body {
     background: linear-gradient(60deg, #00b9e9, #acdcf8);
     height: 100vh;
 }
+.fonIcons {
 
+}
+.fonIcons i {
+    z-index: 1000;
+}
 .iconsOne {
     position: absolute;
     width: 50px;
@@ -212,6 +217,3 @@ body {
     bottom: 14%;
 }
 
-.fonIcons i {
-    z-index: 1000;
-}
