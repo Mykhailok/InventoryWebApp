@@ -67,20 +67,46 @@
         <a href="<c:url value="/users"/>" class="main-nav-link users">Users</a>
         <a href="<c:url value="/products"/>" class="main-nav-link owners">Products</a>
     </nav>
-    <div class="fonIcons">
-        <i class="iconsOne"></i>
-        <i class="iconsTwo"></i>
-        <i class="iconsThree"></i>
-        <i class="iconsFour"></i>
-        <i class="iconsFive"></i>
-        <i class="iconsSix"></i>
-        <i class="iconsSeven"></i>
-        <i class="iconsEight"></i>
-        <i class="iconsNine"></i>
-        <i class="iconsTen"></i>
-        <i class="iconsEleven"></i>
-        <i class="iconsTwelve"></i>
-    </div>
+
+</div>
+<%--<div class="fonIcons">--%>
+    <%--<i class="iconsOne"></i>--%>
+    <%--<i class="iconsTwo"></i>--%>
+    <%--<i class="iconsThree"></i>--%>
+    <%--<i class="iconsFour"></i>--%>
+    <%--<i class="iconsFive"></i>--%>
+    <%--<i class="iconsSix"></i>--%>
+    <%--<i class="iconsSeven"></i>--%>
+    <%--<i class="iconsEight"></i>--%>
+    <%--<i class="iconsNine"></i>--%>
+    <%--<i class="iconsTen"></i>--%>
+    <%--<i class="iconsEleven"></i>--%>
+    <%--<i class="iconsTwelve"></i>--%>
+<%--</div>--%>
+<div class="fonIcons">
+    <i class="iconsOne"></i>
+    <i class="iconsTwo"></i>
+    <i class="iconsThree"></i>
+    <i class="iconsFour"></i>
+    <i class="iconsFive"></i>
+    <i class="iconsSix"></i>
+    <i class="iconsSeven"></i>
+    <i class="iconsEight"></i>
+    <i class="iconsNine"></i>
+    <i class="iconsTen"></i>
+    <i class="iconsEleven"></i>
+    <i class="iconsTwelve"></i>
+    <i class="iconThirteen"></i>
+    <i class="iconFourteen"></i>
+    <i class="iconFifteen"></i>
+    <i class="iconSixteen"></i>
+    <i class="iconSeventeen"></i>
+    <i class="iconEighteen"></i>
+    <i class="iconNineteen"></i>
+    <i class="iconTwenty"></i>
+    <i class="iconTwentyOne"></i>
+    <i class="iconTwentyTwo"></i>
+    <i class="iconTwentyThree"></i>
 </div>
 </body>
 </html>
