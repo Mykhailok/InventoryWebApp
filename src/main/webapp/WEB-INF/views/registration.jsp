@@ -16,7 +16,11 @@
     <title>Create an account</title>
 
     <link href="${contextPath}/resources/css/bootstrap.min.css" rel="stylesheet">
-    <link href="${contextPath}/resources/css/common.css" rel="stylesheet">
+    <link rel="stylesheet" href="${contextPath}/resources/css/reset.css">
+    <link rel="stylesheet" href="${contextPath}/resources/css/styleBackgroundMain.css">
+    <%--<link rel="stylesheet" href="${contextPath}/resources/css/styleMainNav.css">--%>
+    <link rel="stylesheet" href="${contextPath}/resources/css/font.css">
+    <link rel="stylesheet" href="${contextPath}/resources/css/styleRegistation.css">
 
 
     <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
@@ -25,41 +29,66 @@
 </head>
 
 <body>
-
-<div class="container">
-
-    <form:form method="POST" modelAttribute="userForm" class="form-signin">
-        <h2 class="form-signin-heading">Create your account</h2>
-        <spring:bind path="username">
-            <div class="form-group ${status.error ? 'has-error' : ''}">
-                <form:input type="text" path="username" class="form-control" placeholder="Username"
-                            autofocus="true"></form:input>
-                <form:errors path="username"></form:errors>
-            </div>
-        </spring:bind>
-
-        <spring:bind path="password">
-            <div class="form-group ${status.error ? 'has-error' : ''}">
-                <form:input type="password" path="password" class="form-control" placeholder="Password"></form:input>
-                <form:errors path="password"></form:errors>
-            </div>
-        </spring:bind>
-
-        <spring:bind path="confirmPassword">
-            <div class="form-group ${status.error ? 'has-error' : ''}">
-                <form:input type="password" path="confirmPassword" class="form-control"
-                            placeholder="Confirm your password"></form:input>
-                <form:errors path="confirmPassword"></form:errors>
-            </div>
-        </spring:bind>
-
-        <h4 class="text-center"><a href="/login">I have an account</a></h4>
-
-        <button class="btn btn-lg btn-primary btn-block" type="submit">Submit</button>
-    </form:form>
-
+<div class="fonIcons">
+    <i class="iconsOne"></i>
+    <%--<i class="iconsTwo"></i>--%>
+    <i class="iconsThree"></i>
+    <i class="iconsFour"></i>
+    <i class="iconsFive"></i>
+    <i class="iconsSix"></i>
+    <i class="iconsSeven"></i>
+    <i class="iconsEight"></i>
+    <i class="iconsNine"></i>
+    <i class="iconsTen"></i>
+    <i class="iconsEleven"></i>
+    <i class="iconsTwelve"></i>
+    <i class="iconThirteen"></i>
+    <i class="iconFourteen"></i>
+    <i class="iconFifteen"></i>
+    <i class="iconSixteen"></i>
+    <i class="iconSeventeen"></i>
+    <i class="iconEighteen"></i>
+    <i class="iconNineteen"></i>
+    <i class="iconTwenty"></i>
+    <i class="iconTwentyOne"></i>
+    <i class="iconTwentyTwo"></i>
+    <i class="iconTwentyThree"></i>
 </div>
-<!-- /container -->
+
+    <div class="container">
+
+        <form:form method="POST" modelAttribute="userForm" class="form-signin">
+            <h2 class="form-signin-heading">Create your account</h2>
+            <spring:bind path="username">
+                <div class="form-group ${status.error ? 'has-error' : ''}">
+                    <form:input type="text" path="username" class="form-control" placeholder="Username"
+                                autofocus="true"></form:input>
+                    <form:errors path="username"></form:errors>
+                </div>
+            </spring:bind>
+
+            <spring:bind path="password">
+                <div class="form-group ${status.error ? 'has-error' : ''}">
+                    <form:input type="password" path="password" class="form-control" placeholder="Password"></form:input>
+                    <form:errors path="password"></form:errors>
+                </div>
+            </spring:bind>
+
+            <spring:bind path="confirmPassword">
+                <div class="form-group ${status.error ? 'has-error' : ''}">
+                    <form:input type="password" path="confirmPassword" class="form-control"
+                                placeholder="Confirm your password"></form:input>
+                    <form:errors path="confirmPassword"></form:errors>
+                </div>
+            </spring:bind>
+
+            <h4 class="text-center"><a href="/login">I have an account</a></h4>
+
+            <button class="btn btn-lg btn-primary btn-block" type="submit">Submit</button>
+        </form:form>
+
+    </div>
+
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 <script src="${contextPath}/resources/js/bootstrap.min.js"></script>
 </body>

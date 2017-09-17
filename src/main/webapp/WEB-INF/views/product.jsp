@@ -9,10 +9,13 @@
 <head>
     <meta charset="UTF-8">
     <title>Products</title>
+
     <link rel="stylesheet" href="${contextPath}/resources/css/reset.css">
+    <link rel="stylesheet" href="${contextPath}/resources/css/styleBackgroundMain.css">
+    <link rel="stylesheet" href="${contextPath}/resources/css/styleMainNav.css">
     <link rel="stylesheet" href="${contextPath}/resources/css/font.css">
     <link rel="stylesheet" href="${contextPath}/resources/css/styleProduct.css">
-    <link rel="stylesheet" href="${contextPath}/resources/css/fonIcons.css">
+
 </head>
 <body>
 <div class="fonIcons">
@@ -41,44 +44,15 @@
     <i class="iconTwentyThree"></i>
 </div>
 
-<%--<h2>Welcome ${pageContext.request.userPrincipal.name}</a></h2>--%>
-<%--<a href="${contextPath}">Back to main menu</a>--%>
-<%--<br/>--%>
-<%--<br/>--%>
-<%--<a href="${contextPath}/admin/">Admin</a>--%>
-<%--<br/>--%>
-<%--<br/>--%>
-<%--<a href="${contextPath}/owners/">Owners</a>--%>
-<%--<br/>--%>
-<%--<br/>--%>
-<%--<a href="${contextPath}/users/">Users</a>--%>
-
-
-<%--<br/>--%>
-<%--<br/>--%>
-
-<%--<select name="listOfOwners">--%>
-    <%--<option>Выберите Владельца</option>--%>
-    <%--<c:forEach items="${listProducts}" var="listProducts">--%>
-        <%--<option value=${listProducts.id} >${listProducts.owners.toString().replaceAll("[\\[\\]]","")}--%>
-
-        <%--</option>--%>
-    <%--</c:forEach>--%>
-<%--</select>--%>
-
 <div class="container">
-        <%--<button class="btnAdd">add a product +</button>--%>
         <a href="<c:url value="/productAdd"/>" class="btnAdd">add a product +</a>
-            <nav class="mainNav">
-                <a href="<c:url value="/"/>" class="main-nav-link main-menu">Main menu</a>
-                <a href="<c:url value="/admin"/>" class="main-nav-link admin">Admin</a>
-                <a href="<c:url value="/owners"/>" class="main-nav-link owners">Owners</a>
-                <a href="<c:url value="/users"/>" class="main-nav-link users">Users</a>
-                <%--<a href="<c:url value="/products"/>" class="main-nav-link owners">Products</a>--%>
-            </nav>
-
-<%--<h1>Product List</h1>--%>
-
+    <nav class="mainNav">
+        <a href="<c:url value="/"/>" class="main-nav-link main-menu">Main menu</a>
+        <%--<a href="<c:url value="/products"/>" class="main-nav-link products">Products</a>--%>
+        <a href="<c:url value="/admin"/>" class="main-nav-link admin">Admin</a>
+        <a href="<c:url value="/owners"/>" class="main-nav-link owners">Owners</a>
+        <a href="<c:url value="/users"/>" class="main-nav-link users">Users</a>
+    </nav>
 <c:if test="${!empty listProducts}">
     <div class="wrapTable">
         <table id="grid" class="table">
@@ -93,7 +67,7 @@
                 <th data-type="string">Edit</th>
                 <th data-type="string">Del</th>
             </tr>
-            <tr ></tr>
+            <tr></tr>
             </thead>
             <tbody class="ttbody" id="tbody">
                 <c:forEach items="${listProducts}" var="product">
@@ -101,22 +75,17 @@
                         <td>${product.id}</td>
                         <td><a href="${contextPath}/productdata/${product.id}" target="_blank">${product.productName}</a></td>
                         <td>${product.productManufacturer}</td>
-                            <%--<td>${product.owners}</td>--%>
                         <td>${product.owners.toString().replaceAll("[\\[\\]]","")}</td>
-                            <%--<td>${product.price/100}${product.price%100}</td>--%>
                         <td>${product.price}</td>
                         <td>${product.productDescription}</td>
                         <td>
                             <div class="wrapSquaredBut">
-                                    <%--<a href="<c:url value='/editProduct/${product.id}'/>">Edit</a>--%>
-                                    <%--<button class="btnShowEditPage" value="/editProduct/${product.id}" data-value="/editProduct/${product.id}"></button>--%>
                                 <a href="<c:url value='/productEdit/${product.id}'/>" class="btnShowEditPage"></a>
                             </div>
                         </td>
                         <td>
                             <div class="wrapSquaredBut">
                                 <a href="<c:url value='/removeProduct/${product.id}'/>" onclick="return confirm('Are you sure that you want to delete?')" class="delBtn"></a>
-                                    <%--<button class="delBtn" value="/removeProduct/${product.id}" data-value="/removeProduct/${product.id}"></button>--%>
                             </div>
                         </td>
                     </tr>
@@ -130,6 +99,5 @@
 </div>
 <script src="${contextPath}/resources/js/jquery-3.2.1.min.js"></script>
 <script src="${contextPath}/resources/js/lodash.js"></script>
-<%--<script src="${contextPath}/resources/js/scriptProduct.js"></script>--%>
 </body>
 </html>

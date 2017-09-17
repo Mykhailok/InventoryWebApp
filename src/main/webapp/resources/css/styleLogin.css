@@ -1,0 +1,80 @@
+.wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; }
+  .wrapper .container {
+    width: 29rem;
+    padding: 1.3rem 1rem;
+    background: #e6f7fd;
+    -webkit-box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+    border-radius: 20px;
+    z-index: 1; }
+    .wrapper .container .login-form {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+      flex-direction: column;
+      -webkit-box-align: center;
+      -ms-flex-align: center;
+      align-items: center; }
+    .wrapper .container .login-form h1 {
+      margin: 0 0 0.9rem;
+      font: normal 20px/1 'SF UI Display', sans-serif;
+      color: #2ea7e0;
+      text-transform: uppercase; }
+    .wrapper .container .login-form input {
+      width: 80%;
+      margin: 0 0 1px;
+      padding-top: 0.85rem;
+      background: #e6f7fd;
+      -webkit-box-shadow: 0 1px 0 0 #89cfef;
+      box-shadow: 0 1px 0 0 #89cfef;
+      border: 0;
+      border-bottom: 1px solid #2ea7e0;
+      outline: 0;
+      font: normal 14px/1 'SF UI Display', sans-serif;
+      text-align: center;
+      color: #2ea7e0; }
+    .wrapper .container .login-form input::-webkit-input-placeholder {
+      color: #64d3ff;
+      font: 300 12px/1 'SF UI Display', sans-serif; }
+    .wrapper .container .login-form button {
+      margin-top: 1.4rem;
+      padding: 1.125rem 2rem;
+      background: -webkit-linear-gradient(30deg, #fbcd3d, #fee313);
+      background: -o-linear-gradient(30deg, #fbcd3d, #fee313);
+      background: linear-gradient(60deg, #fbcd3d, #fee313);
+      border: 1px solid #34a7e0;
+      border-radius: 25px;
+      outline: 0;
+      font: normal 0.8rem/1 'SF UI Display', sans-serif;
+      text-transform: uppercase;
+      color: #2ea7e0;
+      cursor: pointer; }
+    .wrapper .container .login-form button:hover, .wrapper .container .login-form button:active, .wrapper .container .login-form button:focus {
+      background: -webkit-linear-gradient(30deg, #00b9e9, #acdcf8);
+      background: -o-linear-gradient(30deg, #00b9e9, #acdcf8);
+      background: linear-gradient(60deg, #00b9e9, #acdcf8); }
+    .wrapper .container .login-form .message {
+      margin: 0.95rem 0 0;
+      font: 300 0.7rem/1 'SF UI Display', sans-serif;
+      color: #b3b3b3; }
+    .wrapper .container .login-form .message a {
+      color: #2ea7e0;
+      text-decoration: none; }
+    .wrapper .container .login-form .message a:hover {
+      text-decoration: underline; }
+
+@media (min-width: 320px) and (max-width: 479px) {
+  .container {
+    min-width: 19rem; }
+
+  .login-form input {
+    width: 100%; } }
+
+/*# sourceMappingURL=styleLogin.css.map */

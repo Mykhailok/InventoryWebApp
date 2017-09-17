@@ -1,0 +1,101 @@
+.container {
+  width: 100%; }
+
+.center {
+  margin: 0 auto;
+  max-width: 1200px;
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: flex-start;
+  align-items: center; }
+  .center h1 {
+    font-weight: normal;
+    font-size: 1.5rem;
+    color: black;
+    text-align: center;
+    padding: 1rem; }
+
+.tableOwner {
+  font: 14px 'SF UI Display',  sans-serif;
+  width: 100%; }
+  .tableOwner .thead tr {
+    width: 100%;
+    height: 30px;
+    background: #ffee17;
+    color: #2ea7e0;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+    align-items: center; }
+    .tableOwner .thead tr:last-child {
+      margin-top: 2px;
+      width: 100%;
+      height: 2px; }
+    .tableOwner .thead tr th {
+      height: 100%;
+      font-size: 18px;
+      text-transform: uppercase;
+      color: #2ea7e0;
+      display: flex;
+      flex-flow: row wrap;
+      justify-content: center;
+      align-items: center; }
+      .tableOwner .thead tr th:nth-child(1), .tableOwner .thead tr th:nth-child(4), .tableOwner .thead tr th:nth-child(5) {
+        width: 30px; }
+      .tableOwner .thead tr th:nth-child(2), .tableOwner .thead tr th:nth-child(3) {
+        min-width: 27%; }
+      .tableOwner .thead tr th:hover {
+        cursor: pointer; }
+  .tableOwner .tbody {
+    background-color: transparent;
+    padding-bottom: 1px;
+    width: 100%;
+    color: black; }
+    .tableOwner .tbody tr {
+      margin-top: 30px;
+      height: 20px;
+      display: flex;
+      flex-flow: row wrap;
+      justify-content: space-around;
+      align-items: center; }
+      .tableOwner .tbody tr:nth-child(1) {
+        margin-top: 10px; }
+      .tableOwner .tbody tr td {
+        height: 100%;
+        font-size: 18px;
+        color: #595857;
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: center;
+        align-items: center; }
+        .tableOwner .tbody tr td:nth-child(1), .tableOwner .tbody tr td:nth-child(4), .tableOwner .tbody tr td:nth-child(5) {
+          width: 30px; }
+        .tableOwner .tbody tr td:nth-child(2), .tableOwner .tbody tr td:nth-child(3) {
+          min-width: 27%; }
+        .tableOwner .tbody tr td .btnEd,
+        .tableOwner .tbody tr td .btnDel {
+          display: inline-block;
+          width: 20px;
+          height: 20px;
+          color: transparent;
+          background-color: yellow; }
+        .tableOwner .tbody tr td .btnEd:hover,
+        .tableOwner .tbody tr td .btnDel:hover {
+          cursor: pointer;
+          background-color: #2ea7e0; }
+
+input {
+  width: 200px; }
+
+select {
+  width: 206px; }
+
+h2 {
+  text-align: right;
+  position: relative;
+  right: 10px; }
+
+.add_User {
+  margin-left: 50px; }
+
+/*# sourceMappingURL=styleOwners.css.map */

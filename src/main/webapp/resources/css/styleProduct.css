@@ -6,7 +6,9 @@
   justify-content: flex-start;
   align-items: center;
   max-width: 1200px;
-  font-family: 'SF UI Display', serif; }
+  min-width: 960px;
+  font-family: 'SF UI Display', serif;
+  font-weight: normal; }
 
 .wrapBattonAdd {
   width: 100%;
@@ -140,137 +142,5 @@
 .delBtn:hover,
 .btnShowEditPage:hover {
   background: #2ea7e0; }
-
-.wrapEditHide {
-  display: none; }
-
-.wrapEditVisible {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0;
-  z-index: 9999999;
-  display: flex;
-  flex-flow: column wrap;
-  justify-content: center;
-  align-items: center;
-  background-color: rgba(0, 0, 0, 0.5); }
-
-.wrapForm {
-  background-image: url("../images/BackgroundEdit.png");
-  width: 544px;
-  height: 798px;
-  display: flex;
-  flex-flow: column wrap;
-  justify-content: center;
-  align-items: center; }
-
-.wrapForm form {
-  width: 517px;
-  height: 400px;
-  background-color: #e0f5fc;
-  border-radius: 20px; }
-
-.wrapForm form h1 {
-  margin-top: 22px;
-  margin-bottom: 35px;
-  text-transform: uppercase;
-  text-align: center;
-  color: #f8b62d;
-  font-size: 26px; }
-
-.wrapForm form .wrapEditLabel {
-  display: flex;
-  flex-flow: row wrap;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 15px; }
-
-.wrapForm form .wrapEditLabel label {
-  display: inline-block;
-  font-size: 18px;
-  color: #595857;
-  text-transform: uppercase;
-  text-align: left;
-  margin-left: 10px; }
-
-.wrapForm form .wrapEditLabel input {
-  width: 60%;
-  margin-right: 10px;
-  color: #2ea7e0;
-  font-size: 18px;
-  text-transform: uppercase;
-  text-align: center;
-  border: 1px solid transparent;
-  border-bottom-color: #2ea7e0;
-  background-color: #e0f5fc; }
-
-.wrapForm form .wrapEditLabel input:focus {
-  border: 1px solid transparent;
-  border-bottom-color: #2ea7e0;
-  background-color: #e0f5fc; }
-
-.wrapForm form .wrapEditBut {
-  display: flex;
-  flex-flow: row wrap;
-  justify-content: flex-end;
-  align-items: center; }
-
-.wrapForm form .wrapEditBut button {
-  width: 120px;
-  height: 50px;
-  border-radius: 25px;
-  background-color: #2ea7e0;
-  color: #ffffff;
-  text-transform: uppercase;
-  font-size: 30px;
-  margin-right: 20px;
-  outline: 1px transparent; }
-
-.wrapForm form .wrapEditBut button:hover {
-  background-color: #ffee17;
-  color: #2ea7e0; }
-
-/*# sourceMappingURL=styleProduct.css.map */
-.mainNav {
-  padding: 20px 0;
-  margin-left: 50px;
-  z-index: 1020; }
-
-.main-nav-link {
-  display: inline-block;
-  width: 116px;
-  height: 116px;
-  color: #2ea7e0;
-  padding-top: 90px;
-  margin-right: 10px;
-  background: #ffe000;
-  border-radius: 50%;
-  font-family: 'SFUIDisplay-Light', sans-serif;
-  font-size: 12px;
-  text-align: center;
-  text-transform: uppercase;
-  text-decoration: none;
-  transition: all .5s ease-in; }
-
-@media screen and (min-device-width: 481px) and (max-device-width: 768px) {
-  .main-nav-link {
-    display: block; } }
-.main-nav-link:hover {
-  color: #fdff00;
-  box-shadow: 0 0 35px #fdff00; }
-
-.main-nav-link.main-menu {
-  background: url(../images/main_menu4.png) center center no-repeat, #ffb600; }
-
-.main-nav-link.admin {
-  background: url(../images/admin1.png) center 20px no-repeat, #ffb600; }
-
-.main-nav-link.users {
-  background: url(../images/user.png) center center no-repeat, #ffe000; }
-
-.main-nav-link.owners {
-  background: url(../images/owner.png) center center no-repeat, #ffe000; }
 
 /*# sourceMappingURL=styleProduct.css.map */

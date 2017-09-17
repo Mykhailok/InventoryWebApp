@@ -15,7 +15,14 @@ body {
 	background: linear-gradient(60deg, #00b9e9, #acdcf8);
 	height: 100vh;
 }
-
+.contAdmin {
+	display: flex;
+    flex-flow: column wrap;
+	justify-content: flex-start;
+	align-items: center;
+	width: 100vw;
+	height: 100vh;
+}
 .users_menu {
 	background: url("../images/icons_sprite2.png") 0 0 no-repeat;
 	height: 117px;
@@ -247,16 +254,16 @@ body {
 	bottom: 14%;
 }
 
-.container {
-	height: 100vh;
-	margin: 0 auto;
-	min-width: 320px;
-	overflow: auto;
-	position: fixed;
-	top: 0;
-	left: 0;
-	width: 100%;
-}
+/*.container {*/
+	/*height: 100vh;*/
+	/*margin: 0 auto;*/
+	/*min-width: 320px;*/
+	/*overflow: auto;*/
+	/*position: fixed;*/
+	/*top: 0;*/
+	/*left: 0;*/
+	/*width: 100%;*/
+/*}*/
 
 /*MENU*/
 

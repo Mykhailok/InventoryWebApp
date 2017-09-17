@@ -1,0 +1,196 @@
+body {
+  background: -webkit-linear-gradient(30deg, #00b9e9, #acdcf8);
+  background: -o-linear-gradient(30deg, #00b9e9, #acdcf8);
+  background: linear-gradient(60deg, #00b9e9, #acdcf8);
+  height: 100vh;
+  font-family: 'SF UI Display',sans-serif;
+  font-weight: normal; }
+
+.fonIcons i {
+  z-index: 1000; }
+
+.iconsOne {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  background: url(../images/icons.png) 0 0 no-repeat;
+  right: 0;
+  top: 20%; }
+
+.iconsTwo {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  background: url(../images/icons.png) -60px 0 no-repeat;
+  left: 40%;
+  top: 1%; }
+
+.iconsThree {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  background: url(../images/icons.png) -120px 0 no-repeat;
+  left: 1%;
+  top: 42%; }
+
+.iconsFour {
+  position: absolute;
+  width: 60px;
+  height: 50px;
+  background: url(../images/icons.png) -185px 0 no-repeat;
+  left: 3%;
+  bottom: 0.5%; }
+
+.iconsFive {
+  position: absolute;
+  width: 60px;
+  height: 50px;
+  background: url(../images/icons.png) -255px 0 no-repeat;
+  right: 2%;
+  bottom: 30%; }
+
+.iconsSix {
+  position: absolute;
+  width: 40px;
+  height: 50px;
+  background: url(../images/icons.png) -320px 0 no-repeat;
+  left: 0;
+  top: 70%; }
+
+.iconsSeven {
+  position: absolute;
+  width: 40px;
+  height: 50px;
+  background: url(../images/icons.png) 0 -80px no-repeat;
+  left: 15%;
+  top: 2%; }
+
+.iconsEight {
+  position: absolute;
+  width: 50px;
+  height: 40px;
+  background: url(../images/icons.png) -50px -80px no-repeat;
+  right: 5%;
+  bottom: 0; }
+
+.iconsNine {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  background: url(../images/icons.png) -100px -73px no-repeat;
+  right: 4%;
+  top: 44%; }
+
+.iconsTen {
+  position: absolute;
+  width: 55px;
+  height: 50px;
+  background: url(../images/icons.png) -165px -70px no-repeat;
+  left: 72%;
+  top: 6%; }
+
+.iconsEleven {
+  position: absolute;
+  width: 60px;
+  height: 50px;
+  background: url(../images/icons.png) -238px -65px no-repeat;
+  left: 0;
+  top: 17%; }
+
+.iconsTwelve {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  background: url(../images/icons.png) -290px -65px no-repeat;
+  right: 0;
+  top: 0; }
+
+.iconThirteen {
+  position: absolute;
+  width: 33px;
+  height: 22px;
+  background: url(../images/loginSprite.png) 0 0 no-repeat;
+  left: 34%;
+  top: 24%; }
+
+.iconFourteen {
+  position: absolute;
+  width: 33px;
+  height: 22px;
+  background: url(../images/loginSprite.png) -196px 0 no-repeat;
+  left: 12%;
+  top: 30%; }
+
+.iconFifteen {
+  position: absolute;
+  width: 33px;
+  height: 22px;
+  background: url(../images/loginSprite.png) 0 0 no-repeat;
+  left: 28%;
+  top: 9%; }
+
+.iconSixteen {
+  position: absolute;
+  width: 48px;
+  height: 31px;
+  background: url(../images/loginSprite.png) -146px 0 no-repeat;
+  left: 83%;
+  top: 4%; }
+
+.iconSeventeen {
+  position: absolute;
+  width: 33px;
+  height: 22px;
+  background: url(../images/loginSprite.png) -196px 0 no-repeat;
+  right: 30%;
+  top: 19%; }
+
+.iconEighteen {
+  position: absolute;
+  width: 33px;
+  height: 22px;
+  background: url(../images/loginSprite.png) -196px 0 no-repeat;
+  right: 15%;
+  top: 36%; }
+
+.iconNineteen {
+  position: absolute;
+  width: 47px;
+  height: 31px;
+  background: url(../images/loginSprite.png) -51px -49px no-repeat;
+  right: 20%;
+  top: 52%; }
+
+.iconTwenty {
+  position: absolute;
+  width: 33px;
+  height: 22px;
+  background: url(../images/loginSprite.png) -196px 0 no-repeat;
+  left: 21%;
+  bottom: 39%; }
+
+.iconTwentyOne {
+  position: absolute;
+  width: 47px;
+  height: 31px;
+  background: url(../images/loginSprite.png) -146px 0 no-repeat;
+  left: 19%;
+  bottom: 12%; }
+
+.iconTwentyTwo {
+  position: absolute;
+  width: 33px;
+  height: 22px;
+  background: url(../images/loginSprite.png) 0 0 no-repeat;
+  right: 39%;
+  bottom: 16%; }
+
+.iconTwentyThree {
+  position: absolute;
+  width: 47px;
+  height: 31px;
+  background: url(../images/loginSprite.png) -51px -49px no-repeat;
+  right: 26%;
+  bottom: 14%; }
+
+/*# sourceMappingURL=styleBackgroundMain.css.map */

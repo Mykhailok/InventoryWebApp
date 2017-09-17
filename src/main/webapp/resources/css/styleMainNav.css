@@ -1,0 +1,45 @@
+.mainNav {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  z-index: 1020;
+  font-family: 'SF UI Display',sans-serif; }
+
+.main-nav-link {
+  display: inline-block;
+  width: 116px;
+  height: 116px;
+  color: #2ea7e0;
+  padding-top: 90px;
+  margin-right: 10px;
+  border-radius: 50%;
+  font-weight: 300;
+  font-size: 12px;
+  text-align: center;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: all .5s ease-in;
+  outline: transparent; }
+
+.main-nav-link:hover {
+  color: #fdff00;
+  box-shadow: 0 0 35px #fdff00; }
+
+.main-nav-link.main-menu {
+  background: url(../images/mainNew.png) center 20px no-repeat, #ffa200; }
+
+.main-nav-link.products {
+  background: url(../images/productNew.png) center center no-repeat, #ffb600; }
+
+.main-nav-link.admin {
+  background: url(../images/admin1.png) center 20px no-repeat, #ffc200; }
+
+.main-nav-link.owners {
+  background: url(../images/owner.png) center center no-repeat, #ffdf00; }
+
+.main-nav-link.users {
+  background: url(../images/user.png) center center no-repeat, #ffed16; }
+
+/*# sourceMappingURL=styleMainNav.css.map */

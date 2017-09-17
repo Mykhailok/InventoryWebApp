@@ -1,0 +1,152 @@
+$widthMin:30px;
+$widthMax:27%;
+$heightTdThead:30px;
+$heightTdTbody:20px;
+$colorBackgrondThead:#ffee17;
+$colorBackgrondTbody:transparent;
+$fontSizeThead:18px;
+$fontSizeTbody:18px;
+$colorFontHead:#2ea7e0;
+$colorFontBody:#595857;
+$sizeButton:30px;
+.container {
+  width: 100%;
+  //outline: 1px solid blue;
+}
+
+.center {
+  margin: 0 auto;
+  max-width: 1200px;
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: flex-start;
+  align-items: center;
+  //outline: 1px solid black;
+  h1{
+    font-weight: normal;
+    font-size: 1.5rem;
+    color: black;
+    text-align: center;
+    padding: 1rem;
+  }
+}
+
+.tableOwner {
+  font: 14px 'SF UI Display',  sans-serif;
+  width: 100%;
+  //outline: 3px solid yellow;
+  .thead {
+    tr {
+      width: 100%;
+      height: $heightTdThead;
+      background: $colorBackgrondThead;
+      color: $colorFontHead;
+      display: flex;
+      flex-flow: row wrap;
+      justify-content: space-around;
+      align-items: center;
+
+      &:last-child {
+        margin-top: 2px;
+        width: 100%;
+        height: 2px;
+      }
+      th{
+        height: 100%;
+        font-size: $fontSizeThead;
+        text-transform: uppercase;
+        color: $colorFontHead;
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: center;
+        align-items: center;
+        //outline: 1px solid red;
+        &:nth-child(1),
+        &:nth-child(4),
+        &:nth-child(5)
+        {
+          width: $widthMin;
+        }
+        &:nth-child(2),
+        &:nth-child(3)
+        {
+          min-width: $widthMax;
+        }
+        &:hover {
+          cursor: pointer;
+        }
+      }
+    }
+  }
+  .tbody{
+    background-color: $colorBackgrondTbody;
+    padding-bottom: 1px;
+    width: 100%;
+    color: black;
+    tr{
+      margin-top: $heightTdThead;
+      height: $heightTdTbody;
+      display: flex;
+      flex-flow: row wrap  ;
+      justify-content: space-around;
+      align-items: center;
+      &:nth-child(1){
+        margin-top: 10px;
+      }
+      td {
+        height: 100%;
+        font-size: $fontSizeTbody;
+        color: $colorFontBody;
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: center;
+        align-items: center;
+        &:nth-child(1),
+        &:nth-child(4),
+        &:nth-child(5)
+        {
+          width: $widthMin;
+        }
+        &:nth-child(2),
+        &:nth-child(3)
+        {
+          min-width: $widthMax;
+        }
+        .btnEd,
+        .btnDel{
+          display: inline-block;
+          width: $heightTdTbody;
+          height: $heightTdTbody;
+          color: transparent;
+          background-color: yellow;
+          //border: 1px solid blue;
+        }
+        .btnEd:hover,
+        .btnDel:hover {
+          cursor: pointer;
+          background-color: #2ea7e0;
+        }
+      }
+    }
+  }
+}
+
+input {
+  width: 200px;
+}
+select {
+  width: 206px;
+}
+
+h2{
+  text-align: right;
+  position: relative;
+  right: 10px;
+
+}
+
+
+
+.add_User {
+  margin-left: 50px;
+}

@@ -4,12 +4,17 @@
 <head>
     <meta charset="UTF-8">
     <title>Inventory</title>
-    <link rel="stylesheet" href="resources/css/homeFonts.css">
-    <link rel="stylesheet" href="resources/css/homeStyle320.css">
-    <link rel="stylesheet" href="resources/css/homeStyle768.css">
-    <link rel="stylesheet" href="resources/css/normalize.css">
-    <%--<link href="${contextPath}/resources/css/bootstrap.min.css" rel="stylesheet">--%>
-    <%--<link href="${contextPath}/resources/css/common.css" rel="stylesheet">--%>
+    <link rel="stylesheet" href="resources/css/reset.css">
+    <link rel="stylesheet" href="resources/css/font.css">
+    <link rel="stylesheet" href="resources/css/fontello.css">
+    <link rel="stylesheet" href="resources/css/animation.css">
+    <link rel="stylesheet" href="resources/css/fontello-codes.css">
+    <link rel="stylesheet" href="resources/css/fontello-embedded.css">
+    <link rel="stylesheet" href="resources/css/fontello-ie7.css">
+    <link rel="stylesheet" href="resources/css/fontello-ie7-codes.css">
+    <link rel="stylesheet" href="resources/css/styleBackgroundMain.css">
+    <link rel="stylesheet" href="resources/css/styleIndex.css">
+
 </head>
 <body>
 <div class="fonIcons">
@@ -39,36 +44,20 @@
 </div>
 <div class="container">
     <header  class="header">
-        <%--<a href="login.html" class="inventarium">INVENTARIUM</a>--%>
         <a href="<c:url value="/login"/>" class="inventarium">INVENTARIUM</a>
     </header>
     <main class="main">
         <p class="text">Inventarium and its channel network provide software  solutions for a number of verticals and industries</p>
     </main>
 </div>
-<%--<a href="<c:url value="/login"/>" class="button7">Start</a>--%>
-<%--<hr>--%>
-<%--<br/>--%>
-<%--<a href="<c:url value="/registration"/>" target="_blank">Press to Start</a>--%>
-<%--<p>--%>
-    <%--We present you the inventory service.--%>
-    <%--The service will help you keep track of all inventory that will be stored in one convenient place for you.--%>
-    <%--<span class="word">Inventarium</span> provides the ability to add, delete, edit inventory items.--%>
-<%--</p>--%>
 
-
-<%--a href="<c:url value="/products"/>" target="_blank">Product list</a>
-<br/>
-<br/>
-<a href="<c:url value="/owners"/>" target="_blank">Owner list</a>
-<br/--%>
 <footer class="footer">
     <ul class="contacts">
-        <li><a href="https://www.facebook.com" target="_blank"><img src="resources/images/1.png" alt=""></a></li>
-        <li><a href="https://twitter.com" target="_blank"><img src="resources/images/2.png" alt=""></a></li>
-        <li><a href="https://plus.google.com" target="_blank"><img src="resources/images/3.png" alt=""></a></li>
-        <li><a href="https://www.instagram.com" target="_blank"><img src="resources/images/4.png" alt=""></a></li>
-        <li><a href="https://www.youtube.com" target="_blank"><img src="resources/images/5.png" alt=""></a></li>
+        <li><a href="https://www.facebook.com" target="_blank"><i class="icon-facebook-official"></i></a></li>
+        <li><a href="https://twitter.com" target="_blank"><i class="icon-twitter-squared"></i></a></li>
+        <li><a href="https://plus.google.com" target="_blank"><i class="icon-gplus-squared"></i></a></li>
+        <li><a href="https://www.instagram.com" target="_blank"><i class="icon-linkedin-squared"></i></a></li>
+        <li><a href="https://www.youtube.com" target="_blank"><i class="icon-youtube-squared"></i></a></li>
     </ul>
 </footer>
 </body>
