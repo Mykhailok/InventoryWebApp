@@ -14,11 +14,8 @@
     <meta name="author" content="">
 
     <title>Create an account</title>
-
-    <link href="${contextPath}/resources/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="${contextPath}/resources/css/reset.css">
     <link rel="stylesheet" href="${contextPath}/resources/css/styleBackgroundMain.css">
-    <%--<link rel="stylesheet" href="${contextPath}/resources/css/styleMainNav.css">--%>
     <link rel="stylesheet" href="${contextPath}/resources/css/font.css">
     <link rel="stylesheet" href="${contextPath}/resources/css/styleRegistation.css">
 
@@ -54,9 +51,8 @@
     <i class="iconTwentyTwo"></i>
     <i class="iconTwentyThree"></i>
 </div>
-
     <div class="container">
-
+        <div class="wrapFormSignin">
         <form:form method="POST" modelAttribute="userForm" class="form-signin">
             <h2 class="form-signin-heading">Create your account</h2>
             <spring:bind path="username">
@@ -84,9 +80,10 @@
 
             <h4 class="text-center"><a href="/login">I have an account</a></h4>
 
-            <button class="btn btn-lg btn-primary btn-block" type="submit">Submit</button>
+            <button  type="submit">Submit</button>
         </form:form>
 
+    </div>
     </div>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>

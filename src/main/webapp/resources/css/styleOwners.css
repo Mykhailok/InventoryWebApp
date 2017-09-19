@@ -5,9 +5,9 @@
   margin: 0 auto;
   max-width: 1200px;
   display: flex;
-  flex-flow: column wrap;
-  justify-content: flex-start;
-  align-items: center; }
+  flex-flow: row wrap;
+  justify-content: space-between;
+  align-items: flex-start; }
   .center h1 {
     font-weight: normal;
     font-size: 1.5rem;
@@ -15,37 +15,48 @@
     text-align: center;
     padding: 1rem; }
 
+.wrapTables {
+  width: 70%; }
+
 .tableOwner {
   font: 14px 'SF UI Display',  sans-serif;
-  width: 100%; }
-  .tableOwner .thead tr {
-    width: 100%;
-    height: 30px;
-    background: #ffee17;
-    color: #2ea7e0;
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: space-around;
-    align-items: center; }
-    .tableOwner .thead tr:last-child {
-      margin-top: 2px;
-      width: 100%;
-      height: 2px; }
-    .tableOwner .thead tr th {
-      height: 100%;
-      font-size: 18px;
-      text-transform: uppercase;
-      color: #2ea7e0;
+  width: 100%;
+  z-index: 1022;
+  margin-bottom: 20px;
+  position: relative; }
+  .tableOwner .thead {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%; }
+    .tableOwner .thead tr {
       display: flex;
       flex-flow: row wrap;
-      justify-content: center;
-      align-items: center; }
-      .tableOwner .thead tr th:nth-child(1), .tableOwner .thead tr th:nth-child(4), .tableOwner .thead tr th:nth-child(5) {
-        width: 30px; }
-      .tableOwner .thead tr th:nth-child(2), .tableOwner .thead tr th:nth-child(3) {
-        min-width: 27%; }
-      .tableOwner .thead tr th:hover {
-        cursor: pointer; }
+      justify-content: space-around;
+      align-items: center;
+      width: 100%;
+      height: 30px;
+      background: #ffee17;
+      color: #2ea7e0; }
+      .tableOwner .thead tr:last-child {
+        margin-top: 2px;
+        width: 100%;
+        height: 2px; }
+      .tableOwner .thead tr th {
+        height: 100%;
+        font-size: 18px;
+        text-transform: uppercase;
+        color: #2ea7e0;
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: center;
+        align-items: center; }
+        .tableOwner .thead tr th:nth-child(1), .tableOwner .thead tr th:nth-child(4), .tableOwner .thead tr th:nth-child(5) {
+          width: 30px; }
+        .tableOwner .thead tr th:nth-child(2), .tableOwner .thead tr th:nth-child(3) {
+          min-width: 27%; }
+        .tableOwner .thead tr th:hover {
+          cursor: pointer; }
   .tableOwner .tbody {
     background-color: transparent;
     padding-bottom: 1px;
@@ -59,7 +70,7 @@
       justify-content: space-around;
       align-items: center; }
       .tableOwner .tbody tr:nth-child(1) {
-        margin-top: 10px; }
+        margin-top: 50px; }
       .tableOwner .tbody tr td {
         height: 100%;
         font-size: 18px;
@@ -72,30 +83,76 @@
           width: 30px; }
         .tableOwner .tbody tr td:nth-child(2), .tableOwner .tbody tr td:nth-child(3) {
           min-width: 27%; }
+        .tableOwner .tbody tr td .wrapSquaredBut {
+          width: 100%;
+          height: 100%;
+          display: flex;
+          flex-flow: row wrap;
+          justify-content: center;
+          align-items: center; }
         .tableOwner .tbody tr td .btnEd,
         .tableOwner .tbody tr td .btnDel {
-          display: inline-block;
-          width: 20px;
-          height: 20px;
+          width: 29px;
+          height: 29px;
           color: transparent;
-          background-color: yellow; }
+          font-size: 1px;
+          background-color: #ffe200;
+          border: 2px outset #e1d2d2;
+          transition: all .3s ease-in;
+          z-index: 1020; }
         .tableOwner .tbody tr td .btnEd:hover,
         .tableOwner .tbody tr td .btnDel:hover {
-          cursor: pointer;
-          background-color: #2ea7e0; }
+          background: #2ea7e0; }
 
-input {
-  width: 200px; }
+/*****************************************************************/
+/*ADD PRODUCT*/
+.wrapForm {
+  background-color: rgba(218, 244, 252, 0.8);
+  border-radius: 20px;
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+  margin: auto;
+  padding: 1.2rem 1rem 0 1rem;
+  z-index: 1;
+  width: 27%;
+  min-width: 240px; }
+  .wrapForm form {
+    font: 300 14px 'SF UI Display', sans-serif; }
+    .wrapForm form h1 {
+      color: #f8b62d;
+      font: normal 20px 'SF UI Display', sans-serif;
+      margin: 0 0 1rem 0;
+      text-align: center; }
+    .wrapForm form input[type='text'] {
+      background-color: transparent;
+      border: none;
+      border-bottom: 2px solid #2ea7e0;
+      margin: 0 0 11px 0;
+      padding-top: 0.1rem;
+      outline: none;
+      width: 95%; }
+    .wrapForm form input[type=submit] {
+      background: #2ea7e0;
+      border: 2px solid #2ea7e0;
+      -moz-border-radius: 25px;
+      -webkit-border-radius: 25px;
+      border-radius: 25px;
+      color: #fff;
+      cursor: pointer;
+      font: normal 0.8rem 'SF UI Display', sans-serif;
+      float: left;
+      margin: 20px 0 5px 0;
+      outline: none;
+      padding: 1.125rem 2rem; }
+    .wrapForm form input[type=submit]:hover {
+      background: #f8b62d; }
 
-select {
-  width: 206px; }
-
-h2 {
-  text-align: right;
-  position: relative;
-  right: 10px; }
-
-.add_User {
-  margin-left: 50px; }
+@media screen and (min-device-width: 320px) and (max-device-width: 479px) {
+  .center {
+    display: flex;
+    flex-flow: column-reverse wrap;
+    justify-content: flex-start;
+    align-items: center; }
+    .center .wrapTables {
+      width: 100%; } }
 
 /*# sourceMappingURL=styleOwners.css.map */

@@ -55,87 +55,111 @@
         <%--<a href="<c:url value="/users"/>" class="main-nav-link users">Users</a>--%>
     </nav>
     <div class="center">
-        <h1>User List</h1>
+        <div class="wrapTables">
+            <h1>User List</h1>
+            <c:if test="${!empty listUsers}">
+            <table id="gridUser" class="tableOwner tableUsers ">
+                <thead class="thead" id="theadUsers">
+                        <tr>
+                            <th >ID</th>
+                            <th >Username</th>
+                            <th >Role</th>
+                            <th >Edit</th>
+                            <th >Delete</th>
+                        </tr>
+                        <tr></tr>
+                </thead>
+                <tbody class="tbody" id="tbodyUsers">
+                    <c:forEach items="${listUsers}" var="user">
+                        <tr>
+                            <td>${user.id}</td>
+                            <td>
+                                <a href="${contextPath}/userdata/${user.id}" target="_blank">${user.username}</a>
+                            </td>
+                            <td>${user.roles.toString().replaceAll("[\\[\\]]","")}</td>
+                            <td>
+                                <div class="wrapSquaredBut">
+                                    <a href="<c:url value='/editUser/${user.id}'/>" class="btnEd">Edit</a>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="wrapSquaredBut">
+                                    <a href="<c:url value='/removeUser/${user.id}'/>" class="btnDel">Del</a>
+                                </div>
+                            </td>
+                        </tr>
+                    </c:forEach>
+                </tbody>
+                </table>
+            </c:if>
+        </div>
 
-        <c:if test="${!empty listUsers}">
-            <table class="tg">
-                <tr>
-                    <th width="80">ID</th>
-                    <th width="120">Username</th>
-                    <th width="120">Role</th>
-                    <th width="60">Edit</th>
-                    <th width="120">Delete</th>
-                </tr>
-                <c:forEach items="${listUsers}" var="user">
-                    <tr>
-                        <td>${user.id}</td>
-                        <td><a href="${contextPath}/userdata/${user.id}" target="_blank">${user.username}</a></td>
-                        <td>${user.roles.toString().replaceAll("[\\[\\]]","")}</td>
-                        <td><a href="<c:url value='/editUser/${user.id}'/>">Edit</a></td>
-                        <td><a href="<c:url value='/removeUser/${user.id}'/>">Delete</a></td>
-                    </tr>
-                </c:forEach>
-            </table>
-        </c:if>
+<%--надо сделать привязки--%>
+        <div class="wrapForm">
+            <form action="" class="formAdd formAddOwner">
+                <h1>Add a User</h1>
+                <input type="text" id="idUser" placeholder="id Owner" disabled="true">
+                <input type="text" id="nameUser" placeholder="Name User">
+                <input type="text" id="passwordUser" placeholder="Password">
+                <input type="submit" value="Add Uswer">
+            </form>
+        </div>
 
+        <%--<c:url var="addAction" value="/users/add"/>--%>
 
-        <h1>Add a User</h1>
+    <%--<form:form action="${addAction}" commandName="user">--%>
+        <%--<table>--%>
+            <%--<c:if test="${empty user.username}">--%>
+            <%--<tr>--%>
+                <%--<td>--%>
+                    <%--<form:label path="id">--%>
+                        <%--<spring:message text="ID"/>--%>
+                    <%--</form:label>--%>
+                <%--</td>--%>
+                <%--<td>--%>
+                    <%--<form:input path="id" readonly="true" size="8" disabled="true"/>--%>
+                    <%--<form:hidden path="id"/>--%>
+                <%--</td>--%>
+            <%--</tr>--%>
 
-        <c:url var="addAction" value="/users/add"/>
+            <%--<tr>--%>
+                <%--<td>--%>
+                    <%--<form:label path="username">--%>
+                        <%--<spring:message text="Name"/>--%>
+                    <%--</form:label>--%>
+                <%--</td>--%>
+                <%--<td>--%>
+                    <%--<form:input path="username"/>--%>
+                <%--</td>--%>
+            <%--</tr>--%>
+            <%--<tr>--%>
+                <%--<td>--%>
+                    <%--<form:label path="password">--%>
+                        <%--<spring:message text="password"/>--%>
+                    <%--</form:label>--%>
+                <%--</td>--%>
+                <%--<td>--%>
+                    <%--<form:input path="password"/>--%>
+                <%--</td>--%>
+            <%--</tr>--%>
+            <%--<tr>--%>
+                <%--</c:if>--%>
+            <%--<tr>--%>
 
-        <form:form action="${addAction}" commandName="user">
-            <table>
-                <c:if test="${empty user.username}">
-                    <tr>
-                        <td>
-                            <form:label path="id">
-                                <spring:message text="ID"/>
-                            </form:label>
-                        </td>
-                        <td>
-                            <form:input path="id" readonly="true" size="8" disabled="true"/>
-                            <form:hidden path="id"/>
-                        </td>
-                    </tr>
-
-                    <tr>
-                        <td>
-                            <form:label path="username">
-                                <spring:message text="Name"/>
-                            </form:label>
-                        </td>
-                        <td>
-                            <form:input path="username"/>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <form:label path="password">
-                                <spring:message text="password"/>
-                            </form:label>
-                        </td>
-                        <td>
-                            <form:input path="password"/>
-                        </td>
-                    </tr>
-                    <tr>
-                        </c:if>
-                <tr>
-
-                    <td colspan="2">
-                        <c:if test="${!empty user.username}">
-                            <input class="add_User" type="submit"
-                                   value="<spring:message text="Edit User"/>"
-                        </c:if>
-                        <c:if test="${empty user.username}">
-                            <input class="add_User" type="submit"
-                                   value="<spring:message text="Add User"/>"
-                        </c:if>
-                    </td>
-                </tr>
-            </table>
-        </form:form>
-    </div>
+                <%--<td colspan="2">--%>
+                    <%--<c:if test="${!empty user.username}">--%>
+                        <%--<input class="add_User" type="submit"--%>
+                               <%--value="<spring:message text="Edit User"/>"--%>
+                    <%--</c:if>--%>
+                    <%--<c:if test="${empty user.username}">--%>
+                        <%--<input class="add_User" type="submit"--%>
+                               <%--value="<spring:message text="Add User"/>"--%>
+                    <%--</c:if>--%>
+                <%--</td>--%>
+            <%--</tr>--%>
+        <%--</table>--%>
+    <%--</form:form>--%>
+</div>
 </div>
 </body>
 </html>

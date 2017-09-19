@@ -1,0 +1,120 @@
+$widthMin:30px;
+$widthMax:40%;
+$heightTdThead:30px;
+$heightTdTbody:20px;
+$colorBackgrondThead:#ffee17;
+$colorBackgrondTbody:transparent;
+$fontSizeThead:18px;
+$fontSizeTbody:18px;
+$colorFontHead:#2ea7e0;
+$colorFontBody:#595857;
+$sizeButton:30px;
+
+.container {
+  width: 100%;
+  //outline: 1px solid blue;
+  h1{
+    font-size: 2rem;
+    text-align: center;
+  }
+}
+
+.wrapTableData {
+  margin: 40px auto;
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: flex-start;
+  align-items: center;
+  font-family: 'SF UI Display',  sans-serif;
+  max-width: 680px ;
+  min-width: 320px;
+
+  .tablesData {
+    font: 14px 'SF UI Display',  sans-serif;
+    width: 100%;
+    z-index: 1022;
+    margin-bottom: 20px;
+    position: relative;
+    //outline: 3px solid yellow;
+    .thead {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      tr {
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: space-around;
+        align-items: center;
+        width: 100%;
+        height: $heightTdThead;
+        background: $colorBackgrondThead;
+        color: $colorFontHead;
+        &:last-child {
+          margin-top: 2px;
+          width: 100%;
+          height: 2px;
+        }
+        th{
+          height: 100%;
+          font-size: $fontSizeThead;
+          text-transform: uppercase;
+          color: $colorFontHead;
+          display: flex;
+          flex-flow: row wrap;
+          justify-content: center;
+          align-items: center;
+          //outline: 1px solid red;
+          &:nth-child(1)
+          {
+            width: $widthMin;
+          }
+          &:nth-child(2),
+          &:nth-child(3)
+          {
+            min-width: $widthMax;
+          }
+          &:hover {
+            cursor: pointer;
+          }
+        }
+      }
+    }
+    .tbody{
+      background-color: $colorBackgrondTbody;
+      padding-bottom: 1px;
+      width: 100%;
+      color: black;
+      tr{
+        margin-top: $heightTdThead;
+        height: $heightTdTbody;
+        display: flex;
+        flex-flow: row wrap  ;
+        justify-content: space-around;
+        align-items: center;
+        &:nth-child(1){
+          margin-top: 50px;
+        }
+        td {
+          height: 100%;
+          font-size: $fontSizeTbody;
+          color: $colorFontBody;
+          display: flex;
+          flex-flow: row wrap;
+          justify-content: center;
+          align-items: center;
+          &:nth-child(1)
+          {
+            width: $widthMin;
+          }
+          &:nth-child(2),
+          &:nth-child(3)
+          {
+            min-width: $widthMax;
+          }
+        }
+      }
+    }
+  }
+}
+

@@ -57,13 +57,14 @@
       left: 0;
       width: 100%; }
       .wrapTable .table .thead tr {
-        height: 30px;
         display: flex;
         flex-flow: row wrap;
         justify-content: space-around;
         align-items: center;
+        width: 100%;
+        height: 30px;
         background-color: #ffee17;
-        width: 100%; }
+        color: #2ea7e0; }
         .wrapTable .table .thead tr:last-child {
           margin-top: 2px;
           width: 100%;
@@ -108,39 +109,23 @@
             width: 30px; }
           .wrapTable .table .ttbody tr td:nth-child(2), .wrapTable .table .ttbody tr td:nth-child(3), .wrapTable .table .ttbody tr td:nth-child(4), .wrapTable .table .ttbody tr td:nth-child(5), .wrapTable .table .ttbody tr td:nth-child(6) {
             width: 15%; }
-          .wrapTable .table .ttbody tr td input {
-            font-size: 18px;
-            background-color: yellow;
-            border-radius: 18px;
-            border: 1px solid blue; }
-
-.wrapSquaredBut {
-  width: 100%;
-  height: 100%;
-  display: flex;
-  flex-flow: row wrap;
-  justify-content: center;
-  align-items: center; }
-  .wrapSquaredBut button {
-    width: 30px;
-    height: 30px;
-    background-color: #ffe200;
-    outline: transparent; }
-    .wrapSquaredBut button:hover {
-      cursor: pointer;
-      background-color: #2ea7e0; }
-
-.delBtn,
-.btnShowEditPage {
-  width: 29px;
-  height: 29px;
-  background-color: #ffe200;
-  border: 2px outset #e1d2d2;
-  transition: all .3s ease-in;
-  z-index: 1020; }
-
-.delBtn:hover,
-.btnShowEditPage:hover {
-  background: #2ea7e0; }
+      .wrapTable .table .ttbody .wrapSquaredBut {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: center;
+        align-items: center; }
+      .wrapTable .table .ttbody .delBtn,
+      .wrapTable .table .ttbody .btnShowEditPage {
+        width: 29px;
+        height: 29px;
+        background-color: #ffe200;
+        border: 2px outset #e1d2d2;
+        transition: all .3s ease-in;
+        z-index: 1020; }
+      .wrapTable .table .ttbody .delBtn:hover,
+      .wrapTable .table .ttbody .btnShowEditPage:hover {
+        background: #2ea7e0; }
 
 /*# sourceMappingURL=styleProduct.css.map */

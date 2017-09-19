@@ -55,6 +55,7 @@
         <a href="<c:url value="/users"/>" class="main-nav-link users">Users</a>
     </nav>
     <div class="center">
+        <div class="wrapTables">
         <h1>Owner List</h1>
 
         <c:if test="${!empty listOwners}">
@@ -74,67 +75,88 @@
                         <tr>
                             <td>${owner.id}</td>
                             <td>${owner.firstName}</td>
-                            <td><a href="${contextPath}/ownerdata/${owner.id}" target="_blank">${owner.lastName}</a></td>
-                            <td><a href="<c:url value='/editOwner/${owner.id}'/>" class="btnEd" >Edit</a></td>
-                            <td><a href="<c:url value='/removeOwner/${owner.id}'/>" class="btnDel">Delete</a></td>
+                            <td>
+                                <a href="${contextPath}/ownerdata/${owner.id}" target="_blank">${owner.lastName}</a>
+                            </td>
+                            <td>
+                                <div class="wrapSquaredBut">
+                                    <a href="<c:url value='/editOwner/${owner.id}'/>" class="btnEd" >Edit</a>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="wrapSquaredBut">
+                                    <a href="<c:url value='/removeOwner/${owner.id}'/>" class="btnDel">Del</a>
+                                </div>
+                            </td>
                         </tr>
                     </c:forEach>
                 </tbody>
             </table>
         </c:if>
+        </div>
+        <%--надо сделать привязки--%>
+<div class="wrapForm">
+        <form action="" class="formAdd formAddOwner">
+            <h1>Add an Owner</h1>
+            <%--<input type="text" id="idOwner" placeholder="id Owner" disabled="true">--%>
+            <input type="text" id="firstNameOwner" placeholder="First Name">
+            <input type="text" id="lastNameOwner" placeholder="Last Name">
+            <input type="submit" value="Add Owner">
+        </form>
+</div>
 
 
-        <h1>Add an Owner</h1>
-        <c:url var="addAction" value="/owners/add"/>
-        <form:form action="${addAction}" commandName="owner">
-            <table>
-                <c:if test="${!empty owner.lastName}">
-                    <tr>
-                        <td>
-                            <form:label path="id">
-                                <spring:message text="ID"/>
-                            </form:label>
-                        </td>
-                        <td>
-                            <form:input path="id" readonly="true" size="8" disabled="true"/>
-                            <form:hidden path="id"/>
-                        </td>
-                    </tr>
-                </c:if>
-                <tr>
-                    <td>
-                        <form:label path="firstName">
-                            <spring:message text="First Name"/>
-                        </form:label>
-                    </td>
-                    <td>
-                        <form:input path="firstName"/>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <form:label path="lastName">
-                            <spring:message text="Last Name"/>
-                        </form:label>
-                    </td>
-                    <td>
-                        <form:input path="lastName"/>
-                    </td>
-                </tr>
-                <tr>
-                    <td colspan="2">
-                        <c:if test="${!empty owner.lastName}">
-                            <input class="add_User" type="submit"
-                                   value="<spring:message text="Edit Owner"/>"/>
-                        </c:if>
-                        <c:if test="${empty owner.lastName}">
-                            <input class="add_User" type="submit"
-                                   value="<spring:message text="Add Owner"/>"/>
-                        </c:if>
-                    </td>
-                </tr>
-            </table>
-        </form:form>
+        <%--<h1>Add an Owner</h1>--%>
+        <%--<c:url var="addAction" value="/owners/add"/>--%>
+        <%--<form:form action="${addAction}" commandName="owner">--%>
+            <%--<table>--%>
+                <%--<c:if test="${!empty owner.lastName}">--%>
+                    <%--<tr>--%>
+                        <%--<td>--%>
+                            <%--<form:label path="id">--%>
+                                <%--<spring:message text="ID"/>--%>
+                            <%--</form:label>--%>
+                        <%--</td>--%>
+                        <%--<td>--%>
+                            <%--<form:input path="id" readonly="true" size="8" disabled="true"/>--%>
+                            <%--<form:hidden path="id"/>--%>
+                        <%--</td>--%>
+                    <%--</tr>--%>
+                <%--</c:if>--%>
+                <%--<tr>--%>
+                    <%--<td>--%>
+                        <%--<form:label path="firstName">--%>
+                            <%--<spring:message text="First Name"/>--%>
+                        <%--</form:label>--%>
+                    <%--</td>--%>
+                    <%--<td>--%>
+                        <%--<form:input path="firstName"/>--%>
+                    <%--</td>--%>
+                <%--</tr>--%>
+                <%--<tr>--%>
+                    <%--<td>--%>
+                        <%--<form:label path="lastName">--%>
+                            <%--<spring:message text="Last Name"/>--%>
+                        <%--</form:label>--%>
+                    <%--</td>--%>
+                    <%--<td>--%>
+                        <%--<form:input path="lastName"/>--%>
+                    <%--</td>--%>
+                <%--</tr>--%>
+                <%--<tr>--%>
+                    <%--<td colspan="2">--%>
+                        <%--<c:if test="${!empty owner.lastName}">--%>
+                            <%--<input class="add_User" type="submit"--%>
+                                   <%--value="<spring:message text="Edit Owner"/>"/>--%>
+                        <%--</c:if>--%>
+                        <%--<c:if test="${empty owner.lastName}">--%>
+                            <%--<input class="add_User" type="submit"--%>
+                                   <%--value="<spring:message text="Add Owner"/>"/>--%>
+                        <%--</c:if>--%>
+                    <%--</td>--%>
+                <%--</tr>--%>
+            <%--</table>--%>
+        <%--</form:form>--%>
     </div>
 </div>
 </body>

@@ -1,6 +1,5 @@
-$marginTop:40px;
 $widthMin:30px;
-$widthMax:15%;
+$widthMax:17%;
 $heightTdThead:30px;
 $heightTdTbody:20px;
 $colorBackgrondThead:#ffee17;
@@ -11,75 +10,45 @@ $colorFontHead:#2ea7e0;
 $colorFontBody:#595857;
 $sizeButton:30px;
 
-
 .container {
-  position: relative;
-  margin: 0 auto;
-  display: flex;
-  flex-flow: column wrap;
-  justify-content: flex-start;
-  align-items: center;
-  max-width: 1200px;
-  min-width: 960px;
-  //outline: 1px solid green;
-  font-family: 'SF UI Display', serif;
-  font-weight: normal;
-}
-.wrapBattonAdd {
   width: 100%;
-  margin-top: $marginTop;
-  text-align: left;
-}
-.btnAdd {
-  position: absolute;
-  top: 100px;
-  left: 23px;
-  width: 200px;
-  padding: 6px 0;
-  display: block;
-  border: 2px outset #dfcdcd;
-  background-color: #ffc200;
-  font-size: 18px;
-  text-transform: uppercase;
-  text-align: center;
-  color: #2ea7e0;
-  border-radius: 20px;
-  outline: 1px transparent;
-  transition: all .5s ease-in;
-  text-decoration: none;
-  z-index: 1020;
-  &:hover{
-    cursor: pointer;
-    background: #fdff00;
+  //outline: 1px solid blue;
+  h1{
+    font-size: 2rem;
+    text-align: center;
   }
 }
-.wrapTable {
-  width: 100%;
-  margin-top: 0;
+
+.wrapTableData {
+  margin: 40px auto;
   display: flex;
   flex-flow: column wrap;
   justify-content: flex-start;
   align-items: center;
-  overflow: auto;
-  .table {
+  font-family: 'SF UI Display',  sans-serif;
+  max-width: 960px ;
+  min-width: 760px;
+
+  .tablesData {
+    font: 14px 'SF UI Display',  sans-serif;
+    width: 100%;
     z-index: 1022;
-    width: 99%;
     margin-bottom: 20px;
     position: relative;
-    .thead{
-      border-radius: 40px;
+    //outline: 3px solid yellow;
+    .thead {
       position: absolute;
       top: 0;
       left: 0;
       width: 100%;
       tr {
         display: flex;
-        flex-flow: row wrap  ;
+        flex-flow: row wrap;
         justify-content: space-around;
         align-items: center;
         width: 100%;
         height: $heightTdThead;
-        background-color: $colorBackgrondThead;
+        background: $colorBackgrondThead;
         color: $colorFontHead;
         &:last-child {
           margin-top: 2px;
@@ -95,9 +64,8 @@ $sizeButton:30px;
           flex-flow: row wrap;
           justify-content: center;
           align-items: center;
-          &:nth-child(1),
-          &:nth-child(7),
-          &:nth-child(8)
+          //outline: 1px solid red;
+          &:nth-child(1)
           {
             width: $widthMin;
           }
@@ -107,7 +75,7 @@ $sizeButton:30px;
           &:nth-child(5),
           &:nth-child(6)
           {
-           min-width: $widthMax;
+            min-width: $widthMax;
           }
           &:hover {
             cursor: pointer;
@@ -115,10 +83,11 @@ $sizeButton:30px;
         }
       }
     }
-    .ttbody{
+    .tbody{
       background-color: $colorBackgrondTbody;
       padding-bottom: 1px;
       width: 100%;
+      color: black;
       tr{
         margin-top: $heightTdThead;
         height: $heightTdTbody;
@@ -137,54 +106,18 @@ $sizeButton:30px;
           flex-flow: row wrap;
           justify-content: center;
           align-items: center;
-          &:nth-child(1),
-          &:nth-child(7),
-          &:nth-child(8)
+          &:nth-child(1)
           {
             width: $widthMin;
           }
           &:nth-child(2),
-          &:nth-child(3),
-          &:nth-child(4),
-          &:nth-child(5),
-          &:nth-child(6)
+          &:nth-child(3)
           {
-            width: $widthMax;
+            min-width: $widthMax;
           }
-          //input {
-          //  font-size: $fontSizeTbody;
-          //  background-color: yellow;
-          //  border-radius:$fontSizeTbody ;
-          //  border: 1px solid blue;
-          //
-          //}
         }
-      }
-      .wrapSquaredBut {
-        width: 100%;
-        height: 100%;
-        display: flex;
-        flex-flow: row wrap;
-        justify-content: center;
-        align-items: center;
-      }
-      .delBtn,
-      .btnShowEditPage {
-        width: 29px;
-        height: 29px;
-        background-color: #ffe200;
-        border: 2px outset #e1d2d2;
-        transition: all .3s ease-in;
-        z-index: 1020;
-      }
-      .delBtn:hover,
-      .btnShowEditPage:hover {
-        background: #2ea7e0;
       }
     }
   }
 }
-
-
-
 
