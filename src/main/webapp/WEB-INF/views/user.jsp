@@ -56,7 +56,7 @@
     </nav>
     <div class="center">
         <div class="wrapTables">
-            <h1>User List</h1>
+            <%--<h1>User List</h1>--%>
             <c:if test="${!empty listUsers}">
             <table id="gridUser" class="tableOwner tableUsers ">
                 <thead class="thead" id="theadUsers">
@@ -101,7 +101,7 @@
                 <input type="text" id="idUser" placeholder="id Owner" disabled="true">
                 <input type="text" id="nameUser" placeholder="Name User">
                 <input type="text" id="passwordUser" placeholder="Password">
-                <input type="submit" value="Add Uswer">
+                <input type="submit" value="ADD USER">
             </form>
         </div>
 

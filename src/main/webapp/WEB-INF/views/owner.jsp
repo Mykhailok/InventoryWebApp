@@ -56,7 +56,7 @@
     </nav>
     <div class="center">
         <div class="wrapTables">
-        <h1>Owner List</h1>
+        <%--<h1>Owner List</h1>--%>
 
         <c:if test="${!empty listOwners}">
             <table id="gridOwner" class="tableOwner">
@@ -101,7 +101,7 @@
             <%--<input type="text" id="idOwner" placeholder="id Owner" disabled="true">--%>
             <input type="text" id="firstNameOwner" placeholder="First Name">
             <input type="text" id="lastNameOwner" placeholder="Last Name">
-            <input type="submit" value="Add Owner">
+            <input type="submit" value="ADD OWNER">
         </form>
 </div>
 
